@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+/* ── Quantum Color Palette & Design Tokens ── */
+@theme {
+  --color-quantum-bg: #06060e;
+  --color-quantum-surface: #0d0d1a;
+  --color-quantum-surface-hover: #141426;
+  --color-quantum-border: #1a1a2e;
+  --color-quantum-purple: #6929c4;
+  --color-quantum-purple-light: #8a3ffc;
+  --color-quantum-purple-dark: #491d8b;
+  --color-quantum-text: #f4f4f7;
+  --color-quantum-text-secondary: #8d8d9f;
+  --color-quantum-text-muted: #5e5e70;
+
+  --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* ── Global Styles ── */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-quantum-bg);
+  color: var(--color-quantum-text);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(105, 41, 196, 0.12) 0%, transparent 55%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+/* ── Ambient Subtle Grid ── */
+.quantum-grid-bg {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* ── Glassmorphism Card Utilities (Restrained & Clean) ── */
+.glass-panel {
+  background: rgba(13, 13, 26, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  transition: all 0.25s ease-out;
+}
+.glass-panel-hover:hover {
+  background: rgba(18, 18, 34, 0.85);
+  border-color: rgba(105, 41, 196, 0.4);
+}
+
+/* ── Custom Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06060e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c1c30;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #6929c4;
+}
+
+/* ── Selection ── */
+::selection {
+  background: rgba(105, 41, 196, 0.45);
+  color: #ffffff;
+}
