@@ -28,4 +28,10 @@ export const organizers: Organizer[] = [
     designation: 'The QuantumPlators Club',
     image: '/organizers/tarun-ashwat.jpg',
   },
+  {
+    name: 'Adithya K',
+    role: 'Student Organizer',
+    designation: 'The QuantumPlators Club',
+    image: '/organizers/adithya-k.jpg',
+  },
 ];
