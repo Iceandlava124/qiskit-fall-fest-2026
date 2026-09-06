@@ -22,4 +22,10 @@ export const organizers: Organizer[] = [
     designation: 'Project Assistant',
     image: '/organizers/nathimalar-chandran.jpg',
   },
+  {
+    name: 'Tarun Ashwat',
+    role: 'Student Organizer',
+    designation: 'The QuantumPlators Club',
+    image: '/organizers/tarun-ashwat.jpg',
+  },
 ];
