@@ -16,5 +16,10 @@ export const organizers: Organizer[] = [
     designation: 'Assistant Professor',
     image: '/organizers/thangaraj-m.png',
   },
-  { name: 'Ms. Nathimalar Chandran', role: 'Co-Organizer' },
+  {
+    name: 'Ms. Nathimalar Chandran',
+    role: 'Co-Organizer',
+    designation: 'Project Assistant',
+    image: '/organizers/nathimalar-chandran.jpg',
+  },
 ];
