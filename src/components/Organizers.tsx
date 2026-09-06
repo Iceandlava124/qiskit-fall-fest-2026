@@ -20,12 +20,22 @@ export default function Organizers() {
         {/* Featured Lead Organizer Card */}
         <AnimatedSection delay={0.1}>
           <div className="mb-10 p-8 sm:p-10 rounded-2xl bg-quantum-surface/60 border border-quantum-border flex flex-col sm:flex-row items-center sm:items-start gap-8">
-            {/* Labeled Photo Placeholder per Item 11 */}
-            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-quantum-surface border border-quantum-border flex flex-col items-center justify-center text-center p-3 flex-shrink-0">
-              <Camera size={20} className="text-zinc-600 mb-1.5" />
-              <span className="text-[10px] font-mono text-quantum-text-secondary/70 leading-tight">
-                Photo coming soon
-              </span>
+            {/* Labeled Photo Placeholder or Real Photo */}
+            <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-quantum-surface border border-quantum-border flex flex-col items-center justify-center text-center overflow-hidden flex-shrink-0">
+              {leadOrganizer.image ? (
+                <img
+                  src={leadOrganizer.image}
+                  alt={leadOrganizer.name}
+                  className="w-full h-full object-cover object-top"
+                />
+              ) : (
+                <div className="p-3 flex flex-col items-center justify-center">
+                  <Camera size={20} className="text-zinc-600 mb-1.5" />
+                  <span className="text-[10px] font-mono text-quantum-text-secondary/70 leading-tight">
+                    Photo coming soon
+                  </span>
+                </div>
+              )}
             </div>
 
             <div className="flex-1 text-center sm:text-left">
@@ -36,7 +46,7 @@ export default function Organizers() {
                 {leadOrganizer.name}
               </h3>
               <p className="text-sm text-quantum-text-secondary mb-4">
-                Vellore Institute of Technology (VIT Chennai)
+                {leadOrganizer.designation ? `${leadOrganizer.designation} · ` : ''}Vellore Institute of Technology (VIT Chennai)
               </p>
               <p className="text-xs sm:text-sm text-quantum-text-secondary/80 leading-relaxed max-w-2xl font-normal">
                 Directing the academic program, university partnerships, hackathon problem statements,
@@ -51,12 +61,22 @@ export default function Organizers() {
           {coOrganizers.map((org, i) => (
             <AnimatedSection key={org.name} delay={0.15 + i * 0.05}>
               <div className="p-6 rounded-2xl bg-quantum-surface/40 border border-quantum-border hover:border-quantum-purple/40 transition-colors flex items-center gap-4 h-full">
-                {/* Labeled Photo Placeholder */}
-                <div className="w-14 h-14 rounded-xl bg-quantum-surface border border-quantum-border/60 flex flex-col items-center justify-center text-center p-1 flex-shrink-0">
-                  <Camera size={14} className="text-zinc-600 mb-0.5" />
-                  <span className="text-[8px] font-mono text-quantum-text-secondary/60 leading-none">
-                    Pending
-                  </span>
+                {/* Labeled Photo Placeholder or Real Photo */}
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-quantum-surface border border-quantum-border/60 flex flex-col items-center justify-center text-center overflow-hidden flex-shrink-0">
+                  {org.image ? (
+                    <img
+                      src={org.image}
+                      alt={org.name}
+                      className="w-full h-full object-cover object-top"
+                    />
+                  ) : (
+                    <div className="p-1 flex flex-col items-center justify-center">
+                      <Camera size={16} className="text-zinc-600 mb-0.5" />
+                      <span className="text-[8px] font-mono text-quantum-text-secondary/60 leading-none">
+                        Pending
+                      </span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="min-w-0 flex-1">
@@ -64,7 +84,7 @@ export default function Organizers() {
                     {org.name}
                   </h4>
                   <p className="text-xs font-mono text-quantum-purple mt-0.5">
-                    {org.role}
+                    {org.designation ? `${org.designation} · ${org.role}` : org.role}
                   </p>
                   <p className="text-[11px] font-mono text-quantum-text-secondary/70 mt-1">
                     VIT Chennai
