@@ -84,7 +84,6 @@ export const organizers: Organizer[] = [
     affiliation: 'Vellore Institute of Technology (VIT Chennai)',
     category: 'lead',
     image: '/organizers/ramesh-babu.jpeg',
-    bio: 'Directing the academic program, university partnerships, hackathon problem statements, and student engagement for the 2026 festival.',
   },
   {
     name: 'Dr. Reena Monica',
@@ -93,7 +92,6 @@ export const organizers: Organizer[] = [
     affiliation: 'Vellore Institute of Technology (VIT Chennai)',
     category: 'lead',
     image: '/organizers/reena-monica.jpg',
-    bio: 'Spearheading international institutional outreach, academic keynote coordination, research collaborations, and global quantum community engagement.',
   },
   {
     name: 'Dr. Lakshmanan S',

@@ -47,11 +47,8 @@ export default function Organizers() {
                 <p className="text-sm font-semibold text-slate-700">
                   {chiefPatron.designation}
                 </p>
-                <p className="text-xs font-mono text-slate-500 mb-4">
+                <p className="text-xs font-mono text-slate-500">
                   {chiefPatron.institution}
-                </p>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl font-normal">
-                  Visionary founder and former Member of Parliament who established VIT and pioneered world-class higher education in India, fostering international academic collaborations and research distinction.
                 </p>
               </div>
             </div>
@@ -146,14 +143,9 @@ export default function Organizers() {
                     <h4 className="font-heading font-bold text-slate-900 text-xl sm:text-2xl mt-1 mb-1 truncate">
                       {lead.name}
                     </h4>
-                    <p className="text-xs sm:text-sm text-slate-600 mb-3">
+                    <p className="text-xs sm:text-sm text-slate-600">
                       {lead.designation ? `${lead.designation} · ` : ''}{lead.affiliation || 'Vellore Institute of Technology (VIT Chennai)'}
                     </p>
-                    {lead.bio && (
-                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                        {lead.bio}
-                      </p>
-                    )}
                   </div>
                 </div>
               </AnimatedSection>
