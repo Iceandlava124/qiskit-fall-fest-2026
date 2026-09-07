@@ -35,34 +35,37 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600">
               <li>
-                <a href="#about" className="hover:text-quantum-purple hover:underline transition-colors">About Event</a>
+                <a href="/#about" className="hover:text-quantum-purple hover:underline transition-colors">About Event</a>
               </li>
               <li>
-                <a href="#organizers" className="hover:text-quantum-purple hover:underline transition-colors">Organizers</a>
+                <a href="/#organizers" className="hover:text-quantum-purple hover:underline transition-colors">Organizers</a>
               </li>
               <li>
-                <a href="#speakers" className="hover:text-quantum-purple hover:underline transition-colors">Speakers Lineup</a>
+                <a href="/#speakers" className="hover:text-quantum-purple hover:underline transition-colors">Speakers Lineup</a>
               </li>
               <li>
-                <a href="#attend" className="hover:text-quantum-purple hover:underline transition-colors">Who Can Attend</a>
+                <a href="/#attend" className="hover:text-quantum-purple hover:underline transition-colors">Who Can Attend</a>
               </li>
               <li>
-                <a href="#schedule" className="hover:text-quantum-purple hover:underline transition-colors">3-Day Schedule</a>
+                <a href="/#schedule" className="hover:text-quantum-purple hover:underline transition-colors">3-Day Schedule</a>
               </li>
               <li>
-                <a href="#hackathon" className="hover:text-quantum-purple hover:underline transition-colors">Quantum Hackathon</a>
+                <a href="/#hackathon" className="hover:text-quantum-purple hover:underline transition-colors">Quantum Hackathon</a>
               </li>
               <li>
-                <a href="#venue" className="hover:text-quantum-purple hover:underline transition-colors">Venue & Location</a>
+                <a href="/#venue" className="hover:text-quantum-purple hover:underline transition-colors">Venue & Location</a>
               </li>
               <li>
-                <a href="#past-event" className="hover:text-quantum-purple hover:underline transition-colors">Past Event Galleries</a>
+                <a href="/qmi-2025" className="hover:text-quantum-purple hover:underline transition-colors font-medium text-quantum-purple">QMI 2025 Workshop</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-quantum-purple hover:underline transition-colors">Contact Us</a>
+                <a href="/past-events" className="hover:text-quantum-purple hover:underline transition-colors">Past Event Galleries</a>
               </li>
               <li>
-                <a href="#concept-explainer" className="hover:text-quantum-purple hover:underline transition-colors font-semibold text-quantum-purple">Concept Explainer</a>
+                <a href="/#contact" className="hover:text-quantum-purple hover:underline transition-colors">Contact Us</a>
+              </li>
+              <li>
+                <a href="/#concept-explainer" className="hover:text-quantum-purple hover:underline transition-colors font-semibold text-quantum-purple">Concept Explainer</a>
               </li>
             </ul>
           </div>

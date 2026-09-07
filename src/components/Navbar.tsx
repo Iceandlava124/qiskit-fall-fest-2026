@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Share2, Check } from 'lucide-react';
 
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#organizers', label: 'Organizers' },
-  { href: '#speakers', label: 'Speakers' },
-  { href: '#attend', label: 'Audience', mobileLabel: 'Who Can Attend' },
-  { href: '#schedule', label: 'Schedule' },
-  { href: '#hackathon', label: 'Hackathon' },
-  { href: '#venue', label: 'Venue' },
-  { href: '#past-event', label: 'Gallery', mobileLabel: 'Past Events' },
-  { href: '#concept-explainer', label: 'Explainer', mobileLabel: 'Concept Explainer' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'About', isRoute: false },
+  { href: '/#organizers', label: 'Organizers', isRoute: false },
+  { href: '/#speakers', label: 'Speakers', isRoute: false },
+  { href: '/#schedule', label: 'Schedule', isRoute: false },
+  { href: '/#hackathon', label: 'Hackathon', isRoute: false },
+  { href: '/#venue', label: 'Venue', isRoute: false },
+  { href: '/qmi-2025', label: 'QMI 2025', mobileLabel: 'QMI 2025 Page', isRoute: true },
+  { href: '/past-events', label: 'Gallery', mobileLabel: 'Past Events Gallery', isRoute: true },
+  { href: '/#contact', label: 'Contact', isRoute: false },
 ];
 
 export default function Navbar() {
@@ -61,8 +61,8 @@ export default function Navbar() {
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo / Lockup */}
-          <a
-            href="#"
+          <Link
+            to="/"
             className="flex items-center gap-2.5 sm:gap-3 shrink-0 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded group mr-2"
           >
             <div className="flex items-center gap-2 shrink-0">
@@ -82,19 +82,29 @@ export default function Navbar() {
               <span>Qiskit Fall Fest</span>
               <span className="text-quantum-purple font-mono text-xs font-semibold">2026</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-3.5 2xl:gap-5 shrink-0">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-xs xl:text-sm font-medium text-slate-600 hover:text-quantum-purple transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded px-1.5 py-1 whitespace-nowrap"
-              >
-                {link.label}
-              </a>
-            ))}
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 2xl:gap-4 shrink-0">
+            {navLinks.map((link) =>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="text-xs xl:text-sm font-medium text-slate-600 hover:text-quantum-purple transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded px-1.5 py-1 whitespace-nowrap"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-xs xl:text-sm font-medium text-slate-600 hover:text-quantum-purple transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded px-1.5 py-1 whitespace-nowrap"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
 
             {/* Quick Share Button */}
             <button
@@ -108,7 +118,7 @@ export default function Navbar() {
 
             {/* Register CTA - Solid #6929c4 */}
             <a
-              href="#register"
+              href="/#register"
               className="px-4 py-2 text-xs xl:text-sm font-semibold rounded-lg bg-quantum-purple hover:bg-quantum-purple-light text-white shadow-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple shrink-0 whitespace-nowrap"
             >
               Register Now
@@ -141,18 +151,29 @@ export default function Navbar() {
       {isOpen && (
         <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 max-h-[85vh] overflow-y-auto shadow-xl">
           <div className="px-4 py-4 space-y-1">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="block text-slate-700 hover:text-quantum-purple transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-sm"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.mobileLabel || link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.isRoute ? (
+                <Link
+                  key={link.href}
+                  to={link.href}
+                  className="block text-slate-700 hover:text-quantum-purple transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-sm"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.mobileLabel || link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="block text-slate-700 hover:text-quantum-purple transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-sm"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.mobileLabel || link.label}
+                </a>
+              )
+            )}
             <a
-              href="#register"
+              href="/#register"
               className="block text-center mt-3 px-4 py-3 text-sm font-semibold rounded-lg bg-quantum-purple text-white"
               onClick={() => setIsOpen(false)}
             >

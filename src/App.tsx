@@ -1,63 +1,31 @@
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
-import MetricsBar from './components/MetricsBar';
-import About from './components/About';
-import Organizers from './components/Organizers';
-import SpeakersTeaser from './components/SpeakersTeaser';
-import WhoCanAttend from './components/WhoCanAttend';
-import Schedule from './components/Schedule';
-import Hackathon from './components/Hackathon';
-import Venue from './components/Venue';
-import PastEvent from './components/PastEvent';
-import Contact from './components/Contact';
-import ConceptExplainer from './components/ConceptExplainer';
-import RegisterCTA from './components/RegisterCTA';
+import ScrollToTop from './components/ScrollToTop';
+import HomePage from './pages/HomePage';
+import Qmi2025Page from './pages/Qmi2025Page';
+import Qff2025Page from './pages/Qff2025Page';
+import PastEventsPage from './pages/PastEventsPage';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-quantum-text selection:bg-quantum-purple/20 selection:text-quantum-purple">
-      <Navbar />
-      <main>
-        {/* Top Hero Banner & Metrics Overview */}
-        <Hero />
-        <MetricsBar />
-
-        {/* 1. About */}
-        <About />
-
-        {/* 2. Organizers */}
-        <Organizers />
-
-        {/* 3. Speakers */}
-        <SpeakersTeaser />
-
-        {/* 4. Who Can Attend */}
-        <WhoCanAttend />
-
-        {/* 5. Schedule */}
-        <Schedule />
-
-        {/* 6. Hackathon */}
-        <Hackathon />
-
-        {/* 7. Venue & Location */}
-        <Venue />
-
-        {/* 8. Past Events with Gallery for Each Event */}
-        <PastEvent />
-
-        {/* 9. Contact Us */}
-        <Contact />
-
-        {/* 10. Concept Explainer (Prominent, interactive educational center) */}
-        <ConceptExplainer />
-
-        {/* Final Registration CTA */}
-        <RegisterCTA />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white text-quantum-text selection:bg-quantum-purple/20 selection:text-quantum-purple flex flex-col justify-between">
+        <Navbar />
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/qmi-2025" element={<Qmi2025Page />} />
+            <Route path="/qff-2025" element={<Qff2025Page />} />
+            <Route path="/past-events" element={<PastEventsPage />} />
+            <Route path="/gallery" element={<Navigate to="/past-events" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
