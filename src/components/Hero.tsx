@@ -6,9 +6,9 @@ const BlochSphere = lazy(() => import('./BlochSphere'));
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24 md:py-36 lg:py-40 px-4 sm:px-6 lg:px-8 bg-[#050505] quantum-grid-bg">
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-24 md:py-36 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white quantum-grid-bg">
       {/* Subtle single purple ambient glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-quantum-purple/15 blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-quantum-purple/5 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -18,33 +18,33 @@ export default function Hero() {
             
             {/* Main Event Title - Pure typography, no badge above */}
             <AnimatedSection>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-heading tracking-tight leading-[1.08] mb-6 text-white">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-heading tracking-tight leading-[1.08] mb-6 text-slate-900">
                 Qiskit Fall Fest <span className="text-quantum-purple">2026</span>
               </h1>
             </AnimatedSection>
 
             {/* Tagline */}
             <AnimatedSection delay={0.08}>
-              <p className="text-lg sm:text-2xl text-quantum-text-secondary max-w-xl mb-6 font-light leading-relaxed">
+              <p className="text-lg sm:text-2xl text-slate-600 max-w-xl mb-6 font-light leading-relaxed">
                 Explore Quantum. Build with Qiskit. Connect with the Future.
               </p>
             </AnimatedSection>
 
             {/* Date & Venue - Clean plain text */}
             <AnimatedSection delay={0.12}>
-              <p className="text-sm font-mono text-quantum-text-secondary mb-6">
-                October 2026 <span className="mx-2 text-quantum-purple">·</span> MG Auditorium, VIT Chennai Campus <span className="mx-2 text-quantum-purple">·</span> Hosted by The QuantumPlators Club
+              <p className="text-sm font-mono text-slate-600 mb-6">
+                October 12–16, 2026 <span className="mx-2 text-quantum-purple">·</span> MG Auditorium, VIT Chennai Campus <span className="mx-2 text-quantum-purple">·</span> Hosted by The QuantumPlators Club
               </p>
             </AnimatedSection>
 
             {/* Quiet Stat Line */}
             <AnimatedSection delay={0.16}>
-              <p className="text-xs sm:text-sm font-mono text-quantum-text-secondary mb-8">
-                1,000+ Students <span className="mx-1.5 text-zinc-600">·</span> 50+ Regional Colleges <span className="mx-1.5 text-zinc-600">·</span> 5 Days <span className="mx-1.5 text-zinc-600">·</span> Hands-on Hackathon
+              <p className="text-xs sm:text-sm font-mono text-slate-500 mb-8">
+                1,000+ Students <span className="mx-1.5 text-slate-300">·</span> 50+ Regional Colleges <span className="mx-1.5 text-slate-300">·</span> 5 Days <span className="mx-1.5 text-slate-300">·</span> Hands-on Hackathon
               </p>
             </AnimatedSection>
 
-            {/* Action Buttons - Solid #6929C4, no rainbow gradients */}
+            {/* Action Buttons - Solid #6929C4 */}
             <AnimatedSection delay={0.2}>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
                 <a
@@ -56,7 +56,7 @@ export default function Hero() {
                 </a>
                 <a
                   href="#schedule"
-                  className="px-7 py-3.5 text-base font-semibold rounded-lg border border-quantum-border bg-quantum-surface/60 hover:bg-quantum-surface text-quantum-text hover:text-white transition-colors"
+                  className="px-7 py-3.5 text-base font-semibold rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-slate-900 transition-colors shadow-sm"
                 >
                   View Schedule
                 </a>
@@ -68,17 +68,17 @@ export default function Hero() {
           {/* Right Column: 3D Rotating Bloch Sphere - The ONE signature quantum visual */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center w-full">
             <AnimatedSection delay={0.16}>
-              <div className="p-6 sm:p-8 rounded-2xl bg-quantum-surface/60 border border-quantum-border relative w-full flex flex-col items-center">
-                <div className="w-full flex items-center justify-between text-xs font-mono text-quantum-text-secondary border-b border-quantum-border/60 pb-3 mb-4 px-1">
+              <div className="p-6 sm:p-8 rounded-2xl bg-slate-50/80 border border-slate-200 shadow-sm relative w-full flex flex-col items-center">
+                <div className="w-full flex items-center justify-between text-xs font-mono text-slate-500 border-b border-slate-200 pb-3 mb-4 px-1">
                   <span>Bloch Sphere Simulator</span>
-                  <span className="text-quantum-purple">Interactive 3D</span>
+                  <span className="text-quantum-purple font-semibold">Interactive 3D</span>
                 </div>
                 
                 <Suspense
                   fallback={
-                    <div className="w-full aspect-square max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] mx-auto flex flex-col items-center justify-center rounded-xl bg-quantum-surface/40 border border-quantum-border p-8">
+                    <div className="w-full aspect-square max-w-[340px] sm:max-w-[380px] lg:max-w-[420px] mx-auto flex flex-col items-center justify-center rounded-xl bg-slate-100/60 border border-slate-200 p-8">
                       <div className="w-10 h-10 rounded-full border-2 border-quantum-purple border-t-transparent animate-spin mb-3" />
-                      <span className="text-xs font-mono text-quantum-text-secondary">
+                      <span className="text-xs font-mono text-slate-500">
                         Loading Bloch Simulator...
                       </span>
                     </div>
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-quantum-bg to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent pointer-events-none" />
     </section>
   );
 }

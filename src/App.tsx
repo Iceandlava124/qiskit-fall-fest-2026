@@ -20,7 +20,7 @@ import RegisterCTA from './components/RegisterCTA';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#050505] text-quantum-text selection:bg-quantum-purple/40 selection:text-white">
+    <div className="min-h-screen bg-white text-quantum-text selection:bg-quantum-purple/20 selection:text-quantum-purple">
       <Navbar />
       <main>
         <Hero />

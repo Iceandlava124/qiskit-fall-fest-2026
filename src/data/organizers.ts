@@ -6,10 +6,30 @@ export interface Organizer {
 }
 
 export const organizers: Organizer[] = [
-  { name: 'Dr. N. Ramesh Babu', role: 'Lead Organizer' },
-  { name: 'Dr. Lakshmanan S', role: 'Co-Organizer' },
-  { name: 'Dr. Padmaja N', role: 'Co-Organizer' },
-  { name: 'Dr. Sriraman R', role: 'Co-Organizer' },
+  {
+    name: 'Dr. N. Ramesh Babu',
+    role: 'Lead Organizer',
+    designation: 'Assistant Professor',
+    image: '/organizers/ramesh-babu.jpeg',
+  },
+  {
+    name: 'Dr. Lakshmanan S',
+    role: 'Co-Organizer',
+    designation: 'Professor',
+    image: '/organizers/lakshmanan.jpg',
+  },
+  {
+    name: 'Dr. Padmaja N',
+    role: 'Co-Organizer',
+    designation: 'Assistant Professor',
+    image: '/organizers/padmaja.jpg',
+  },
+  {
+    name: 'Dr. Sriraman R',
+    role: 'Co-Organizer',
+    designation: 'Assistant Professor',
+    image: '/organizers/sriraman.jpg',
+  },
   {
     name: 'Dr. Thangaraj M',
     role: 'Co-Organizer',

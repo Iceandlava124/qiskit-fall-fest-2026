@@ -13,7 +13,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-[#050505] relative overflow-hidden flex items-center justify-center">
+    <section id="faq" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-slate-50/60 relative overflow-hidden border-y border-slate-200 flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto relative z-10">
         <AnimatedSection>
           <SectionHeading
@@ -29,10 +29,10 @@ export default function FAQ() {
             return (
               <AnimatedSection key={faq.question} delay={i * 0.05}>
                 <div
-                  className={`rounded-2xl border transition-colors overflow-hidden ${
+                  className={`rounded-2xl border transition-all overflow-hidden ${
                     isOpen
-                      ? 'border-quantum-purple bg-quantum-surface/80'
-                      : 'border-quantum-border bg-quantum-surface/40 hover:border-quantum-purple/40'
+                      ? 'border-quantum-purple bg-white shadow-sm'
+                      : 'border-slate-200 bg-white hover:border-quantum-purple/40 shadow-xs'
                   }`}
                 >
                   <button
@@ -44,16 +44,16 @@ export default function FAQ() {
                       <HelpCircle
                         size={18}
                         className={`flex-shrink-0 mt-0.5 transition-colors ${
-                          isOpen ? 'text-quantum-purple' : 'text-zinc-500'
+                          isOpen ? 'text-quantum-purple' : 'text-slate-400'
                         }`}
                       />
-                      <span className="font-heading font-semibold text-white text-base sm:text-lg leading-snug">
+                      <span className="font-heading font-semibold text-slate-900 text-base sm:text-lg leading-snug">
                         {faq.question}
                       </span>
                     </div>
                     <ChevronDown
                       size={18}
-                      className={`text-quantum-text-secondary flex-shrink-0 mt-1 transition-transform duration-200 ${
+                      className={`text-slate-400 flex-shrink-0 mt-1 transition-transform duration-200 ${
                         isOpen ? 'rotate-180 text-quantum-purple' : ''
                       }`}
                     />
@@ -67,7 +67,7 @@ export default function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25, ease: 'easeOut' }}
                       >
-                        <div className="px-6 pb-6 pt-2 pl-12 text-sm sm:text-base text-quantum-text-secondary leading-relaxed border-t border-quantum-border/40">
+                        <div className="px-6 pb-6 pt-2 pl-12 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100">
                           {faq.answer}
                         </div>
                       </motion.div>
@@ -81,14 +81,14 @@ export default function FAQ() {
 
         {/* Desktop Help Support Row */}
         <AnimatedSection delay={0.3}>
-          <div className="mt-12 p-6 rounded-2xl border border-quantum-border/60 bg-quantum-surface/30 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="mt-12 p-6 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
-              <p className="text-sm font-semibold text-white">Still have questions about OD letters or team eligibility?</p>
-              <p className="text-xs text-quantum-text-secondary mt-0.5">The QuantumPlators student organizing team is here to help.</p>
+              <p className="text-sm font-semibold text-slate-900">Still have questions about OD letters or team eligibility?</p>
+              <p className="text-xs text-slate-500 mt-0.5">The QuantumPlators student organizing team is here to help.</p>
             </div>
             <a
               href="mailto:quantumplators@vit.ac.in"
-              className="inline-flex items-center px-5 py-2.5 text-xs font-semibold rounded-lg border border-quantum-border bg-quantum-surface hover:bg-quantum-surface/80 text-quantum-text hover:text-white transition-colors"
+              className="inline-flex items-center px-5 py-2.5 text-xs font-semibold rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-slate-900 transition-colors shadow-xs"
             >
               Contact Organizing Team
             </a>

@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
-/* ── Quantum Color Palette & Design Tokens ── */
+/* ── Quantum Color Palette & Design Tokens (Light Theme) ── */
 @theme {
-  --color-quantum-bg: #06060e;
-  --color-quantum-surface: #0d0d1a;
-  --color-quantum-surface-hover: #141426;
-  --color-quantum-border: #1a1a2e;
+  --color-quantum-bg: #ffffff;
+  --color-quantum-surface: #f8fafc;
+  --color-quantum-surface-hover: #f1f5f9;
+  --color-quantum-border: #e2e8f0;
   --color-quantum-purple: #6929c4;
   --color-quantum-purple-light: #8a3ffc;
   --color-quantum-purple-dark: #491d8b;
-  --color-quantum-text: #f4f4f7;
-  --color-quantum-text-secondary: #8d8d9f;
-  --color-quantum-text-muted: #5e5e70;
+  --color-quantum-text: #0f172a;
+  --color-quantum-text-secondary: #475569;
+  --color-quantum-text-muted: #64748b;
 
   --font-heading: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
@@ -21,7 +21,7 @@
 /* ── Global Styles ── */
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -33,37 +33,40 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: 
-    radial-gradient(ellipse at 50% 0%, rgba(105, 41, 196, 0.12) 0%, transparent 55%);
+    radial-gradient(ellipse at 50% 0%, rgba(105, 41, 196, 0.05) 0%, transparent 60%);
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.025em;
   line-height: 1.18;
+  color: var(--color-quantum-text);
 }
 
 /* ── Ambient Subtle Grid ── */
 .quantum-grid-bg {
   background-size: 48px 48px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
-/* ── Glassmorphism Card Utilities (Restrained & Clean) ── */
+/* ── Glassmorphism Card Utilities (Clean & Elevated) ── */
 .glass-panel {
-  background: rgba(13, 13, 26, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
 }
 
 .glass-panel-hover {
   transition: all 0.25s ease-out;
 }
 .glass-panel-hover:hover {
-  background: rgba(18, 18, 34, 0.85);
+  background: #ffffff;
   border-color: rgba(105, 41, 196, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(105, 41, 196, 0.1);
 }
 
 /* ── Custom Scrollbar ── */
@@ -71,10 +74,10 @@ h1, h2, h3, h4, h5, h6 {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #06060e;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1c1c30;
+  background: #cbd5e1;
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -83,6 +86,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ── Selection ── */
 ::selection {
-  background: rgba(105, 41, 196, 0.45);
-  color: #ffffff;
+  background: rgba(105, 41, 196, 0.2);
+  color: #6929c4;
 }

@@ -87,7 +87,7 @@ const flowSteps = [
 
 export default function Hackathon() {
   return (
-    <section id="hackathon" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-[#050505] relative overflow-hidden flex items-center justify-center">
+    <section id="hackathon" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-slate-50/60 relative overflow-hidden border-y border-slate-200 flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto">
         <AnimatedSection>
           <SectionHeading
@@ -96,34 +96,34 @@ export default function Hackathon() {
           />
         </AnimatedSection>
 
-        {/* Hackathon Intro Card - Direct copy, no pill badges */}
+        {/* Hackathon Intro Card */}
         <AnimatedSection delay={0.1}>
-          <div className="p-8 sm:p-12 rounded-2xl bg-quantum-surface/60 border border-quantum-border mb-20 relative overflow-hidden">
+          <div className="p-8 sm:p-12 rounded-2xl bg-white border border-slate-200 shadow-sm mb-20 relative overflow-hidden">
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
               <div className="max-w-3xl">
-                <p className="text-xs font-mono text-quantum-purple mb-2 uppercase tracking-wider">
-                  Day 2 Evening → Day 3 Afternoon · {STATUS_LABELS.confirmed}
+                <p className="text-xs font-mono text-quantum-purple mb-2 uppercase tracking-wider font-semibold">
+                  Day 3 Afternoon → Day 4 Afternoon · {STATUS_LABELS.confirmed}
                 </p>
-                <h3 className="text-3xl sm:text-4xl font-heading font-extrabold text-white mb-4">
+                <h3 className="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 mb-4">
                   Overnight Quantum Build Challenge
                 </h3>
-                <p className="text-base sm:text-lg text-quantum-text-secondary leading-relaxed mb-6">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6">
                   A quantum-focused hackathon where teams use quantum computing concepts and
                   tools on real problems. Build solutions, collaborate with peer developers, learn
                   from mentors, and compete for recognition and prizes.
                 </p>
 
                 {/* Plain text metadata line with middle dots */}
-                <p className="text-xs sm:text-sm font-mono text-quantum-text-secondary">
-                  Team Size: 2–4 Members <span className="mx-1.5 text-zinc-600">·</span> Cross-College Teams Allowed <span className="mx-1.5 text-zinc-600">·</span> BYOD (Bring Your Laptop) <span className="mx-1.5 text-zinc-600">·</span> Individual Registrants Matched
+                <p className="text-xs sm:text-sm font-mono text-slate-500">
+                  Team Size: 2–4 Members <span className="mx-1.5 text-slate-300">·</span> Cross-College Teams Allowed <span className="mx-1.5 text-slate-300">·</span> BYOD (Bring Your Laptop) <span className="mx-1.5 text-slate-300">·</span> Individual Registrants Matched
                 </p>
               </div>
 
-              {/* Prize card with quiet status label per Item 8 */}
-              <div className="p-7 rounded-xl bg-quantum-surface border border-quantum-border text-center flex-shrink-0 w-full lg:w-auto">
+              {/* Prize card with quiet status label */}
+              <div className="p-7 rounded-xl bg-slate-50 border border-slate-200 text-center flex-shrink-0 w-full lg:w-auto shadow-xs">
                 <Trophy size={28} className="text-quantum-purple mx-auto mb-3" />
-                <div className="text-base font-bold text-white">Prize Tracks & Awards</div>
-                <div className="text-xs text-quantum-text-secondary font-mono mt-1">
+                <div className="text-base font-bold text-slate-900">Prize Tracks & Awards</div>
+                <div className="text-xs text-slate-500 font-mono mt-1">
                   {STATUS_LABELS.comingSoon}
                 </div>
               </div>
@@ -131,14 +131,14 @@ export default function Hackathon() {
           </div>
         </AnimatedSection>
 
-        {/* Hackathon Tracks - Plain small icon without rounded box */}
+        {/* Hackathon Tracks */}
         <div className="mb-20">
           <AnimatedSection delay={0.15}>
             <div className="mb-8">
-              <h4 className="text-2xl font-heading font-bold text-white">
+              <h4 className="text-2xl font-heading font-bold text-slate-900">
                 Challenge Tracks
               </h4>
-              <p className="text-sm text-quantum-text-secondary mt-1">
+              <p className="text-sm text-slate-600 mt-1">
                 Select a track aligned with your interests and technical goals (6 Focus Areas)
               </p>
             </div>
@@ -147,17 +147,17 @@ export default function Hackathon() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {tracks.map((t, idx) => (
               <AnimatedSection key={t.name} delay={0.15 + idx * 0.05}>
-                <div className="p-8 rounded-2xl bg-quantum-surface/60 border border-quantum-border hover:border-quantum-purple/40 transition-colors flex flex-col justify-between h-full">
+                <div className="p-8 rounded-2xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-sm transition-all flex flex-col justify-between h-full">
                   <div>
                     {/* Number and icon header */}
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-mono text-quantum-text-secondary">
+                      <span className="text-xs font-mono text-slate-400 font-semibold">
                         {t.num}
                       </span>
                       <t.icon size={18} className="text-quantum-purple" />
                     </div>
-                    <h5 className="font-heading font-bold text-white text-xl mb-3 leading-snug">{t.name}</h5>
-                    <p className="text-sm text-quantum-text-secondary leading-relaxed font-normal">{t.desc}</p>
+                    <h5 className="font-heading font-bold text-slate-900 text-xl mb-3 leading-snug">{t.name}</h5>
+                    <p className="text-sm text-slate-600 leading-relaxed font-normal">{t.desc}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -169,10 +169,10 @@ export default function Hackathon() {
         <div>
           <AnimatedSection delay={0.25}>
             <div className="mb-8">
-              <h4 className="text-2xl font-heading font-bold text-white">
+              <h4 className="text-2xl font-heading font-bold text-slate-900">
                 Hackathon Flow & Progression
               </h4>
-              <p className="text-sm text-quantum-text-secondary mt-1">
+              <p className="text-sm text-slate-600 mt-1">
                 Five milestones from briefing to final pitch presentations
               </p>
             </div>
@@ -181,23 +181,23 @@ export default function Hackathon() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
             {flowSteps.map((step, i) => (
               <AnimatedSection key={step.num} delay={0.25 + i * 0.06}>
-                <div className="p-6 sm:p-7 rounded-2xl bg-quantum-surface/60 border border-quantum-border hover:border-quantum-purple/40 transition-colors flex flex-col justify-between h-full">
+                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-sm transition-all flex flex-col justify-between h-full">
                   <div>
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-3xl font-heading font-extrabold text-white">
+                      <span className="text-3xl font-heading font-extrabold text-slate-900">
                         {step.num}
                       </span>
                       <step.icon size={18} className="text-quantum-purple" />
                     </div>
-                    <h5 className="font-heading font-bold text-white text-base mb-2">
+                    <h5 className="font-heading font-bold text-slate-900 text-base mb-2">
                       {step.title}
                     </h5>
-                    <p className="text-xs text-quantum-text-secondary leading-relaxed">
+                    <p className="text-xs text-slate-500 leading-relaxed">
                       {step.desc}
                     </p>
                   </div>
 
-                  <div className="mt-6 pt-4 border-t border-quantum-border/40 text-[11px] font-mono text-quantum-text-secondary/70">
+                  <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-400">
                     Milestone 0{i + 1}
                   </div>
                 </div>

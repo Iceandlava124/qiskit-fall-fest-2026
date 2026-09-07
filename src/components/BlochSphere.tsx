@@ -69,7 +69,7 @@ export default function BlochSphere() {
     const sphereMat = new THREE.MeshBasicMaterial({
       color: 0x6929c4,
       transparent: true,
-      opacity: 0.14,
+      opacity: 0.08,
       wireframe: false,
     });
     const sphereMesh = new THREE.Mesh(sphereGeo, sphereMat);
@@ -90,9 +90,9 @@ export default function BlochSphere() {
       return new THREE.Line(geom, mat);
     };
 
-    sphereGroup.add(createRing('z', 0x00d4ff, 0.65)); // Equator
-    sphereGroup.add(createRing('x', 0x6929c4, 0.45)); // XZ meridian
-    sphereGroup.add(createRing('y', 0xa855f7, 0.35)); // YZ meridian
+    sphereGroup.add(createRing('z', 0x6929c4, 0.45)); // Equator
+    sphereGroup.add(createRing('x', 0x8a3ffc, 0.35)); // XZ meridian
+    sphereGroup.add(createRing('y', 0x491d8b, 0.25)); // YZ meridian
 
     // 3. Coordinate Axes
     const axisLen = 1.38;
@@ -101,22 +101,22 @@ export default function BlochSphere() {
         dir.clone().multiplyScalar(-axisLen),
         dir.clone().multiplyScalar(axisLen),
       ]);
-      const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.5 });
+      const mat = new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.45 });
       return new THREE.Line(geom, mat);
     };
 
-    sphereGroup.add(makeAxis(new THREE.Vector3(1, 0, 0), 0x00d4ff)); // X
+    sphereGroup.add(makeAxis(new THREE.Vector3(1, 0, 0), 0x94a3b8)); // X
     sphereGroup.add(makeAxis(new THREE.Vector3(0, 1, 0), 0x6929c4)); // Z (|0⟩ is +Z)
-    sphereGroup.add(makeAxis(new THREE.Vector3(0, 0, 1), 0xa855f7)); // Y
+    sphereGroup.add(makeAxis(new THREE.Vector3(0, 0, 1), 0x94a3b8)); // Y
 
-    // 4. Robust text sprites with cross-platform PC font fallback
-    const makeTextSprite = (text: string, color: string = '#ffffff') => {
+    // 4. Robust text sprites with cross-platform font fallback
+    const makeTextSprite = (text: string, color: string = '#0f172a') => {
       const canvas = document.createElement('canvas');
       canvas.width = 256;
       canvas.height = 128;
       const ctx = canvas.getContext('2d')!;
       ctx.fillStyle = color;
-      ctx.font = 'bold 44px "Segoe UI", "Space Grotesk", Arial, sans-serif';
+      ctx.font = 'bold 44px "Space Grotesk", "Segoe UI", Arial, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       ctx.fillText(text, 128, 64);
@@ -127,42 +127,42 @@ export default function BlochSphere() {
       return sprite;
     };
 
-    const label0 = makeTextSprite('|0⟩', '#ffffff');
+    const label0 = makeTextSprite('|0⟩', '#0f172a');
     label0.position.set(0, axisLen + 0.14, 0);
     sphereGroup.add(label0);
 
-    const label1 = makeTextSprite('|1⟩', '#ffffff');
+    const label1 = makeTextSprite('|1⟩', '#0f172a');
     label1.position.set(0, -axisLen - 0.14, 0);
     sphereGroup.add(label1);
 
-    const labelPlus = makeTextSprite('|+⟩', '#00d4ff');
+    const labelPlus = makeTextSprite('|+⟩', '#6929c4');
     labelPlus.position.set(axisLen + 0.14, 0, 0);
     sphereGroup.add(labelPlus);
 
-    const labelMinus = makeTextSprite('|−⟩', '#00d4ff');
+    const labelMinus = makeTextSprite('|−⟩', '#6929c4');
     labelMinus.position.set(-axisLen - 0.14, 0, 0);
     sphereGroup.add(labelMinus);
 
-    // 5. State Vector Arrow & Glowing Tip
+    // 5. State Vector Arrow & Purple Tip
     const arrow = new THREE.ArrowHelper(
       currentDirRef.current,
       new THREE.Vector3(0, 0, 0),
       radius,
-      0x00d4ff,
+      0x6929c4,
       0.18,
       0.09
     );
     sphereGroup.add(arrow);
 
     const tipGeo = new THREE.SphereGeometry(0.05, 16, 16);
-    const tipMat = new THREE.MeshBasicMaterial({ color: 0x00d4ff });
+    const tipMat = new THREE.MeshBasicMaterial({ color: 0x6929c4 });
     const tipMesh = new THREE.Mesh(tipGeo, tipMat);
     tipMesh.position.copy(currentDirRef.current.clone().multiplyScalar(radius));
     sphereGroup.add(tipMesh);
 
     // North and South Pole Spheres
     const poleGeo = new THREE.SphereGeometry(0.035, 12, 12);
-    const poleMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.8 });
+    const poleMat = new THREE.MeshBasicMaterial({ color: 0x6929c4, transparent: true, opacity: 0.5 });
     const northPole = new THREE.Mesh(poleGeo, poleMat);
     northPole.position.set(0, radius, 0);
     sphereGroup.add(northPole);
@@ -286,7 +286,7 @@ export default function BlochSphere() {
         <div className="w-16 h-16 rounded-full bg-quantum-purple/20 flex items-center justify-center text-quantum-purple text-xl font-mono mb-3">
           |ψ⟩
         </div>
-        <div className="font-heading font-bold text-white text-base mb-1">Bloch Sphere</div>
+        <div className="font-heading font-bold text-slate-900 text-base mb-1">Bloch Sphere</div>
         <p className="text-xs text-quantum-text-secondary">
           WebGL acceleration disabled. State: <span className="text-quantum-purple">{activePreset.formula}</span>
         </p>
@@ -307,7 +307,7 @@ export default function BlochSphere() {
 
         {/* Dynamic State Equation Chip */}
         <div
-          className="absolute bottom-2 right-2 text-xs font-mono text-quantum-purple bg-quantum-surface/90 px-3 py-1.5 rounded-lg border border-quantum-purple/30 pointer-events-none shadow-lg backdrop-blur-md z-20"
+          className="absolute bottom-2 right-2 text-xs font-mono text-quantum-purple bg-white/95 px-3 py-1.5 rounded-lg border border-quantum-purple/30 pointer-events-none shadow-md backdrop-blur-md z-20"
           aria-live="polite"
         >
           {activePreset.formula}
@@ -316,19 +316,19 @@ export default function BlochSphere() {
 
       {/* Preset State Selector Buttons with screen-reader friendly ARIA labels */}
       <div
-        className="mt-3 flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-xl border border-quantum-purple/25 bg-quantum-surface/70 backdrop-blur-md shadow-lg shadow-black/40"
+        className="mt-3 flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-xl border border-slate-200 bg-white/90 backdrop-blur-md shadow-sm"
         role="group"
         aria-label="Quantum State Presets"
       >
-        <span className="text-[11px] font-mono text-quantum-text-secondary px-2 font-medium">State:</span>
+        <span className="text-[11px] font-mono text-slate-500 px-2 font-medium">State:</span>
         {presets.map((p) => (
           <button
             key={p.label}
             onClick={() => setPreset(p)}
             className={`px-3 py-1 text-xs font-mono rounded-lg transition-all ${
               activePreset.label === p.label
-                ? 'bg-quantum-purple text-white font-bold shadow-md shadow-quantum-purple/40 ring-1 ring-quantum-purple'
-                : 'text-quantum-text-secondary hover:text-white hover:bg-quantum-purple/20'
+                ? 'bg-quantum-purple text-white font-bold shadow-sm ring-1 ring-quantum-purple'
+                : 'text-slate-600 hover:text-quantum-purple hover:bg-slate-100'
             }`}
             title={`${p.name} (${p.label})`}
             aria-label={`${p.name} (${p.label})`}
@@ -338,7 +338,7 @@ export default function BlochSphere() {
           </button>
         ))}
       </div>
-      <p className="text-[10px] font-mono text-quantum-text-secondary/70 mt-2 text-center">
+      <p className="text-[10px] font-mono text-slate-500 mt-2 text-center">
         (drag to rotate • click presets to transform state)
       </p>
     </div>

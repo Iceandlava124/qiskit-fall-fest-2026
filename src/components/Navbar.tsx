@@ -45,8 +45,8 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#06060e]/95 backdrop-blur-md border-b border-quantum-border/80 shadow-lg shadow-black/50'
-          : 'bg-transparent'
+          ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm'
+          : 'bg-white/80 backdrop-blur-sm border-b border-slate-100'
       }`}
       role="navigation"
       aria-label="Main navigation"
@@ -62,7 +62,7 @@ export default function Navbar() {
           {/* Logo / Lockup */}
           <a
             href="#"
-            className="flex items-center gap-2.5 font-heading text-base sm:text-lg font-bold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded"
+            className="flex items-center gap-2.5 font-heading text-base sm:text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded"
           >
             <span className="flex h-7 w-7 items-center justify-center rounded-md bg-quantum-purple text-white text-xs font-mono font-bold">
               Q
@@ -78,7 +78,7 @@ export default function Navbar() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-quantum-text-secondary hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded px-1"
+                className="text-sm font-medium text-slate-600 hover:text-quantum-purple transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded px-1"
               >
                 {link.label}
               </a>
@@ -87,7 +87,7 @@ export default function Navbar() {
             {/* Quick Share Button */}
             <button
               onClick={handleShare}
-              className="text-quantum-text-secondary hover:text-white p-2 rounded-lg border border-transparent hover:border-quantum-border transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple"
+              className="text-slate-600 hover:text-quantum-purple p-2 rounded-lg border border-transparent hover:border-slate-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple"
               title={copied ? 'Link Copied!' : 'Share Site'}
               aria-label="Share Event Link"
             >
@@ -107,14 +107,14 @@ export default function Navbar() {
           <div className="flex items-center gap-3 lg:hidden">
             <button
               onClick={handleShare}
-              className="text-quantum-text-secondary hover:text-white p-1.5 rounded focus:outline-none"
+              className="text-slate-600 hover:text-quantum-purple p-1.5 rounded focus:outline-none"
               aria-label="Share site"
             >
               {copied ? <Check size={18} className="text-quantum-purple" /> : <Share2 size={18} />}
             </button>
 
             <button
-              className="text-quantum-text-secondary hover:text-quantum-text transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded p-1"
+              className="text-slate-700 hover:text-quantum-purple transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded p-1"
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
@@ -127,13 +127,13 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {isOpen && (
-        <div className="lg:hidden bg-quantum-surface/98 backdrop-blur-xl border-b border-quantum-border max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-slate-200 max-h-[85vh] overflow-y-auto shadow-xl">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="block text-quantum-text-secondary hover:text-white transition-colors py-2.5 px-3 rounded-lg hover:bg-quantum-surface-hover font-medium text-sm"
+                className="block text-slate-700 hover:text-quantum-purple transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-sm"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}

@@ -31,7 +31,7 @@ const audience = [
 
 export default function WhoCanAttend() {
   return (
-    <section id="attend" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-[#050505] relative overflow-hidden flex items-center justify-center">
+    <section id="attend" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-slate-50/60 relative overflow-hidden border-y border-slate-200 flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto">
         <AnimatedSection>
           <SectionHeading
@@ -40,22 +40,22 @@ export default function WhoCanAttend() {
           />
         </AnimatedSection>
 
-        {/* Hairline-divided 5-card grid, restrained and quiet */}
+        {/* Clean 5-card grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
           {audience.map((item, i) => (
             <AnimatedSection key={item.role} delay={i * 0.06}>
-              <div className="p-7 rounded-2xl bg-quantum-surface/60 border border-quantum-border hover:border-quantum-purple/40 transition-colors flex flex-col justify-between h-full">
+              <div className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-sm transition-all flex flex-col justify-between h-full">
                 <div>
-                  <div className="text-xs font-mono text-quantum-purple mb-4">
+                  <div className="text-xs font-mono text-quantum-purple mb-4 font-semibold">
                     0{i + 1}
                   </div>
-                  <h3 className="font-heading font-bold text-white text-xl mb-2">
+                  <h3 className="font-heading font-bold text-slate-900 text-xl mb-2">
                     {item.role}
                   </h3>
-                  <p className="text-sm font-medium text-quantum-text mb-3 leading-snug">
+                  <p className="text-sm font-medium text-slate-800 mb-3 leading-snug">
                     {item.tagline}
                   </p>
-                  <p className="text-xs text-quantum-text-secondary leading-relaxed">
+                  <p className="text-xs text-slate-500 leading-relaxed">
                     {item.detail}
                   </p>
                 </div>
