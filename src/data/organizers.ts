@@ -17,6 +17,11 @@ export const organizers: Organizer[] = [
     image: '/organizers/thangaraj-m.png',
   },
   {
+    name: 'Dr. Reena Monica',
+    role: 'Co-Organizer',
+    designation: 'Deputy Director (International Relations)',
+  },
+  {
     name: 'Ms. Nathimalar Chandran',
     role: 'Co-Organizer',
     designation: 'Project Assistant',

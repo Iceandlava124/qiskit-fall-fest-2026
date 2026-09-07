@@ -2,48 +2,53 @@ import AnimatedSection from './AnimatedSection';
 import SectionHeading from './SectionHeading';
 import { STATUS_LABELS } from '../data/status';
 import {
-  Code,
-  Brain,
-  Sliders,
-  Layers,
-  Lock,
-  Sparkles,
-  Trophy,
-  Users,
+  Atom,
   Terminal,
+  Activity,
+  Users,
+  Sparkles,
+  Globe,
+  Trophy,
+  Code,
   CheckCircle,
 } from 'lucide-react';
 
 const tracks = [
   {
-    name: 'Quantum Algorithms',
-    icon: Code,
-    desc: 'Design and optimize quantum circuits to solve computational bottlenecks.',
+    num: '01',
+    name: 'Quantum Computing',
+    icon: Atom,
+    desc: 'Understand the fundamentals of quantum computing and how quantum systems differ from classical computers.',
   },
   {
-    name: 'Quantum Machine Learning',
-    icon: Brain,
-    desc: 'Leverage parameterized quantum circuits (QNNs) for classification and pattern recognition.',
+    num: '02',
+    name: 'Qiskit & Quantum Programming',
+    icon: Terminal,
+    desc: 'Learn to build basic quantum circuits and gain hands-on experience with Qiskit and IBM Quantum.',
   },
   {
-    name: 'Quantum Optimisation',
-    icon: Sliders,
-    desc: 'Apply QAOA and VQE to complex combinatorial optimization problems.',
+    num: '03',
+    name: 'Quantum Healthcare',
+    icon: Activity,
+    desc: 'Explore emerging applications of quantum computing in healthcare, biomedical research, and medical imaging.',
   },
   {
-    name: 'Quantum Simulation',
-    icon: Layers,
-    desc: 'Simulate quantum physical systems, molecular dynamics, and materials.',
+    num: '04',
+    name: 'Expert & Industry Sessions',
+    icon: Users,
+    desc: 'Interact with researchers and professionals working in quantum computing and emerging quantum technologies.',
   },
   {
-    name: 'Quantum Cryptography',
-    icon: Lock,
-    desc: 'Explore QKD protocols, post-quantum cryptography, and quantum communication channels.',
-  },
-  {
-    name: 'Quantum + AI',
+    num: '05',
+    name: 'Interactive Learning',
     icon: Sparkles,
-    desc: 'Hybrid classical-quantum architectures merging deep learning with quantum states.',
+    desc: 'Participate in quizzes, demonstrations, coding activities, and hands-on challenges designed to make quantum concepts engaging and accessible.',
+  },
+  {
+    num: '06',
+    name: 'Inter-College Quantum Community',
+    icon: Globe,
+    desc: 'Bring together students from colleges across Tamil Nadu to share knowledge, develop curiosity, and build a collaborative quantum-learning community.',
   },
 ];
 
@@ -144,19 +149,15 @@ export default function Hackathon() {
               <AnimatedSection key={t.name} delay={0.15 + idx * 0.05}>
                 <div className="p-8 rounded-2xl bg-quantum-surface/60 border border-quantum-border hover:border-quantum-purple/40 transition-colors flex flex-col justify-between h-full">
                   <div>
-                    {/* Plain icon, no rounded box */}
+                    {/* Number and icon header */}
                     <div className="flex items-center justify-between mb-6">
                       <span className="text-xs font-mono text-quantum-text-secondary">
-                        0{idx + 1}
+                        {t.num}
                       </span>
                       <t.icon size={18} className="text-quantum-purple" />
                     </div>
-                    <h5 className="font-heading font-bold text-white text-xl mb-2">{t.name}</h5>
-                    <p className="text-sm text-quantum-text-secondary leading-relaxed">{t.desc}</p>
-                  </div>
-                  <div className="mt-8 pt-4 border-t border-quantum-border/40 flex items-center justify-between text-xs font-mono text-quantum-text-secondary/70">
-                    <span>Qiskit SDK</span>
-                    <span className="text-quantum-purple">✦</span>
+                    <h5 className="font-heading font-bold text-white text-xl mb-3 leading-snug">{t.name}</h5>
+                    <p className="text-sm text-quantum-text-secondary leading-relaxed font-normal">{t.desc}</p>
                   </div>
                 </div>
               </AnimatedSection>

@@ -3,7 +3,6 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import MetricsBar from './components/MetricsBar';
 import About from './components/About';
-import Community from './components/Community';
 import WhoCanAttend from './components/WhoCanAttend';
 import Experience from './components/Experience';
 import Highlights from './components/Highlights';
@@ -15,6 +14,7 @@ import GetInvolved from './components/GetInvolved';
 import Venue from './components/Venue';
 import Organizers from './components/Organizers';
 import FAQ from './components/FAQ';
+import Contact from './components/Contact';
 import PastEvent from './components/PastEvent';
 import RegisterCTA from './components/RegisterCTA';
 
@@ -26,7 +26,6 @@ function App() {
         <Hero />
         <MetricsBar />
         <About />
-        <Community />
         <WhoCanAttend />
         <Experience />
         <Highlights />
@@ -38,6 +37,7 @@ function App() {
         <Venue />
         <Organizers />
         <FAQ />
+        <Contact />
         <PastEvent />
         <RegisterCTA />
       </main>

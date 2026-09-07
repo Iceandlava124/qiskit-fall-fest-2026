@@ -3,13 +3,13 @@ import { Menu, X, Share2, Check } from 'lucide-react';
 
 const navLinks = [
   { href: '#about', label: 'About' },
-  { href: '#community', label: 'Community' },
   { href: '#attend', label: 'Who Can Attend' },
   { href: '#schedule', label: 'Schedule' },
   { href: '#hackathon', label: 'Hackathon' },
   { href: '#venue', label: 'Venue' },
   { href: '#organizers', label: 'Organizers' },
   { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'Contact' },
   { href: '#past-event', label: 'Past Event' },
 ];
 

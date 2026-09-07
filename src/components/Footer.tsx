@@ -33,7 +33,7 @@ export default function Footer() {
                 <a href="#about" className="hover:text-white hover:underline transition-colors">About Event</a>
               </li>
               <li>
-                <a href="#community" className="hover:text-white hover:underline transition-colors">Community</a>
+                <a href="#contact" className="hover:text-white hover:underline transition-colors">Contact Us</a>
               </li>
               <li>
                 <a href="#attend" className="hover:text-white hover:underline transition-colors">Who Can Attend</a>
