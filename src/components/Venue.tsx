@@ -85,45 +85,64 @@ export default function Venue() {
             </div>
           </div>
 
-          {/* Real Photography Placement */}
-          <div className="lg:col-span-6 flex flex-col gap-5">
-            <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col flex-1">
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden">
+          {/* Venue & Campus Photography Showcase */}
+          <div className="lg:col-span-6 flex flex-col gap-6">
+            {/* 1. MG Auditorium (Inside) */}
+            <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col">
+              <div className="relative h-56 sm:h-64 w-full overflow-hidden">
                 <img
-                  src="/gallery/day1_1.webp"
-                  alt="MG Auditorium Stage - VIT Chennai"
+                  src="/venue/mg-auditorium-4.jpg"
+                  alt="MG Auditorium Interior Stage and Seating - VIT Chennai"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-3 left-4 right-4 text-white">
-                  <p className="font-heading font-bold text-base">MG Auditorium Stage</p>
-                  <p className="text-xs text-white/80 font-mono">VIT Chennai Campus</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3.5 left-4 right-4 text-white flex items-end justify-between">
+                  <div>
+                    <p className="font-heading font-bold text-base sm:text-lg">MG Auditorium (Inside)</p>
+                    <p className="text-xs text-white/80 font-mono">Central Stage & Plenary Hall</p>
+                  </div>
+                  <span className="text-[11px] font-mono bg-quantum-purple text-white px-3 py-1 rounded-full font-semibold shadow-xs">
+                    2,000 Capacity
+                  </span>
                 </div>
               </div>
-              <div className="p-6">
-                <h4 className="font-heading font-bold text-slate-900 text-lg mb-1">
+              <div className="p-5">
+                <h4 className="font-heading font-bold text-slate-900 text-base mb-1">
                   Keynotes, Workshops & Hackathon Hub
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  The flagship auditorium hosting all plenary ceremonies, IBM technical keynote addresses, guided hands-on lab sprints, and the overnight hackathon showcase.
+                  The primary indoor auditorium hosting all plenary ceremonies, IBM technical keynote addresses, guided hands-on lab sprints, and the overnight hackathon showcase.
                 </p>
               </div>
             </div>
 
-            {/* Coordinates Box */}
-            <div className="p-5 rounded-2xl border border-slate-200 bg-white shadow-xs flex items-center justify-between">
-              <div>
-                <span className="text-xs font-mono text-slate-500">Campus Coordinates</span>
-                <p className="text-sm font-mono text-slate-800 font-semibold mt-0.5">12.8406° N, 80.1534° E</p>
+            {/* 2. VIT Chennai Campus (Main Entrance) */}
+            <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden flex flex-col">
+              <div className="relative h-56 sm:h-64 w-full overflow-hidden">
+                <img
+                  src="/venue/vit-chennai-main.png"
+                  alt="VIT Chennai Campus Entrance and Academic Complex"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute bottom-3.5 left-4 right-4 text-white flex items-end justify-between">
+                  <div>
+                    <p className="font-heading font-bold text-base sm:text-lg">VIT Chennai Campus</p>
+                    <p className="text-xs text-white/80 font-mono">Main Entrance & Academic Complex</p>
+                  </div>
+                  <span className="text-[11px] font-mono bg-slate-900/90 text-white px-3 py-1 rounded-full font-semibold shadow-xs">
+                    Gate 1 (Main Gate)
+                  </span>
+                </div>
               </div>
-              <a
-                href={mapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-mono text-quantum-purple font-semibold hover:underline"
-              >
-                Directions ↗
-              </a>
+              <div className="p-5">
+                <h4 className="font-heading font-bold text-slate-900 text-base mb-1">
+                  Vellore Institute of Technology, Chennai
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed">
+                  Located along Vandalur-Kelambakkam Road, spanning state-of-the-art computational facilities, smart classrooms, research centers, and lush green campus corridors.
+                </p>
+              </div>
             </div>
           </div>
         </div>
