@@ -75,7 +75,7 @@ export default function Footer() {
                 <a href="#speakers" className="hover:text-quantum-purple hover:underline transition-colors">Mentors Lineup</a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-quantum-purple hover:underline transition-colors">FAQs & OD Info</a>
+                <a href="#contact" className="hover:text-quantum-purple hover:underline transition-colors">Contact Us</a>
               </li>
               <li>
                 <a href="#get-involved" className="hover:text-quantum-purple hover:underline transition-colors">Partner With Us</a>

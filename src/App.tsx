@@ -10,7 +10,6 @@ import Schedule from './components/Schedule';
 import Hackathon from './components/Hackathon';
 import Venue from './components/Venue';
 import PastEvent from './components/PastEvent';
-import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import ConceptExplainer from './components/ConceptExplainer';
 import RegisterCTA from './components/RegisterCTA';
@@ -48,8 +47,7 @@ function App() {
         {/* 8. Past Events with Gallery for Each Event */}
         <PastEvent />
 
-        {/* 9. FAQ & Contact Us */}
-        <FAQ />
+        {/* 9. Contact Us */}
         <Contact />
 
         {/* 10. Concept Explainer (Prominent, interactive educational center) */}

@@ -71,10 +71,10 @@ export default function RegisterCTA() {
                     </a>
 
                     <a
-                      href="#faq"
+                      href="#contact"
                       className="w-full inline-flex items-center justify-center px-6 py-3.5 text-sm font-semibold rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 text-slate-700 hover:text-slate-900 transition-colors"
                     >
-                      Read FAQs & OD Guidelines
+                      Contact Organizing Team
                     </a>
                   </div>
 
