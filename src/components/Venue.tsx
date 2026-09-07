@@ -10,7 +10,6 @@ import {
   Sparkles,
   MapPin,
   ExternalLink,
-  Sun,
   Building2,
   Radio,
 } from 'lucide-react';
@@ -94,48 +93,12 @@ export default function Venue() {
           />
         </AnimatedSection>
 
-        {/* 3-Image Photography Showcase: Daytime Exterior, Interior Stage, Main Entrance */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {/* Photo 1: Daytime External MG Auditorium */}
+        {/* Photography Showcase: Interior Stage & Main Entrance */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
+          {/* Photo 1: Inside MG Auditorium (Stage & Seating) */}
           <AnimatedSection delay={0.05}>
             <div className="rounded-3xl border border-slate-200 bg-white shadow-xs hover:shadow-md hover:border-quantum-purple/40 transition-all overflow-hidden flex flex-col h-full group">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
-                <img
-                  src="/venue/mg-auditorium-exterior-day.jpg"
-                  alt="MG Auditorium Daytime External Architecture - VIT Chennai"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
-                <div className="absolute top-3 left-3">
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-semibold px-2.5 py-1 rounded-full bg-slate-950/80 text-white backdrop-blur-xs border border-white/10 shadow-xs">
-                    <Sun size={11} className="text-amber-400" />
-                    Daytime Exterior
-                  </span>
-                </div>
-                <div className="absolute bottom-3 left-4 right-4 text-white">
-                  <p className="font-heading font-bold text-base">MG Auditorium Architecture</p>
-                  <p className="text-xs text-white/80 font-mono">Iconic Cantilever Facade</p>
-                </div>
-              </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  The striking architectural landmark at VIT Chennai featuring a modern cantilevered pavilion and glass facade, hosting all major institutional colloquia.
-                </p>
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span className="flex items-center gap-1 text-quantum-purple font-medium">
-                    <Building2 size={12} /> MG Auditorium
-                  </span>
-                  <span>Daylight View</span>
-                </div>
-              </div>
-            </div>
-          </AnimatedSection>
-
-          {/* Photo 2: Inside MG Auditorium (Stage & Seating) */}
-          <AnimatedSection delay={0.1}>
-            <div className="rounded-3xl border border-slate-200 bg-white shadow-xs hover:shadow-md hover:border-quantum-purple/40 transition-all overflow-hidden flex flex-col h-full group">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <img
                   src="/venue/mg-auditorium-4.jpg"
                   alt="MG Auditorium Central Stage and Plenary Seating - VIT Chennai"
@@ -150,28 +113,28 @@ export default function Venue() {
                   </span>
                 </div>
                 <div className="absolute bottom-3 left-4 right-4 text-white">
-                  <p className="font-heading font-bold text-base">Central Stage & Plenary Hall</p>
-                  <p className="text-xs text-white/80 font-mono">Auditorium Interior</p>
+                  <p className="font-heading font-bold text-base sm:text-lg">MG Auditorium (Inside)</p>
+                  <p className="text-xs text-white/80 font-mono">Central Stage & Plenary Arena</p>
                 </div>
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Fully air-conditioned indoor hall equipped with surround sound, dual 4K LED projection, and tiered seating for festival ceremonies and hackathon presentations.
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  Fully air-conditioned indoor plenary hall equipped with acoustic surround sound, dual 4K LED projection, and tiered seating for keynotes, workshops, and hackathons.
                 </p>
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
                   <span className="flex items-center gap-1 text-quantum-purple font-medium">
                     <Sparkles size={12} /> Keynotes & Hackathon
                   </span>
-                  <span>Plenary Arena</span>
+                  <span>Plenary Hall</span>
                 </div>
               </div>
             </div>
           </AnimatedSection>
 
-          {/* Photo 3: VIT Chennai Main Entrance Arch */}
-          <AnimatedSection delay={0.15}>
+          {/* Photo 2: VIT Chennai Main Entrance Arch */}
+          <AnimatedSection delay={0.1}>
             <div className="rounded-3xl border border-slate-200 bg-white shadow-xs hover:shadow-md hover:border-quantum-purple/40 transition-all overflow-hidden flex flex-col h-full group">
-              <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+              <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <img
                   src="/venue/vit-chennai-main.png"
                   alt="VIT Chennai Campus Main Gate Entrance"
@@ -186,13 +149,13 @@ export default function Venue() {
                   </span>
                 </div>
                 <div className="absolute bottom-3 left-4 right-4 text-white">
-                  <p className="font-heading font-bold text-base">VIT Chennai University Campus</p>
+                  <p className="font-heading font-bold text-base sm:text-lg">VIT Chennai University Campus</p>
                   <p className="text-xs text-white/80 font-mono">Main Entrance & Pylon</p>
                 </div>
               </div>
               <div className="p-5 flex-1 flex flex-col justify-between">
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Delegates entering from Vandalur-Kelambakkam Road proceed through Gate 1 with physical college ID cards for quick campus security registration.
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  External delegates entering along Vandalur-Kelambakkam Road proceed through Gate 1 with physical college ID cards for quick campus security registration.
                 </p>
                 <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
                   <span className="flex items-center gap-1 text-quantum-purple font-medium">
