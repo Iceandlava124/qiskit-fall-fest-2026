@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import AnimatedSection from './AnimatedSection';
 import SectionHeading from './SectionHeading';
-import { ExternalLink, X, Calendar, Layers } from 'lucide-react';
+import { ExternalLink, X, Calendar, Layers, Trophy } from 'lucide-react';
 
 interface EventPhoto {
   title: string;
@@ -24,7 +24,7 @@ const pastEvents: PastEventData[] = [
   {
     id: 'qff-2025',
     title: 'IBM Qiskit Fall Fest 2025 (Inaugural Edition)',
-    edition: 'October 2025 · Inaugural Edition',
+    edition: 'October 2025 · Inaugural Edition · VIT Chennai',
     description:
       'The landmark inaugural edition of Qiskit Fall Fest at VIT Chennai brought together 600+ passionate student developers, faculty mentors, and IBM Quantum researchers. Over 5 intensive days, delegates participated in guided quantum circuit design labs, interactive quizzes, keynote lectures, and a 24-hour overnight hackathon sprint.',
     websiteUrl: 'https://ibm-qff-25.netlify.app/',
@@ -36,21 +36,39 @@ const pastEvents: PastEventData[] = [
     ],
     photos: [
       {
+        title: 'Student Organizer Address at Dais',
+        caption: 'Tarun Ashwat addressing delegates from the VIT Chennai dais at MG Auditorium during Qiskit Fall Fest.',
+        image: '/gallery/qff25/qff25_1.jpeg',
+        tag: 'Dais Address',
+      },
+      {
+        title: 'Organizing Committee & Delegates Cohort',
+        caption: 'Student organizing committee and enthusiastic participant delegates wearing official Qiskit Fall Fest badges.',
+        image: '/gallery/qff25/qff25_2.jpeg',
+        tag: 'Cohort · Group',
+      },
+      {
+        title: 'QFF25 Participant Assembly',
+        caption: 'Full participant cohort assembled in lecture hall for technical briefing and circuit assignments.',
+        image: '/gallery/qff25/qff25_3.jpeg',
+        tag: 'Assembly',
+      },
+      {
+        title: 'International & Inter-College Delegates',
+        caption: 'Student delegates from diverse universities collaborating and networking during the festival workshops.',
+        image: '/gallery/qff25/qff25_5.jpeg',
+        tag: 'Delegates',
+      },
+      {
+        title: 'Team Collaboration & Hackathon Huddles',
+        caption: 'Hackathon team members discussing algorithmic approaches and quantum circuit design.',
+        image: '/gallery/qff25/qff25_7.jpeg',
+        tag: 'Collaboration',
+      },
+      {
         title: 'Inauguration Ceremony & Keynote',
         caption: 'Faculty leadership and distinguished guests inaugurating the quantum sessions at MG Auditorium.',
         image: '/gallery/day1_1.webp',
-        tag: 'Day 1 · Keynote',
-      },
-      {
-        title: 'Dignitary Felicitation & Welcome',
-        caption: 'Honoring visiting dignitaries and academic speakers at the festival opening.',
-        image: '/gallery/day1_2.webp',
-        tag: 'Day 1 · Opening',
-      },
-      {
-        title: 'Quantum Computing Frontiers',
-        caption: 'Keynote lecture introducing quantum circuit architectures and quantum supremacy milestones.',
-        image: '/gallery/day1_3.webp',
         tag: 'Day 1 · Keynote',
       },
       {
@@ -60,28 +78,10 @@ const pastEvents: PastEventData[] = [
         tag: 'Day 2 · Workshop',
       },
       {
-        title: 'Interactive Python Programming',
-        caption: 'Hands-on coding exercises writing quantum statevectors and gate compositions.',
-        image: '/gallery/day2_2.webp',
-        tag: 'Day 2 · Lab',
-      },
-      {
         title: 'Hackathon Sprint Kickoff',
         caption: 'Teams collaborating on real-world quantum challenge problem statements.',
         image: '/gallery/day3_1.webp',
         tag: 'Day 3 · Hackathon',
-      },
-      {
-        title: 'Technical Mentor Troubleshooting',
-        caption: 'One-on-one debugging clinics with technical mentors to optimize circuit execution.',
-        image: '/gallery/day3_2.webp',
-        tag: 'Day 3 · Mentorship',
-      },
-      {
-        title: 'Late Night Prototyping',
-        caption: 'Delegates working into the night to build working algorithms and front-end demos.',
-        image: '/gallery/day3_3.webp',
-        tag: 'Day 3 · Sprint',
       },
       {
         title: 'Mid-Sprint Review Checkpoint',
@@ -96,12 +96,6 @@ const pastEvents: PastEventData[] = [
         tag: 'Day 5 · Finale',
       },
       {
-        title: 'Project Demonstrations & Defense',
-        caption: 'Finalist teams presenting their quantum prototypes before the distinguished jury.',
-        image: '/gallery/day5_2.webp',
-        tag: 'Day 5 · Defense',
-      },
-      {
         title: 'Winners Trophy Felicitation',
         caption: 'Awarding cash prizes and certificates of excellence to champion hackathon teams.',
         image: '/gallery/day5_3.webp',
@@ -110,41 +104,42 @@ const pastEvents: PastEventData[] = [
     ],
   },
   {
-    id: 'quantum-workshop',
-    title: 'Quantum Computing Hands-on Workshop & Research Colloquium',
-    edition: 'Research Colloquium Series · VIT Chennai',
+    id: 'qmi-2025',
+    title: 'QMI 2025 — Quantum Mathematics, Imaging & Research Workshop',
+    edition: 'International Workshop & Research Colloquium · School of Advanced Sciences, VIT Chennai',
     description:
-      'An intensive quantum colloquium engaging undergraduate researchers, faculty scholars, and delegates in quantum algorithm implementation, statevector simulations, and research paper discussions.',
+      'A five-day international workshop organized by the Department of Mathematics, School of Advanced Sciences (SAS), VIT Chennai. The event brought together leading researchers, academicians, clinicians, and students in quantum mathematics, biomedical imaging, and intelligent healthcare analytics, concluding with prestigious awards recognizing outstanding participant excellence.',
+    websiteUrl: 'https://qmi2025.onrender.com/pastevents.html',
     stats: [
       { label: 'Participants', value: '250+' },
-      { label: 'Simulation Labs', value: 'Hands-on' },
-      { label: 'Faculty Panel', value: 'Expert' },
-      { label: 'Campus Exchange', value: 'Active' },
+      { label: 'Expert Talks', value: '18 Sessions' },
+      { label: 'Awards Presented', value: '3 Places' },
+      { label: 'Host School', value: 'SAS VIT' },
     ],
     photos: [
       {
-        title: 'Quantum Simulation Lab & Hardware Execution',
-        caption: 'Hands-on execution of quantum circuits on simulator backends with state analysis.',
-        image: '/gallery/1.jpg',
-        tag: 'Hands-on Lab',
+        title: 'QMI Excellence Award (1st Place)',
+        caption: 'Dr. Canavoy Narahari Sujatha from Sreenidhi Institute of Science and Technology, Telangana honoured with the QMI Excellence Award (1st Place) during the valedictory ceremony.',
+        image: '/gallery/qmi_excellence_award_1st_place.jpg',
+        tag: '1st Place · Excellence Award',
       },
       {
-        title: 'Faculty Research Colloquium & Panel',
-        caption: 'Academic panel discussing emerging quantum computing algorithms and scalable qubits.',
-        image: '/gallery/2.jpg',
-        tag: 'Research Panel',
+        title: 'QMI Distinction Award (2nd Place)',
+        caption: 'Dr. Sujatha E from SRM Institute of Science and Technology, Chennai honoured with the QMI Distinction Award (2nd Place) during the valedictory ceremony.',
+        image: '/gallery/qmi_distinction_award_2nd_place.jpg',
+        tag: '2nd Place · Distinction Award',
       },
       {
-        title: 'Collaborative Problem Solving & Demos',
-        caption: 'Student groups analyzing circuit results and discussing algorithmic optimizations.',
-        image: '/gallery/3.jpg',
-        tag: 'Group Activity',
+        title: 'QMI Merit Award (3rd Place)',
+        caption: 'Mr. Sobhin Thomas from Vellore Institute of Technology, Chennai honoured with the QMI Merit Award (3rd Place) during the valedictory ceremony.',
+        image: '/gallery/qmi_merit_award_3rd_place.jpg',
+        tag: '3rd Place · Merit Award',
       },
       {
-        title: 'Networking Tea & Inter-College Exchange',
-        caption: 'Delegates and faculty networking over refreshments during the workshop breaks.',
+        title: 'Hospitality & Networking Refreshments',
+        caption: 'Faculty, research scholars, and student participants networking over tea and refreshments during workshop intervals.',
         image: '/gallery/refreshments_1.webp',
-        tag: 'Networking',
+        tag: 'Networking & Hospitality',
       },
     ],
   },
@@ -171,7 +166,7 @@ export default function PastEvent() {
         <AnimatedSection>
           <SectionHeading
             title="Past Events & Photo Gallery"
-            subtitle="Explore memories, galleries, and achievements from previous quantum events hosted at VIT Chennai"
+            subtitle="Explore memories, award recognitions, and galleries from previous quantum events at VIT Chennai"
           />
         </AnimatedSection>
 
@@ -198,7 +193,7 @@ export default function PastEvent() {
                     : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                 }`}
               >
-                {evt.id === 'qff-2025' ? 'Qiskit Fall Fest 2025' : 'Quantum Workshop'}
+                {evt.id === 'qff-2025' ? 'Qiskit Fall Fest 2025' : 'QMI 2025 Awards & Workshop'}
               </button>
             ))}
           </div>
@@ -239,13 +234,13 @@ export default function PastEvent() {
                             rel="noopener noreferrer"
                             className="text-slate-900 hover:text-quantum-purple font-semibold inline-flex items-center gap-1.5 transition-colors"
                           >
-                            <span>Visit 2025 Edition Website</span>
+                            <span>Visit Official Archive Site</span>
                             <ExternalLink size={14} className="text-quantum-purple" />
                           </a>
                         )}
 
                         <span className="text-xs font-mono text-slate-400">
-                          Gallery: {event.photos.length} Verified Event Photos
+                          {event.photos.length} Verified High-Resolution Photos
                         </span>
                       </div>
                     </div>
@@ -273,10 +268,10 @@ export default function PastEvent() {
                 <div className="flex items-center justify-between mb-6 px-1">
                   <h4 className="font-heading font-bold text-slate-900 text-lg sm:text-xl flex items-center gap-2">
                     <Layers size={18} className="text-quantum-purple" />
-                    <span>{event.title} Photo Gallery</span>
+                    <span>{event.title} Gallery</span>
                   </h4>
                   <span className="text-xs font-mono text-slate-500">
-                    Click any photo to zoom
+                    Full aspect view · Click any photo to zoom
                   </span>
                 </div>
 
@@ -289,17 +284,20 @@ export default function PastEvent() {
                         }
                         className="rounded-2xl border border-slate-200 bg-white shadow-xs overflow-hidden flex flex-col h-full hover:shadow-md transition-all cursor-pointer group hover:border-quantum-purple/40"
                       >
-                        <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-slate-100">
+                        {/* 4:3 Aspect Ratio Container ensuring full uncropped image visibility */}
+                        <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100 flex items-center justify-center">
                           <img
                             src={photo.image}
                             alt={photo.title}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            className="w-full h-full object-contain sm:object-cover group-hover:scale-105 transition-transform duration-300"
                             loading="lazy"
                           />
-                          <span className="absolute top-3 left-3 text-[10px] font-mono font-semibold uppercase px-2.5 py-1 rounded bg-slate-950/75 text-white backdrop-blur-xs">
+                          <span className="absolute top-2.5 left-2.5 text-[10px] font-mono font-semibold uppercase px-2 py-0.5 rounded bg-slate-950/80 text-white backdrop-blur-xs flex items-center gap-1">
+                            {photo.tag.includes('Award') && <Trophy size={10} className="text-amber-300" />}
                             {photo.tag}
                           </span>
                         </div>
+
                         <div className="p-4 flex-1 flex flex-col justify-between">
                           <div>
                             <h5 className="font-heading font-bold text-slate-900 text-sm mb-1 leading-snug group-hover:text-quantum-purple transition-colors">
@@ -319,34 +317,37 @@ export default function PastEvent() {
           ))}
         </div>
 
-        {/* Lightbox Modal */}
+        {/* Lightbox Modal (Entire image 100% visible) */}
         {activeLightboxPhoto && (
           <div
-            className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+            className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6"
             onClick={() => setActiveLightboxPhoto(null)}
           >
             <div
-              className="relative max-w-4xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200"
+              className="relative max-w-5xl w-full bg-white rounded-3xl overflow-hidden shadow-2xl border border-slate-200 flex flex-col"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative aspect-video w-full bg-slate-900 overflow-hidden">
+              {/* Full Image Container - preserves exact original orientation and full view */}
+              <div className="relative max-h-[72vh] w-full bg-slate-950 flex items-center justify-center p-2 sm:p-4 overflow-hidden">
                 <img
                   src={activeLightboxPhoto.photo.image}
                   alt={activeLightboxPhoto.photo.title}
-                  className="w-full h-full object-contain"
+                  className="max-h-[68vh] w-auto max-w-full object-contain mx-auto rounded-lg shadow-lg"
                 />
                 <button
                   onClick={() => setActiveLightboxPhoto(null)}
-                  className="absolute top-4 right-4 p-2 rounded-full bg-slate-900/80 text-white hover:bg-slate-900 transition-colors"
+                  className="absolute top-4 right-4 p-2.5 rounded-full bg-slate-900/80 text-white hover:bg-slate-800 transition-colors shadow-md"
                   aria-label="Close photo preview"
                 >
                   <X size={20} />
                 </button>
               </div>
 
-              <div className="p-6 sm:p-8 bg-white">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 rounded bg-quantum-purple/10 text-quantum-purple font-semibold">
+              {/* Caption & Metadata */}
+              <div className="p-6 sm:p-8 bg-white border-t border-slate-100">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="text-[11px] font-mono uppercase px-2.5 py-0.5 rounded bg-quantum-purple/10 text-quantum-purple font-semibold flex items-center gap-1">
+                    {activeLightboxPhoto.photo.tag.includes('Award') && <Trophy size={11} />}
                     {activeLightboxPhoto.photo.tag}
                   </span>
                   <span className="text-xs font-mono text-slate-400">

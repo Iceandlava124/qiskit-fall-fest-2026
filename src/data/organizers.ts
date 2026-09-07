@@ -40,6 +40,7 @@ export const organizers: Organizer[] = [
     name: 'Dr. Reena Monica',
     role: 'Co-Organizer',
     designation: 'Deputy Director (International Relations)',
+    image: '/organizers/reena-monica.jpg',
   },
   {
     name: 'Ms. Nathimalar Chandran',
