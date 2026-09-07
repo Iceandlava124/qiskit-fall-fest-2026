@@ -44,10 +44,6 @@ export default function PastEventsTeaser() {
                   International Workshop on Quantum Mathematics and Imaging for Smart Manufacturing and Industry 4.0
                 </p>
 
-                <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
-                  Organized by the Department of Mathematics, SAS VIT Chennai. Included keynote sessions, guided circuit labs, 
-                  and the prestigious QMI Excellence, Distinction, and Merit Awards.
-                </p>
 
                 {/* Thumbnail Preview Row */}
                 <div className="grid grid-cols-3 gap-2.5 mb-6">
@@ -111,10 +107,6 @@ export default function PastEventsTeaser() {
                   The Landmark Inaugural Quantum Festival at VIT Chennai
                 </p>
 
-                <p className="text-sm text-slate-600 leading-relaxed mb-6 font-normal">
-                  Brought together 600+ delegates and developers across 50+ colleges for 3 days of IBM Quantum talks, 
-                  guided circuit design labs, and a 24-hour overnight hackathon sprint at MG Auditorium.
-                </p>
 
                 {/* Thumbnail Preview Row */}
                 <div className="grid grid-cols-3 gap-2.5 mb-6">

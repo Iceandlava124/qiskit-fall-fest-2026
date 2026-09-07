@@ -1,85 +1,94 @@
-import { Mic, Award, GraduationCap, Users } from 'lucide-react';
+import { User, Sparkles } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import AnimatedSection from './AnimatedSection';
-import { STATUS_LABELS } from '../data/status';
 
-const speakerCategories = [
+const featuredSpeakers = [
   {
-    icon: GraduationCap,
-    category: 'Quantum Researchers',
-    description: 'Faculty and academic researchers exploring quantum foundations and algorithm development.',
+    name: 'Anupama Roy',
+    org: 'IBM India',
+    topic: 'Quantum Machine Learning & Software Engineering',
   },
   {
-    icon: Award,
-    category: 'Industry Practitioners',
-    description: 'Engineers and industry specialists working on practical quantum computing deployments.',
+    name: 'Amith Singhee',
+    org: 'IBM India',
+    topic: 'QAOA and Quantum Optimization',
   },
   {
-    icon: Users,
-    category: 'Technical Mentors',
-    description: 'Hands-on hackathon mentors assisting teams with circuit debugging, optimization, and tooling.',
+    name: 'Siddharth Golecha',
+    org: 'IBM India',
+    topic: 'Quantum Error Correction & Cybersecurity',
+  },
+  {
+    name: 'Bhanwar Gupta',
+    org: 'IBM India',
+    topic: 'Quantum Generative AI',
+  },
+  {
+    name: 'Sonali Chawla',
+    org: 'IBM India',
+    topic: 'Quantum Drug Discovery',
+  },
+  {
+    name: 'Ritajit Majumdar',
+    org: 'IBM India',
+    topic: 'Quantum-Centric Supercomputing & Startups',
+  },
+  {
+    name: 'Mrs. Guncha Malik',
+    org: 'IBM India',
+    topic: 'Real IBM Quantum Hardware Programming',
   },
 ];
 
 export default function SpeakersTeaser() {
   return (
-    <section id="speakers" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center justify-center">
-      <div className="w-full max-w-6xl mx-auto">
+    <section id="speakers" className="py-20 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center justify-center">
+      <div className="w-full max-w-7xl mx-auto">
         <AnimatedSection>
           <SectionHeading
-            title="Speakers & Mentors"
-            subtitle="Distinguished researchers and industry practitioners"
+            title="Featured Speakers & Mentors"
+            subtitle="Distinguished quantum researchers and practitioners from IBM India"
           />
         </AnimatedSection>
 
-        {/* Categories */}
+        {/* Speakers Grid - Clean Cards without fluff descriptions */}
         <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
-            {speakerCategories.map((cat, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
+            {featuredSpeakers.map((speaker, i) => (
               <div
-                key={cat.category}
-                className="p-8 sm:p-9 rounded-2xl bg-slate-50 border border-slate-200 hover:border-quantum-purple/40 shadow-sm transition-all flex flex-col justify-between h-full"
+                key={speaker.name}
+                className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-quantum-purple/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-mono text-slate-400 font-semibold">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-10 h-10 rounded-full bg-quantum-purple/10 border border-quantum-purple/20 flex items-center justify-center text-quantum-purple font-semibold text-sm">
+                      <User size={18} />
+                    </div>
+                    <span className="text-[10px] font-mono font-semibold px-2 py-0.5 rounded bg-slate-200/80 text-slate-700">
                       0{i + 1}
                     </span>
-                    <cat.icon size={18} className="text-quantum-purple" />
                   </div>
-                  <h3 className="font-heading font-bold text-xl text-slate-900 mb-2">
-                    {cat.category}
+
+                  <h3 className="font-heading font-bold text-slate-900 text-base mb-1 group-hover:text-quantum-purple transition-colors">
+                    {speaker.name}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed max-w-prose">
-                    {cat.description}
-                  </p>
-                </div>
-                <div className="mt-8 pt-4 border-t border-slate-200 flex items-center justify-between">
-                  <span className="text-xs font-mono text-quantum-purple uppercase tracking-wider font-semibold">
-                    Category
+
+                  <span className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-quantum-purple mb-3">
+                    <Sparkles size={11} />
+                    {speaker.org}
                   </span>
-                  <span className="text-xs font-mono text-slate-400">
-                    {STATUS_LABELS.comingSoon}
-                  </span>
+
+                  <div className="pt-3 border-t border-slate-200/70">
+                    <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider block mb-1">
+                      Keynote / Session
+                    </span>
+                    <p className="text-xs font-semibold text-slate-800 leading-snug">
+                      {speaker.topic}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
-          </div>
-        </AnimatedSection>
-
-        {/* Speaker Announcement Box */}
-        <AnimatedSection delay={0.2}>
-          <div className="text-center p-7 sm:p-8 rounded-2xl border border-slate-200 bg-slate-50/70 max-w-2xl mx-auto shadow-xs">
-            <div className="inline-flex items-center gap-2 text-quantum-purple text-sm font-semibold mb-2">
-              <Mic size={16} />
-              <span>Speaker Lineup</span>
-            </div>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-2">
-              Keynote speakers from IBM Quantum and academic research institutions will lead deep-dive sessions across the 3-day event.
-            </p>
-            <span className="text-[11px] font-mono text-slate-400">
-              Status: {STATUS_LABELS.confirmed}
-            </span>
           </div>
         </AnimatedSection>
       </div>

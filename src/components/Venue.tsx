@@ -10,70 +10,25 @@ import {
   Sparkles,
   MapPin,
   ExternalLink,
-  Building2,
   Radio,
 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import AnimatedSection from './AnimatedSection';
 
 const venueFacilities = [
-  {
-    icon: Users,
-    title: '2,000 Capacity Hall',
-    desc: 'Spacious tiered acoustic seating accommodating all attendees, mentors, and hackathon teams.',
-  },
-  {
-    icon: Wifi,
-    title: 'Gigabit Campus Wi-Fi',
-    desc: 'High-speed dual-band wireless infrastructure optimized for live cloud computing and quantum SDK simulation.',
-  },
-  {
-    icon: Zap,
-    title: '100% Power Backup',
-    desc: 'Uninterrupted power supply with heavy-duty backup generators for the entire 24-hour sprint.',
-  },
-  {
-    icon: Sparkles,
-    title: '4K Projection & Audio',
-    desc: 'Dual ultra-high-definition presentation screens with professional stage line-array sound systems.',
-  },
-  {
-    icon: Radio,
-    title: 'Media & Live Broadcast',
-    desc: 'Integrated audiovisual broadcast infrastructure for plenary session recording and multi-angle projection.',
-  },
-  {
-    icon: ShieldCheck,
-    title: '24/7 Campus Security',
-    desc: 'Dedicated security staff, CCTV monitoring, first-aid medical station, and helpdesk desks on site.',
-  },
+  { icon: Users, title: '2,000 Capacity Tiered Hall' },
+  { icon: Wifi, title: 'Gigabit Campus Wi-Fi' },
+  { icon: Zap, title: '100% Generator Backup' },
+  { icon: Sparkles, title: 'Dual 4K LED Displays & Line-Array Audio' },
+  { icon: Radio, title: 'Session Recording & Live Broadcast' },
+  { icon: ShieldCheck, title: '24/7 Campus Security & Registration Desk' },
 ];
 
 const transitOptions = [
-  {
-    icon: Plane,
-    label: 'Air Transit (MAA)',
-    detail: 'Chennai Intl. Airport (~30 km)',
-    sub: 'Prepaid taxis & Metro available',
-  },
-  {
-    icon: Train,
-    label: 'Rail Transit (TBM)',
-    detail: 'Tambaram Railway Station (~15 km)',
-    sub: 'Frequent local trains & buses',
-  },
-  {
-    icon: Bus,
-    label: 'Bus Terminal (KCBT)',
-    detail: 'Kalaignar Centenary Bus Terminus (~8 km)',
-    sub: 'Direct inter-city connectivity',
-  },
-  {
-    icon: MapPin,
-    label: 'Road Transit',
-    detail: 'Vandalur Junction (~9 km)',
-    sub: 'Connected via Kelambakkam Road',
-  },
+  { icon: Plane, label: 'Air (MAA)', detail: 'Chennai Intl. Airport · ~30 km' },
+  { icon: Train, label: 'Rail (TBM)', detail: 'Tambaram Railway Station · ~15 km' },
+  { icon: Bus, label: 'Bus (KCBT)', detail: 'Kilambakkam Terminus · ~8 km' },
+  { icon: MapPin, label: 'Road Transit', detail: 'Vandalur Junction · ~9 km' },
 ];
 
 export default function Venue() {
@@ -94,10 +49,10 @@ export default function Venue() {
         </AnimatedSection>
 
         {/* Photography Showcase: Interior Stage & Main Entrance */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-10">
           {/* Photo 1: Inside MG Auditorium (Stage & Seating) */}
           <AnimatedSection delay={0.05}>
-            <div className="rounded-3xl border border-slate-200 bg-white shadow-xs hover:shadow-md hover:border-quantum-purple/40 transition-all overflow-hidden flex flex-col h-full group">
+            <div className="rounded-3xl border border-slate-200 bg-white shadow-xs hover:shadow-md hover:border-quantum-purple/40 transition-all overflow-hidden flex flex-col group">
               <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <img
                   src="/venue/mg-auditorium-4.jpg"
@@ -117,23 +72,18 @@ export default function Venue() {
                   <p className="text-xs text-white/80 font-mono">Central Stage & Plenary Arena</p>
                 </div>
               </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Fully air-conditioned indoor plenary hall equipped with acoustic surround sound, dual 4K LED projection, and tiered seating for keynotes, workshops, and hackathons.
-                </p>
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span className="flex items-center gap-1 text-quantum-purple font-medium">
-                    <Sparkles size={12} /> Keynotes & Hackathon
-                  </span>
-                  <span>Plenary Hall</span>
-                </div>
+              <div className="p-4 flex items-center justify-between text-xs font-mono text-slate-500 border-t border-slate-100">
+                <span className="flex items-center gap-1.5 text-quantum-purple font-medium">
+                  <Sparkles size={13} /> Keynotes & Hackathon Arena
+                </span>
+                <span>Plenary Hall</span>
               </div>
             </div>
           </AnimatedSection>
 
           {/* Photo 2: VIT Chennai Main Entrance Arch */}
           <AnimatedSection delay={0.1}>
-            <div className="rounded-3xl border border-slate-200 bg-white shadow-xs hover:shadow-md hover:border-quantum-purple/40 transition-all overflow-hidden flex flex-col h-full group">
+            <div className="rounded-3xl border border-slate-200 bg-white shadow-xs hover:shadow-md hover:border-quantum-purple/40 transition-all overflow-hidden flex flex-col group">
               <div className="relative aspect-[16/10] sm:aspect-[4/3] w-full overflow-hidden bg-slate-100">
                 <img
                   src="/venue/vit-chennai-main.png"
@@ -153,60 +103,40 @@ export default function Venue() {
                   <p className="text-xs text-white/80 font-mono">Main Entrance & Pylon</p>
                 </div>
               </div>
-              <div className="p-5 flex-1 flex flex-col justify-between">
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  External delegates entering along Vandalur-Kelambakkam Road proceed through Gate 1 with physical college ID cards for quick campus security registration.
-                </p>
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-slate-500">
-                  <span className="flex items-center gap-1 text-quantum-purple font-medium">
-                    <ShieldCheck size={12} /> Security Checkpoint
-                  </span>
-                  <span>Campus Access</span>
-                </div>
+              <div className="p-4 flex items-center justify-between text-xs font-mono text-slate-500 border-t border-slate-100">
+                <span className="flex items-center gap-1.5 text-quantum-purple font-medium">
+                  <ShieldCheck size={13} /> Security Checkpoint
+                </span>
+                <span>Campus Access</span>
               </div>
             </div>
           </AnimatedSection>
         </div>
 
         {/* Detailed Information & Facilities Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Venue Facilities Grid with Icons */}
-          <div className="lg:col-span-7 space-y-6">
-            <AnimatedSection delay={0.2}>
-              <div className="p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm">
-                <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                  <div>
-                    <h3 className="font-heading font-bold text-xl sm:text-2xl text-slate-900">
-                      Auditorium Infrastructure & Technical Rig
-                    </h3>
-                    <p className="text-xs text-slate-500 font-mono mt-1">
-                      Equipped for high-intensity quantum lectures, workshops & hackathons
-                    </p>
-                  </div>
-                  <span className="p-2 rounded-xl bg-quantum-purple/10 text-quantum-purple">
-                    <Building2 size={20} />
-                  </span>
-                </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          {/* Left Column: Venue Facilities */}
+          <div className="lg:col-span-7">
+            <AnimatedSection delay={0.15}>
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
+                <h3 className="font-heading font-bold text-lg sm:text-xl text-slate-900 mb-5">
+                  Auditorium Infrastructure & Technical Specs
+                </h3>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                   {venueFacilities.map((facility) => {
                     const Icon = facility.icon;
                     return (
                       <div
                         key={facility.title}
-                        className="p-4 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-quantum-purple/40 transition-all flex flex-col justify-between"
+                        className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-quantum-purple/40 transition-all flex items-center gap-3"
                       >
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="p-2 rounded-xl bg-white border border-slate-200 text-quantum-purple shadow-xs shrink-0">
-                            <Icon size={16} />
-                          </div>
-                          <h4 className="font-heading font-bold text-slate-900 text-sm">
-                            {facility.title}
-                          </h4>
+                        <div className="p-2 rounded-lg bg-white border border-slate-200 text-quantum-purple shadow-xs shrink-0">
+                          <Icon size={16} />
                         </div>
-                        <p className="text-xs text-slate-600 leading-relaxed font-normal">
-                          {facility.desc}
-                        </p>
+                        <h4 className="font-heading font-semibold text-slate-900 text-xs sm:text-sm">
+                          {facility.title}
+                        </h4>
                       </div>
                     );
                   })}
@@ -215,72 +145,55 @@ export default function Venue() {
             </AnimatedSection>
           </div>
 
-          {/* Right Column: Address, Entry Protocols & Transit Cards */}
-          <div className="lg:col-span-5 space-y-6">
-            {/* Address & Entry Guidelines */}
-            <AnimatedSection delay={0.25}>
-              <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-sm">
-                <div className="flex items-center gap-2 mb-2">
-                  <MapPin size={16} className="text-quantum-purple" />
-                  <span className="text-xs font-mono text-quantum-purple uppercase tracking-wider font-semibold">
-                    Campus Address
-                  </span>
-                </div>
-
-                <h4 className="font-heading font-bold text-lg text-slate-900 mb-1">
-                  Mahatma Gandhi Auditorium
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed mb-6 font-normal">
-                  Vellore Institute of Technology (VIT Chennai)<br />
-                  Vandalur-Kelambakkam Road, Keelakottaiyur<br />
-                  Chennai, Tamil Nadu 600127, India
-                </p>
-
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 mb-6 space-y-2.5">
-                  <h5 className="text-xs font-mono font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-                    <ShieldCheck size={14} className="text-quantum-purple" />
-                    Entry Guidelines
-                  </h5>
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    External student delegates must carry their <strong>Physical College ID Card</strong> along with a Government Photo ID (Aadhaar / Driving License). Entry is through <strong>Gate 1 (Main Entrance)</strong>.
+          {/* Right Column: Address, Entry Protocols & Transit */}
+          <div className="lg:col-span-5">
+            <AnimatedSection delay={0.2}>
+              <div className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-sm space-y-4">
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1 text-xs font-mono text-quantum-purple font-semibold uppercase">
+                    <MapPin size={13} />
+                    <span>Campus Location</span>
+                  </div>
+                  <h4 className="font-heading font-bold text-base text-slate-900">
+                    MG Auditorium, VIT Chennai
+                  </h4>
+                  <p className="text-xs text-slate-500 font-mono mt-0.5">
+                    Vandalur-Kelambakkam Road, Keelakottaiyur, Chennai 600127
                   </p>
                 </div>
 
-                <div className="mb-6">
-                  <h5 className="text-xs font-mono uppercase tracking-wider text-slate-500 font-semibold mb-3">
-                    Transit Connectivity
-                  </h5>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {transitOptions.map((opt) => {
-                      const Icon = opt.icon;
-                      return (
-                        <div
-                          key={opt.label}
-                          className="p-3 rounded-xl border border-slate-200 bg-slate-50 flex items-start gap-2.5"
-                        >
-                          <div className="p-1.5 rounded-lg bg-white border border-slate-200 text-quantum-purple shrink-0 mt-0.5">
-                            <Icon size={14} />
-                          </div>
-                          <div>
-                            <div className="text-xs font-bold text-slate-800">{opt.label}</div>
-                            <div className="text-[11px] text-slate-600 font-medium">{opt.detail}</div>
-                            <div className="text-[10px] text-slate-400">{opt.sub}</div>
-                          </div>
+                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 flex items-center gap-2.5">
+                  <ShieldCheck size={16} className="text-quantum-purple shrink-0" />
+                  <span>Entry via <strong>Gate 1</strong> · Mandatory physical College ID & Govt Photo ID</span>
+                </div>
+
+                {/* Transit Chips */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {transitOptions.map((opt) => {
+                    const Icon = opt.icon;
+                    return (
+                      <div
+                        key={opt.label}
+                        className="p-2.5 rounded-xl border border-slate-200 bg-slate-50 flex items-center gap-2"
+                      >
+                        <Icon size={14} className="text-quantum-purple shrink-0" />
+                        <div className="text-[11px] font-medium text-slate-700 truncate">
+                          {opt.detail}
                         </div>
-                      );
-                    })}
-                  </div>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 <a
                   href={mapUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-quantum-purple hover:bg-quantum-purple-light text-white font-semibold text-xs sm:text-sm inline-flex items-center justify-center gap-2 shadow-sm transition-colors"
+                  className="w-full py-2.5 px-4 rounded-xl bg-quantum-purple hover:bg-quantum-purple-light text-white font-semibold text-xs sm:text-sm inline-flex items-center justify-center gap-2 shadow-sm transition-colors"
                 >
-                  <Navigation size={15} />
-                  <span>Open MG Auditorium on Google Maps</span>
-                  <ExternalLink size={13} />
+                  <Navigation size={14} />
+                  <span>Open in Google Maps</span>
+                  <ExternalLink size={12} />
                 </a>
               </div>
             </AnimatedSection>
