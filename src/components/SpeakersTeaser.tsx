@@ -1,56 +1,63 @@
-import { Sparkles, Brain, Cpu, ShieldCheck, Dna, Terminal, Award } from 'lucide-react';
+import { Sparkles, Brain, Cpu, ShieldCheck, Dna, Terminal, Award, Binary, Atom } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import AnimatedSection from './AnimatedSection';
 
 const featuredSpeakers = [
   {
-    name: 'Anupama Roy',
-    org: 'IBM India',
-    topic: 'Quantum Machine Learning & Software Engineering',
+    name: 'Speaker 1',
+    org: 'IBM Quantum',
+    topic: 'Session 1: Quantum & Qiskit 101 (Intro & Hands-on)',
+    icon: Cpu,
+    category: 'IBM Keynote',
+  },
+  {
+    name: 'Speaker 2',
+    org: 'IBM Quantum',
+    topic: 'Session 4: Qiskit & Hands-on Quantum Programming',
+    icon: Terminal,
+    category: 'IBM Lab Lead',
+  },
+  {
+    name: 'Speaker 3',
+    org: 'Invited Expert',
+    topic: 'Session 2: Introduction to Quantum Computing',
+    icon: Atom,
+    category: 'Foundations',
+  },
+  {
+    name: 'Speaker 4',
+    org: 'Invited Expert',
+    topic: 'Session 3: Quantum Computing for Healthcare',
+    icon: Dna,
+    category: 'Healthcare',
+  },
+  {
+    name: 'Speaker 5',
+    org: 'Invited Expert',
+    topic: 'Session 5: Quantum Machine Learning',
     icon: Brain,
     category: 'Quantum AI',
   },
   {
-    name: 'Amith Singhee',
-    org: 'IBM India',
-    topic: 'QAOA and Quantum Optimization',
-    icon: Cpu,
-    category: 'Optimization',
-  },
-  {
-    name: 'Siddharth Golecha',
-    org: 'IBM India',
-    topic: 'Quantum Error Correction & Cybersecurity',
+    name: 'Speaker 6',
+    org: 'Invited Expert',
+    topic: 'Session 6: Quantum Cryptography & Communication',
     icon: ShieldCheck,
-    category: 'Error Mitigation',
+    category: 'Cryptography',
   },
   {
-    name: 'Bhanwar Gupta',
-    org: 'IBM India',
-    topic: 'Quantum Generative AI',
+    name: 'Speaker 7',
+    org: 'Invited Expert',
+    topic: 'Session 7: Quantum Computing for Biomedical Applications',
     icon: Sparkles,
-    category: 'Generative Models',
+    category: 'Biomedical',
   },
   {
-    name: 'Sonali Chawla',
-    org: 'IBM India',
-    topic: 'Quantum Drug Discovery',
-    icon: Dna,
-    category: 'Life Sciences',
-  },
-  {
-    name: 'Ritajit Majumdar',
-    org: 'IBM India',
-    topic: 'Quantum-Centric Supercomputing & Startups',
-    icon: Terminal,
-    category: 'Supercomputing',
-  },
-  {
-    name: 'Mrs. Guncha Malik',
-    org: 'IBM India',
-    topic: 'Real IBM Quantum Hardware Programming',
-    icon: Cpu,
-    category: 'Hardware Labs',
+    name: 'Speaker 8',
+    org: 'Invited Expert',
+    topic: 'Session 8: Hands-on QML for Biomedical Research',
+    icon: Binary,
+    category: 'Research Lab',
   },
 ];
 
@@ -61,14 +68,14 @@ export default function SpeakersTeaser() {
         <AnimatedSection>
           <SectionHeading
             title="Featured Speakers & Mentors"
-            subtitle="Distinguished quantum researchers and practitioners from IBM India"
+            subtitle="Distinguished quantum researchers, IBM Quantum speakers, and track mentors"
           />
         </AnimatedSection>
 
-        {/* Speakers Grid - Rich Visual Cards with Thematic Icons */}
+        {/* Speakers Grid - Clean Cards using Speaker 1, Speaker 2, etc. */}
         <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 sm:gap-6">
-            {featuredSpeakers.map((speaker) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+            {featuredSpeakers.map((speaker, i) => {
               const Icon = speaker.icon;
               return (
                 <div
@@ -85,9 +92,14 @@ export default function SpeakersTeaser() {
                       </span>
                     </div>
 
-                    <h3 className="font-heading font-bold text-slate-900 text-base mb-1 group-hover:text-quantum-purple transition-colors">
-                      {speaker.name}
-                    </h3>
+                    <div className="flex items-baseline justify-between mb-1">
+                      <h3 className="font-heading font-bold text-slate-900 text-lg group-hover:text-quantum-purple transition-colors">
+                        {speaker.name}
+                      </h3>
+                      <span className="text-xs font-mono font-semibold text-slate-400">
+                        0{i + 1}
+                      </span>
+                    </div>
 
                     <span className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-quantum-purple mb-3">
                       <Award size={11} />
@@ -95,8 +107,8 @@ export default function SpeakersTeaser() {
                     </span>
 
                     <div className="pt-3 border-t border-slate-200/70">
-                      <span className="text-[10.5px] font-mono text-slate-500 uppercase tracking-wider block mb-1">
-                        Keynote Topic
+                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block mb-1">
+                        Scheduled Session
                       </span>
                       <p className="text-xs font-semibold text-slate-800 leading-snug">
                         {speaker.topic}
