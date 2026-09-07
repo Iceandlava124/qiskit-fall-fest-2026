@@ -63,14 +63,25 @@ export default function Navbar() {
           {/* Logo / Lockup */}
           <a
             href="#"
-            className="flex items-center gap-2.5 font-heading text-base sm:text-lg font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded"
+            className="flex items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded group"
           >
-            <span className="flex h-7 w-7 items-center justify-center rounded-md bg-quantum-purple text-white text-xs font-mono font-bold">
-              Q
-            </span>
-            <span className="tracking-tight">
-              Qiskit Fall Fest <span className="text-quantum-purple font-mono text-xs font-semibold">2026</span>
-            </span>
+            <div className="flex items-center gap-2">
+              <img
+                src="/logos/qiskit-logo.svg"
+                alt="IBM Qiskit Logo"
+                className="h-6 w-6 sm:h-7 sm:w-7 object-contain transition-transform group-hover:scale-105"
+              />
+              <span className="h-4 w-px bg-slate-300" />
+              <img
+                src="/logos/vit-chennai-logo.png"
+                alt="VIT Chennai Logo"
+                className="h-5 sm:h-6 w-auto object-contain max-w-[75px] sm:max-w-none"
+              />
+            </div>
+            <div className="flex items-baseline gap-1 font-heading font-bold text-slate-900 text-sm sm:text-base tracking-tight">
+              <span>Qiskit Fall Fest</span>
+              <span className="text-quantum-purple font-mono text-xs font-semibold">2026</span>
+            </div>
           </a>
 
           {/* Desktop links */}

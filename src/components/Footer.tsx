@@ -6,6 +6,11 @@ export default function Footer() {
           
           {/* Column 1: Branding, Location & Disclaimer */}
           <div className="lg:col-span-5 space-y-4">
+            <div className="flex items-center gap-3 mb-1">
+              <img src="/logos/qiskit-logo.svg" alt="IBM Qiskit Logo" className="h-8 w-auto" />
+              <span className="h-5 w-px bg-slate-300" />
+              <img src="/logos/vit-chennai-logo.png" alt="VIT Chennai Logo" className="h-6 w-auto object-contain" />
+            </div>
             <h3 className="font-heading text-xl font-bold text-slate-900 tracking-tight">
               Qiskit Fall Fest <span className="text-quantum-purple">2026</span>
             </h3>

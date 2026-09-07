@@ -16,8 +16,19 @@ export default function Hero() {
           {/* Left Column: Clean, Spacious Headline & CTAs */}
           <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
             
-            {/* Main Event Title - Pure typography */}
+            {/* Institutional Co-Branding Badge */}
             <AnimatedSection>
+              <div className="inline-flex items-center gap-2.5 sm:gap-3 bg-slate-50 border border-slate-200/90 rounded-full px-3.5 sm:px-4 py-1.5 sm:py-2 mb-6 shadow-xs">
+                <img src="/logos/qiskit-logo.svg" alt="IBM Qiskit Logo" className="h-5 sm:h-6 w-auto" />
+                <span className="text-xs font-bold text-slate-800 tracking-wider font-mono uppercase">IBM Quantum</span>
+                <span className="h-3.5 w-px bg-slate-300" />
+                <img src="/logos/vit-chennai-logo.png" alt="VIT Chennai Logo" className="h-4 sm:h-5 w-auto object-contain" />
+                <span className="text-xs font-semibold text-slate-600 hidden sm:inline">VIT Chennai</span>
+              </div>
+            </AnimatedSection>
+
+            {/* Main Event Title - Pure typography */}
+            <AnimatedSection delay={0.04}>
               <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-heading tracking-tight leading-[1.08] mb-4 text-slate-900">
                 Qiskit Fall Fest <span className="text-quantum-purple">2026</span>
               </h1>
