@@ -33,7 +33,10 @@ export default function Footer() {
                 <a href="#about" className="hover:text-quantum-purple hover:underline transition-colors">About Event</a>
               </li>
               <li>
-                <a href="#contact" className="hover:text-quantum-purple hover:underline transition-colors">Contact Us</a>
+                <a href="#organizers" className="hover:text-quantum-purple hover:underline transition-colors">Organizers</a>
+              </li>
+              <li>
+                <a href="#speakers" className="hover:text-quantum-purple hover:underline transition-colors">Speakers Lineup</a>
               </li>
               <li>
                 <a href="#attend" className="hover:text-quantum-purple hover:underline transition-colors">Who Can Attend</a>
@@ -42,10 +45,19 @@ export default function Footer() {
                 <a href="#schedule" className="hover:text-quantum-purple hover:underline transition-colors">3-Day Schedule</a>
               </li>
               <li>
-                <a href="#venue" className="hover:text-quantum-purple hover:underline transition-colors">Venue & Transit</a>
+                <a href="#hackathon" className="hover:text-quantum-purple hover:underline transition-colors">Quantum Hackathon</a>
               </li>
               <li>
-                <a href="#organizers" className="hover:text-quantum-purple hover:underline transition-colors">Organizers</a>
+                <a href="#venue" className="hover:text-quantum-purple hover:underline transition-colors">Venue & Location</a>
+              </li>
+              <li>
+                <a href="#past-event" className="hover:text-quantum-purple hover:underline transition-colors">Past Event Galleries</a>
+              </li>
+              <li>
+                <a href="#contact" className="hover:text-quantum-purple hover:underline transition-colors">Contact Us</a>
+              </li>
+              <li>
+                <a href="#concept-explainer" className="hover:text-quantum-purple hover:underline transition-colors font-semibold text-quantum-purple">Concept Explainer</a>
               </li>
             </ul>
           </div>

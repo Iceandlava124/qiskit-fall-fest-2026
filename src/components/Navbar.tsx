@@ -3,14 +3,15 @@ import { Menu, X, Share2, Check } from 'lucide-react';
 
 const navLinks = [
   { href: '#about', label: 'About' },
+  { href: '#organizers', label: 'Organizers' },
+  { href: '#speakers', label: 'Speakers' },
   { href: '#attend', label: 'Who Can Attend' },
   { href: '#schedule', label: 'Schedule' },
   { href: '#hackathon', label: 'Hackathon' },
   { href: '#venue', label: 'Venue' },
-  { href: '#organizers', label: 'Organizers' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '#past-event', label: 'Past Events' },
   { href: '#contact', label: 'Contact' },
-  { href: '#past-event', label: 'Past Event' },
+  { href: '#concept-explainer', label: 'Concept Explainer' },
 ];
 
 export default function Navbar() {
