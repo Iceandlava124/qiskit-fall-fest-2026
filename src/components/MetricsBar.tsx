@@ -14,30 +14,30 @@ interface MetricStat {
 const stats: MetricStat[] = [
   {
     icon: Users,
-    value: '1,000+',
-    label: 'Student Attendees',
-    sub: 'Regional university enrollment',
-    status: 'target',
-  },
-  {
-    icon: Building2,
-    value: '50+',
-    label: 'Partner Colleges',
-    sub: 'Institutions across the region',
-    status: 'target',
+    value: '400–500',
+    label: 'Expected Participants',
+    sub: 'Students, researchers & faculty',
+    status: 'confirmed',
   },
   {
     icon: Calendar,
-    value: '5 Days',
-    label: 'Festival Duration',
-    sub: '3 core days + 2-day outreach extension',
-    status: 'proposed',
+    value: '3 Days',
+    label: 'Offline Programme',
+    sub: '5–7 October 2026 at VIT Chennai',
+    status: 'confirmed',
+  },
+  {
+    icon: Building2,
+    value: '8 Sessions',
+    label: 'Keynotes & Hands-on Labs',
+    sub: 'Includes IBM Quantum speakers',
+    status: 'confirmed',
   },
   {
     icon: Trophy,
-    value: 'Overnight',
+    value: '4 Tracks',
     label: 'Quantum Hackathon',
-    sub: 'Circuit optimization & project build',
+    sub: 'Biomedical, QML, crypto & error correction',
     status: 'confirmed',
   },
 ];
@@ -55,7 +55,7 @@ export default function MetricsBar() {
                 Mark Your Calendar
               </h3>
               <p className="text-sm text-slate-600 max-w-sm mb-6 leading-relaxed">
-                Opening ceremony at MG Auditorium, VIT Chennai on October 12, 2026.
+                Inauguration ceremony at MG Auditorium, VIT Chennai on October 5, 2026 at 09:00 AM.
               </p>
               <EventCountdown />
             </AnimatedSection>

@@ -22,8 +22,8 @@ export default function RegisterCTA() {
                 </h2>
 
                 <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
-                  Five days of quantum computing workshops, circuit design, hackathon challenges, and
-                  inter-college networking. Secure your spot today.
+                  Three days of quantum computing workshops, IBM Quantum keynotes, circuit design labs,
+                  hackathon challenges, and biomedical innovation. Secure your spot today.
                 </p>
 
                 {/* Attendee Perks Grid */}
@@ -79,7 +79,7 @@ export default function RegisterCTA() {
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-400">
-                    October 12–16, 2026 · MG Auditorium, VIT Chennai
+                    5–7 October 2026 · MG Auditorium, VIT Chennai · OFFLINE
                   </div>
                 </div>
               </div>

@@ -25,7 +25,7 @@ const eventPhotos = [
     title: 'Grand Valedictory & Awards Ceremony',
     caption: 'Honoring top project demonstrations, cash prize distribution, and certificates.',
     image: '/gallery/day5_1.webp',
-    tag: 'Day 5 · Finale',
+    tag: 'Finale · Valedictory',
   },
 ];
 

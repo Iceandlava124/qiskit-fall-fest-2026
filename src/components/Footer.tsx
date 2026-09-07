@@ -39,7 +39,7 @@ export default function Footer() {
                 <a href="#attend" className="hover:text-quantum-purple hover:underline transition-colors">Who Can Attend</a>
               </li>
               <li>
-                <a href="#schedule" className="hover:text-quantum-purple hover:underline transition-colors">5-Day Schedule</a>
+                <a href="#schedule" className="hover:text-quantum-purple hover:underline transition-colors">3-Day Schedule</a>
               </li>
               <li>
                 <a href="#venue" className="hover:text-quantum-purple hover:underline transition-colors">Venue & Transit</a>

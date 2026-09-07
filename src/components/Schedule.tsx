@@ -13,12 +13,10 @@ export default function Schedule() {
       : schedule.filter((s) => s.dayLabel.toLowerCase().includes(selectedFilter.toLowerCase()));
 
   const tabs = [
-    { id: 'all', label: 'All 5 Days', ariaLabel: 'View complete 5-day schedule overview' },
-    { id: 'Day 1', label: 'Day 1 (Oct 12)', ariaLabel: 'View Day 1 schedule: Quantum Foundations' },
-    { id: 'Day 2', label: 'Day 2 (Oct 13)', ariaLabel: 'View Day 2 schedule: Quantum ML & Healthcare' },
-    { id: 'Day 3', label: 'Day 3 (Oct 14)', ariaLabel: 'View Day 3 schedule: Hardware & Hackathon Kickoff' },
-    { id: 'Day 4', label: 'Day 4 (Oct 15)', ariaLabel: 'View Day 4 schedule: Hackathon Sprint & Checkpoints' },
-    { id: 'Day 5', label: 'Day 5 (Oct 16)', ariaLabel: 'View Day 5 schedule: Finalist Demos & Valedictory' },
+    { id: 'all', label: 'All 3 Days', ariaLabel: 'View complete 3-day schedule overview' },
+    { id: 'Day 1', label: 'Day 1 (Oct 5)', ariaLabel: 'View Day 1 schedule: Foundations & Healthcare Horizons' },
+    { id: 'Day 2', label: 'Day 2 (Oct 6)', ariaLabel: 'View Day 2 schedule: Advanced Paradigms & Hackathon Release' },
+    { id: 'Day 3', label: 'Day 3 (Oct 7)', ariaLabel: 'View Day 3 schedule: Submissions, Demos & Valedictory' },
   ];
 
   const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
@@ -43,7 +41,7 @@ export default function Schedule() {
         <AnimatedSection>
           <SectionHeading
             title="Event Schedule"
-            subtitle="5-day immersive journey from quantum foundations to overnight hackathon and awards"
+            subtitle="3-day offline programme at VIT Chennai featuring 8 technical sessions, IBM Quantum speakers, and hackathon"
           />
         </AnimatedSection>
 

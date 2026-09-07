@@ -16,31 +16,36 @@ export default function Hero() {
           {/* Left Column: Clean, Spacious Headline & CTAs */}
           <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
             
-            {/* Main Event Title - Pure typography, no badge above */}
+            {/* Main Event Title - Pure typography */}
             <AnimatedSection>
-              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-heading tracking-tight leading-[1.08] mb-6 text-slate-900">
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold font-heading tracking-tight leading-[1.08] mb-4 text-slate-900">
                 Qiskit Fall Fest <span className="text-quantum-purple">2026</span>
               </h1>
             </AnimatedSection>
 
-            {/* Tagline */}
+            {/* Theme & Tagline */}
             <AnimatedSection delay={0.08}>
-              <p className="text-lg sm:text-2xl text-slate-600 max-w-xl mb-6 font-light leading-relaxed">
-                Explore Quantum. Build with Qiskit. Connect with the Future.
-              </p>
+              <div className="mb-6">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-quantum-purple mb-2">
+                  Quantum Computing for Biomedical Applications
+                </p>
+                <p className="text-base sm:text-lg font-mono text-slate-600 font-medium tracking-wide">
+                  Learn <span className="text-quantum-purple font-bold">|</span> Explore <span className="text-quantum-purple font-bold">|</span> Build <span className="text-quantum-purple font-bold">|</span> Innovate
+                </p>
+              </div>
             </AnimatedSection>
 
-            {/* Date & Venue - Clean plain text */}
+            {/* Date, Mode & Venue */}
             <AnimatedSection delay={0.12}>
-              <p className="text-sm font-mono text-slate-600 mb-6">
-                October 12–16, 2026 <span className="mx-2 text-quantum-purple">·</span> MG Auditorium, VIT Chennai Campus <span className="mx-2 text-quantum-purple">·</span> Hosted by The QuantumPlators Club
+              <p className="text-sm font-mono text-slate-700 mb-6 bg-slate-100/80 px-4 py-2 rounded-lg border border-slate-200 inline-block">
+                OFFLINE <span className="mx-2 text-quantum-purple">·</span> VIT CHENNAI <span className="mx-2 text-quantum-purple">·</span> 5–7 OCTOBER 2026
               </p>
             </AnimatedSection>
 
             {/* Quiet Stat Line */}
             <AnimatedSection delay={0.16}>
               <p className="text-xs sm:text-sm font-mono text-slate-500 mb-8">
-                1,000+ Students <span className="mx-1.5 text-slate-300">·</span> 50+ Regional Colleges <span className="mx-1.5 text-slate-300">·</span> 5 Days <span className="mx-1.5 text-slate-300">·</span> Hands-on Hackathon
+                400–500 Expected Delegates <span className="mx-1.5 text-slate-300">·</span> 3 Days <span className="mx-1.5 text-slate-300">·</span> 8 Technical Sessions <span className="mx-1.5 text-slate-300">·</span> 4 Hackathon Tracks
               </p>
             </AnimatedSection>
 

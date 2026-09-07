@@ -11,7 +11,6 @@ export interface ScheduleEntry {
   date: string;
   title: string;
   subtitle: string;
-  isExtension?: boolean;
   content: string;
   sessions: ScheduleSession[];
 }
@@ -19,222 +18,130 @@ export interface ScheduleEntry {
 export const schedule: ScheduleEntry[] = [
   {
     dayLabel: 'Day 1',
-    date: 'October 12, 2026',
-    title: 'Quantum Foundations & Industry Horizons',
-    subtitle: 'Inaugural Ceremony, Core Principles & Interactive Challenges',
+    date: 'October 5, 2026',
+    title: 'Foundations & Healthcare Horizons',
+    subtitle: 'Inauguration, Quantum & Qiskit 101, Core Principles & Hands-on Programming',
     content:
-      'Grand inauguration at MG Auditorium, inaugural keynote, foundational quantum computing concepts, Qiskit SDK introductory architecture, and interactive live quiz challenges.',
+      'Grand inauguration at MG Auditorium, introductory quantum lectures, quantum computing for healthcare, and guided hands-on Qiskit programming with IBM Quantum speakers.',
     sessions: [
       {
-        timeframe: '09:30 AM – 11:00 AM',
-        title: 'Grand Inauguration & Opening Keynote',
+        timeframe: '09:00 AM – 10:00 AM',
+        title: 'Inauguration Ceremony',
         description:
-          'Inaugural ceremony at MG Auditorium with university leadership, IBM dignitaries, and the host team from The QuantumPlators Club. Keynote address introducing the quantum computing paradigm.',
-        tags: ['Inauguration', 'Keynote', 'MG Auditorium'],
+          'Official opening ceremony at MG Auditorium with university dignitaries, department heads, and distinguished guests kicking off Qiskit Fall Fest 2026.',
+        tags: ['Inauguration', 'MG Auditorium', 'Opening'],
       },
       {
-        timeframe: '11:15 AM – 01:00 PM',
-        title: 'Quantum Computing Fundamentals & Circuit Anatomy',
+        timeframe: '10:00 AM – 11:00 AM',
+        title: 'Session 1 — Quantum & Qiskit 101: Introduction to Quantum Computing and Hands-on Qiskit',
         description:
-          'Deep dive into qubits, superposition, quantum entanglement, unitary quantum gates, and multi-qubit circuit compositions.',
-        tags: ['Theory', 'Fundamentals', 'Circuits'],
+          'Comprehensive introductory session covering quantum principles and hands-on circuit exploration using IBM Qiskit.',
+        speaker: 'IBM Quantum Speaker',
+        tags: ['Session 1', 'Quantum 101', 'Qiskit SDK', 'IBM Quantum'],
       },
       {
-        timeframe: '01:00 PM – 02:00 PM',
-        title: 'Lunch Break & Inter-College Networking',
+        timeframe: '11:30 AM – 01:00 PM',
+        title: 'Session 2 — Introduction to Quantum Computing',
         description:
-          'Buffet lunch and informal networking with faculty mentors, students, and peers from over 50 regional institutions.',
-        tags: ['Networking', 'Break'],
+          'Core mathematical foundations, qubits, superposition, quantum entanglement, and quantum gate operations for beginners and multidisciplinary engineers.',
+        tags: ['Session 2', 'Fundamentals', 'Superposition', 'Entanglement'],
       },
       {
-        timeframe: '02:00 PM – 03:45 PM',
-        title: 'Hands-on Qiskit SDK: Writing Your First Quantum Circuit',
+        timeframe: '01:30 PM – 02:30 PM',
+        title: 'Session 3 — Quantum Computing for Healthcare',
         description:
-          'Interactive Python coding session configuring Qiskit environments, creating quantum circuits, executing local simulators, and visualizing statevectors.',
-        speaker: 'Anupama Roy, IBM India',
-        tags: ['Qiskit SDK', 'Hands-on Lab', 'Python'],
+          'Exploring quantum computing applications in precision medicine, medical imaging, biomolecular modeling, and genomic data analytics.',
+        tags: ['Session 3', 'Healthcare', 'Biomedical', 'Life Sciences'],
       },
       {
-        timeframe: '04:00 PM – 05:00 PM',
-        title: 'Live Quantum Quiz & Industry Pathways Panel',
+        timeframe: '03:00 PM – 04:00 PM',
+        title: 'Session 4 — Qiskit & Hands-on Quantum Programming',
         description:
-          'Interactive live challenge testing Day 1 concepts with immediate leaderboard recognition, followed by an overview of quantum career pathways and research opportunities.',
-        tags: ['Live Quiz', 'Career Pathways', 'Competition'],
+          'Guided practical coding session: structuring quantum circuits, running statevector simulations, and executing algorithms on Qiskit Runtime.',
+        speaker: 'IBM Quantum Speaker',
+        tags: ['Session 4', 'Hands-on Lab', 'Python', 'Qiskit Runtime', 'IBM Quantum'],
       },
     ],
   },
   {
     dayLabel: 'Day 2',
-    date: 'October 13, 2026',
-    title: 'Quantum Machine Learning & Healthcare Innovation',
-    subtitle: 'Variational Algorithms, QML Architecture & Domain Applications',
+    date: 'October 6, 2026',
+    title: 'Advanced Paradigms & Hackathon Release',
+    subtitle: 'Quantum ML, Cryptography, Biomedical Applications & Hackathon Sprint Kickoff',
     content:
-      'Exploration of hybrid quantum-classical algorithms, Variational Quantum Eigensolver (VQE), Quantum Neural Networks, and applications in drug discovery and healthcare.',
+      'In-depth exploration of Quantum Machine Learning, Cryptography & Communication, Biomedical applications, hands-on research labs, and release of the official Hackathon problem statements.',
     sessions: [
       {
-        timeframe: '09:30 AM – 11:00 AM',
-        title: 'Quantum Machine Learning & Hybrid AI Algorithms',
+        timeframe: '09:00 AM – 10:00 AM',
+        title: 'Session 5 — Quantum Machine Learning',
         description:
-          'Introduction to parameterized quantum circuits, quantum kernels, data encoding techniques, and combining classical PyTorch/TensorFlow pipelines with Qiskit Machine Learning.',
-        speaker: 'Bhanwar Gupta, IBM India',
-        tags: ['Quantum ML', 'Hybrid AI', 'Qiskit ML'],
+          'Parameterized quantum circuits, quantum kernels, variational classifiers, and hybrid quantum-classical machine learning architectures.',
+        tags: ['Session 5', 'Quantum ML', 'Hybrid AI', 'Parameterized Circuits'],
       },
       {
-        timeframe: '11:15 AM – 01:00 PM',
-        title: 'Quantum Computing in Healthcare & Drug Discovery',
+        timeframe: '10:00 AM – 11:00 AM',
+        title: 'Session 6 — Quantum Cryptography & Communication',
         description:
-          'Investigating molecular simulation, protein folding modeling, and algorithmic acceleration for biomedical research with quantum chemistry modules.',
-        tags: ['Quantum Healthcare', 'Biomedical', 'Algorithms'],
+          'Quantum Key Distribution (QKD), BB84 protocol, quantum repeaters, and post-quantum cryptographic security imperatives.',
+        tags: ['Session 6', 'Cryptography', 'QKD', 'Communication', 'Security'],
       },
       {
-        timeframe: '01:00 PM – 02:00 PM',
-        title: 'Lunch Break & Poster Showcase',
+        timeframe: '11:30 AM – 01:00 PM',
+        title: 'Session 7 — Quantum Computing for Biomedical Applications',
         description:
-          'Lunch break accompanied by student research poster showcases and project idea discussions.',
-        tags: ['Poster Session', 'Break'],
+          'Targeted study of quantum algorithms in biomedical research: molecular simulation, drug discovery pipelines, and complex protein interactions.',
+        tags: ['Session 7', 'Biomedical Applications', 'Drug Discovery', 'Molecular Simulation'],
       },
       {
-        timeframe: '02:00 PM – 03:45 PM',
-        title: 'Guided Hands-on Lab: Variational Classifiers & Optimization',
+        timeframe: '01:30 PM – 02:30 PM',
+        title: 'Session 8 — Hands-on Quantum Machine Learning for Biomedical Research',
         description:
-          'Step-by-step practical coding of variational quantum algorithms on sample healthcare datasets with error mitigation basics.',
-        tags: ['Hands-on Lab', 'Optimization', 'VQE'],
+          'Practical workshop implementing QML pipelines on biomedical datasets, feature encoding, and variational optimization with mentor guidance.',
+        tags: ['Session 8', 'Hands-on QML', 'Biomedical Research', 'Lab'],
       },
       {
-        timeframe: '04:00 PM – 05:00 PM',
-        title: 'Expert Panel: Frontiers of Quantum Technologies',
+        timeframe: '03:00 PM – 04:00 PM',
+        title: 'Hackathon Briefing & Problem Statement Release',
         description:
-          'Panel dialogue between academic researchers and industry experts discussing NISQ-era constraints, fault-tolerant roadmaps, and commercial opportunities.',
-        tags: ['Expert Panel', 'Discussion', 'Industry'],
+          'Official launch of the hackathon! Covers introduction to the hackathon, explanation of problem statements, track-wise briefing, team formation, rules & evaluation criteria, and mentor interaction.',
+        tags: [
+          'Hackathon Briefing',
+          'Track Release',
+          'Team Formation',
+          'Rules & Rubric',
+          'Mentor Interaction',
+        ],
       },
     ],
   },
   {
     dayLabel: 'Day 3',
-    date: 'October 14, 2026',
-    title: 'Hardware Programming & Hackathon Launch',
-    subtitle: 'Real IBM Quantum Hardware, Circuit Optimization & Sprint Kickoff',
+    date: 'October 7, 2026',
+    title: 'Sprint Submission, Demonstrations & Valedictory',
+    subtitle: 'Final Code Submission, Live Jury Demonstrations & Grand Award Ceremony',
     content:
-      'Executing jobs on real IBM Quantum superconducting backends via Qiskit Runtime, track problem statement release, team formation, and launch of the 24-hour hackathon.',
+      'Final hackathon development sprint and submission, live project demonstrations before the jury, followed by results announcement and the valedictory ceremony.',
     sessions: [
       {
-        timeframe: '09:30 AM – 11:00 AM',
-        title: 'Programming on Real IBM Quantum Hardware & Runtime',
+        timeframe: '09:00 AM – 10:00 AM',
+        title: 'Hackathon — Final Development & Submission',
         description:
-          'Connecting to IBM Quantum systems via the cloud, utilizing Qiskit Runtime primitives (Sampler & Estimator), and understanding device topology and coupling maps.',
-        speaker: 'Guncha Malik, IBM India',
-        tags: ['IBM Quantum', 'Cloud Hardware', 'Qiskit Runtime'],
+          'Final sprint touches, GitHub repository freeze, documentation preparation, and submission of quantum project prototypes.',
+        tags: ['Hackathon Final Sprint', 'Submission Deadline', 'Code Freeze'],
       },
       {
-        timeframe: '11:15 AM – 01:00 PM',
-        title: 'Quantum Circuit Optimization & Error Mitigation Strategies',
+        timeframe: '10:00 AM – 11:00 AM',
+        title: 'Project Demonstration & Evaluation',
         description:
-          'Techniques for reducing circuit depth, transpilation pass managers, readout error mitigation (M3), and Zero-Noise Extrapolation (ZNE).',
-        tags: ['Optimization', 'Error Mitigation', 'Transpiler'],
-      },
-      {
-        timeframe: '01:00 PM – 02:00 PM',
-        title: 'Lunch Break & Team Preparation',
-        description:
-          'Final team registration check-ins and environment setup for hackathon participants.',
-        tags: ['Team Check-in', 'Break'],
-      },
-      {
-        timeframe: '02:00 PM – 03:30 PM',
-        title: 'Hackathon Briefing & Official Track Problem Release',
-        description:
-          'Unveiling of the 6 official hackathon tracks, evaluation rubric, submission guidelines, and technical mentor introductions.',
-        tags: ['Hackathon Briefing', 'Track Release', 'Evaluation Rubric'],
-      },
-      {
-        timeframe: '03:30 PM Onward',
-        title: '24-Hour Quantum Hackathon Sprint Begins',
-        description:
-          'Sprint kick-off! Teams commence development across hackathon tracks with live technical mentor support and continuous lab access through the night.',
-        tags: ['Hackathon Launch', 'Overnight Sprint', 'Mentorship'],
-      },
-    ],
-  },
-  {
-    dayLabel: 'Day 4',
-    date: 'October 15, 2026',
-    title: 'Overnight Hackathon Sprint & Mentor Checkpoints',
-    subtitle: 'Continuous Development, Milestone Reviews & Code Freeze',
-    content:
-      'Intensive prototyping sprint supported by continuous technical mentorship, formal evaluation checkpoints, code freeze, and project submission.',
-    sessions: [
-      {
-        timeframe: '09:00 AM – 11:00 AM',
-        title: 'Hackathon Checkpoint 1: Architecture Review',
-        description:
-          'Mandatory progress check with assigned technical mentors to review algorithmic design, quantum circuit validity, and classical integration.',
-        tags: ['Checkpoint 1', 'Mentor Review', 'Architecture'],
+          'Live project presentations and jury evaluation. Teams demonstrate working quantum circuits, benchmark metrics, and algorithmic innovation.',
+        tags: ['Project Demonstrations', 'Jury Evaluation', 'Live Demos'],
       },
       {
         timeframe: '11:30 AM – 01:00 PM',
-        title: 'Mentor Office Hours & Circuit Debugging Clinics',
+        title: 'Results Announcement & Valedictory Ceremony',
         description:
-          'One-on-one troubleshooting clinics with IBM and faculty mentors for teams facing convergence issues or transpilation errors.',
-        tags: ['Office Hours', 'Debugging', 'Optimization'],
-      },
-      {
-        timeframe: '01:00 PM – 02:00 PM',
-        title: 'Lunch & Recharge Break',
-        description:
-          'Participants recharge and regroup before the afternoon sprint push.',
-        tags: ['Break', 'Recharge'],
-      },
-      {
-        timeframe: '02:00 PM – 03:30 PM',
-        title: 'Hackathon Checkpoint 2: Final Integration & Demos Prep',
-        description:
-          'Final checkpoint verifying working execution, GitHub repository documentation, and benchmark evidence.',
-        tags: ['Checkpoint 2', 'Verification', 'Benchmarking'],
-      },
-      {
-        timeframe: '04:00 PM Sharp',
-        title: 'Code Freeze & Project Submission Deadline',
-        description:
-          'All code, slide decks, and project repositories submitted for jury review. Automated verification pipeline runs.',
-        tags: ['Code Freeze', 'Project Submission', 'Deadline'],
-      },
-    ],
-  },
-  {
-    dayLabel: 'Day 5',
-    date: 'October 16, 2026',
-    title: 'Project Demonstrations & Grand Valedictory',
-    subtitle: 'Finalist Demos, Jury Evaluation, Awards & Closing Ceremony',
-    content:
-      'Shortlisted teams present before the distinguished jury panel, followed by a quantum career panel, winner announcements, cash prize distribution, and the valedictory ceremony.',
-    sessions: [
-      {
-        timeframe: '09:30 AM – 12:30 PM',
-        title: 'Finalist Live Presentations & Jury Defense',
-        description:
-          'Shortlisted finalist teams showcase live project demos, answer technical questions from the jury, and defend algorithmic novelty.',
-        tags: ['Live Demos', 'Jury Evaluation', 'Finalists'],
-      },
-      {
-        timeframe: '12:30 PM – 01:30 PM',
-        title: 'Lunch Break & Deliberation Period',
-        description:
-          'Jury evaluation deliberation and score tabulation.',
-        tags: ['Deliberation', 'Break'],
-      },
-      {
-        timeframe: '01:30 PM – 03:00 PM',
-        title: 'Quantum Community Horizons: Student & Researcher Panel',
-        description:
-          'Inspiring panel featuring student builders, graduate scholars, and open-source contributors sharing blueprints for building local quantum communities.',
-        tags: ['Community', 'Student Panel', 'Future Pathways'],
-      },
-      {
-        timeframe: '03:15 PM – 05:00 PM',
-        title: 'Grand Valedictory Ceremony & Prize Distribution',
-        description:
-          'Official closing ceremony at MG Auditorium with presentation of winner trophies, cash prizes, certificates, and recognition for mentors, volunteers, and sponsors.',
-        tags: ['Valedictory', 'Prize Distribution', 'Certificates', 'MG Auditorium'],
+          'Grand valedictory ceremony: announcement of track winners, distribution of cash prizes, participant certificates, and felicitation of organizers & mentors.',
+        tags: ['Valedictory Ceremony', 'Results Announcement', 'Prize Distribution', 'Awards'],
       },
     ],
   },

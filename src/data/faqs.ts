@@ -40,8 +40,8 @@ export const faqs: FAQItem[] = [
       'Certificate details will be announced once the event structure and attendance criteria are finalized.',
   },
   {
-    question: 'What are Days 4–5 (Outreach & Awareness Extension)?',
+    question: 'What is the format and duration of Qiskit Fall Fest 2026?',
     answer:
-      'Days 4 and 5 are an outreach and awareness extension conducted at regional partner institutions to introduce basic quantum concepts to school and junior college students. They are separate from the core 3-day on-campus program at MG Auditorium.',
+      'The event is an offline 3-day programme held from 5–7 October 2026 at MG Auditorium, VIT Chennai. It encompasses 8 technical sessions and hands-on coding labs, IBM Quantum guest lectures, and a dedicated 4-track hackathon spanning Quantum Machine Learning, Cryptography & Communication, Quantum Error Correction, and Quantum Computing for Healthcare.',
   },
 ];

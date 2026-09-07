@@ -75,7 +75,7 @@ export default function SpeakersTeaser() {
               <span>Speaker Lineup</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-2">
-              Keynote speakers from IBM Quantum and academic research institutions will lead deep-dive sessions across all 5 days.
+              Keynote speakers from IBM Quantum and academic research institutions will lead deep-dive sessions across the 3-day event.
             </p>
             <span className="text-[11px] font-mono text-slate-400">
               Status: {STATUS_LABELS.confirmed}

@@ -61,18 +61,15 @@ export const highlights: Highlight[] = [
 ];
 
 export const hackathonTracks: string[] = [
-  'Quantum Computing',
-  'Qiskit & Quantum Programming',
-  'Quantum Healthcare',
-  'Expert & Industry Sessions',
-  'Interactive Learning',
-  'Inter-College Quantum Community',
+  'Quantum Machine Learning',
+  'Quantum Cryptography & Communication',
+  'Quantum Error Correction',
+  'Quantum Computing for Healthcare',
 ];
 
 export const experiencePillars: string[] = [
   'Learn',
-  'Build',
-  'Connect',
-  'Compete',
   'Explore',
+  'Build',
+  'Innovate',
 ];
