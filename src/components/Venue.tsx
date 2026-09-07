@@ -8,11 +8,11 @@ import {
   Wifi,
   Zap,
   Sparkles,
-  Coffee,
   MapPin,
   ExternalLink,
   Sun,
   Building2,
+  Radio,
 } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import AnimatedSection from './AnimatedSection';
@@ -39,9 +39,9 @@ const venueFacilities = [
     desc: 'Dual ultra-high-definition presentation screens with professional stage line-array sound systems.',
   },
   {
-    icon: Coffee,
-    title: 'Food Courts & Lounges',
-    desc: 'On-campus multi-cuisine cafeterias, refreshment stalls, and student networking lounges within 50m.',
+    icon: Radio,
+    title: 'Media & Live Broadcast',
+    desc: 'Integrated audiovisual broadcast infrastructure for plenary session recording and multi-angle projection.',
   },
   {
     icon: ShieldCheck,
@@ -214,7 +214,7 @@ export default function Venue() {
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
                   <div>
                     <h3 className="font-heading font-bold text-xl sm:text-2xl text-slate-900">
-                      Auditorium Facilities & Tech Rig
+                      Auditorium Infrastructure & Technical Rig
                     </h3>
                     <p className="text-xs text-slate-500 font-mono mt-1">
                       Equipped for high-intensity quantum lectures, workshops & hackathons
