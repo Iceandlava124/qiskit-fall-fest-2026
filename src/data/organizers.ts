@@ -73,6 +73,7 @@ export interface Organizer {
   affiliation?: string;
   category: 'lead' | 'faculty' | 'student';
   image?: string;
+  bio?: string;
 }
 
 export const organizers: Organizer[] = [
@@ -83,6 +84,16 @@ export const organizers: Organizer[] = [
     affiliation: 'Vellore Institute of Technology (VIT Chennai)',
     category: 'lead',
     image: '/organizers/ramesh-babu.jpeg',
+    bio: 'Directing the academic program, university partnerships, hackathon problem statements, and student engagement for the 2026 festival.',
+  },
+  {
+    name: 'Dr. Reena Monica',
+    role: 'Co-Lead Organizer',
+    designation: 'Professor & Deputy Director (International Relations)',
+    affiliation: 'Vellore Institute of Technology (VIT Chennai)',
+    category: 'lead',
+    image: '/organizers/reena-monica.jpg',
+    bio: 'Spearheading international institutional outreach, academic keynote coordination, research collaborations, and global quantum community engagement.',
   },
   {
     name: 'Dr. Lakshmanan S',
@@ -115,14 +126,6 @@ export const organizers: Organizer[] = [
     affiliation: 'VIT Chennai',
     category: 'faculty',
     image: '/organizers/thangaraj-m.png',
-  },
-  {
-    name: 'Dr. Reena Monica',
-    role: 'Co-Organizer',
-    designation: 'Deputy Director (International Relations)',
-    affiliation: 'VIT Chennai',
-    category: 'faculty',
-    image: '/organizers/reena-monica.jpg',
   },
   {
     name: 'Ms. Nathimalar Chandran',

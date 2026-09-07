@@ -4,7 +4,7 @@ import { chiefPatron, patrons, organizers } from '../data/organizers';
 import { Camera, GraduationCap, Users, Crown, Award } from 'lucide-react';
 
 export default function Organizers() {
-  const leadOrganizer = organizers.find((o) => o.category === 'lead') || organizers[0];
+  const leadOrganizers = organizers.filter((o) => o.category === 'lead');
   const facultyOrganizers = organizers.filter((o) => o.category === 'faculty');
   const studentOrganizers = organizers.filter((o) => o.category === 'student');
 
@@ -117,43 +117,48 @@ export default function Organizers() {
             </div>
           </AnimatedSection>
 
-          {/* Lead Organizer Card */}
-          <AnimatedSection delay={0.18}>
-            <div className="mb-14 p-8 sm:p-10 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-8">
-              <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col items-center justify-center text-center overflow-hidden flex-shrink-0">
-                {leadOrganizer.image ? (
-                  <img
-                    src={leadOrganizer.image}
-                    alt={leadOrganizer.name}
-                    className="w-full h-full object-cover object-top"
-                  />
-                ) : (
-                  <div className="p-3 flex flex-col items-center justify-center">
-                    <Camera size={20} className="text-slate-400 mb-1.5" />
-                    <span className="text-[10px] font-mono text-slate-500 leading-tight">
-                      Photo coming soon
-                    </span>
+          {/* Lead & Co-Lead Organizers Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-14">
+            {leadOrganizers.map((lead, i) => (
+              <AnimatedSection key={lead.name} delay={0.18 + i * 0.05}>
+                <div className="p-8 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm flex flex-col sm:flex-row items-center sm:items-start gap-6 h-full">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col items-center justify-center text-center overflow-hidden flex-shrink-0">
+                    {lead.image ? (
+                      <img
+                        src={lead.image}
+                        alt={lead.name}
+                        className="w-full h-full object-cover object-top"
+                      />
+                    ) : (
+                      <div className="p-3 flex flex-col items-center justify-center">
+                        <Camera size={20} className="text-slate-400 mb-1.5" />
+                        <span className="text-[10px] font-mono text-slate-500 leading-tight">
+                          Photo coming soon
+                        </span>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
 
-              <div className="flex-1 text-center sm:text-left">
-                <span className="text-xs font-mono text-quantum-purple uppercase tracking-wider font-semibold">
-                  Lead Organizer
-                </span>
-                <h3 className="font-heading font-bold text-slate-900 text-2xl sm:text-3xl mt-1 mb-2">
-                  {leadOrganizer.name}
-                </h3>
-                <p className="text-sm text-slate-600 mb-4">
-                  {leadOrganizer.designation ? `${leadOrganizer.designation} · ` : ''}{leadOrganizer.affiliation || 'Vellore Institute of Technology (VIT Chennai)'}
-                </p>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl font-normal">
-                  Directing the academic program, university partnerships, hackathon problem statements,
-                  and student engagement for the 2026 festival.
-                </p>
-              </div>
-            </div>
-          </AnimatedSection>
+                  <div className="flex-1 text-center sm:text-left min-w-0">
+                    <span className="text-xs font-mono text-quantum-purple uppercase tracking-wider font-semibold">
+                      {lead.role}
+                    </span>
+                    <h4 className="font-heading font-bold text-slate-900 text-xl sm:text-2xl mt-1 mb-1 truncate">
+                      {lead.name}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-slate-600 mb-3">
+                      {lead.designation ? `${lead.designation} · ` : ''}{lead.affiliation || 'Vellore Institute of Technology (VIT Chennai)'}
+                    </p>
+                    {lead.bio && (
+                      <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                        {lead.bio}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
 
           {/* Faculty Co-Organizers */}
           <div className="mb-14">
