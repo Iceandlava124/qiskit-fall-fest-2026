@@ -160,7 +160,7 @@ export default function Organizers() {
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               {facultyOrganizers.map((org, i) => (
                 <AnimatedSection key={org.name} delay={0.2 + i * 0.05}>
                   <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-quantum-purple/40 shadow-xs transition-all flex items-center gap-4 h-full">
@@ -212,7 +212,7 @@ export default function Organizers() {
               </div>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               {studentOrganizers.map((org, i) => (
                 <AnimatedSection key={org.name} delay={0.26 + i * 0.05}>
                   <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-quantum-purple/40 shadow-xs transition-all flex items-center gap-4 h-full">
