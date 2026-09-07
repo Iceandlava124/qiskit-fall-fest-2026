@@ -71,14 +71,14 @@ const flowSteps = [
   {
     num: '04',
     title: 'Submission Deadline',
-    time: 'Day 3 · 09:00 – 10:00 AM',
+    time: 'Day 3 · 01:00 PM',
     desc: 'Final development sprint, code freeze, GitHub repository submission, and demonstration slide upload.',
     icon: CheckCircle,
   },
   {
     num: '05',
     title: 'Jury Demos & Valedictory',
-    time: 'Day 3 · 10:00 AM – 01:00 PM',
+    time: 'Day 3 · 01:30 – 04:00 PM',
     desc: 'Live project defense before the judging panel, followed by the grand valedictory ceremony and prize distribution.',
     icon: Trophy,
   },
@@ -101,7 +101,7 @@ export default function Hackathon() {
             <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
               <div className="max-w-3xl">
                 <p className="text-xs font-mono text-quantum-purple mb-2 uppercase tracking-wider font-semibold">
-                  Day 2 (3:00 PM) → Day 3 (10:00 AM) · {STATUS_LABELS.confirmed}
+                  Day 2 (3:00 PM) → Day 3 (1:00 PM) · {STATUS_LABELS.confirmed}
                 </p>
                 <h3 className="text-3xl sm:text-4xl font-heading font-extrabold text-slate-900 mb-4">
                   Quantum Challenge Sprint
@@ -123,7 +123,7 @@ export default function Hackathon() {
                 <Trophy size={28} className="text-quantum-purple mx-auto mb-3" />
                 <div className="text-base font-bold text-slate-900">Prize Tracks & Awards</div>
                 <div className="text-xs text-slate-500 font-mono mt-1">
-                  Cash Prizes & Certificates
+                  Official Awards & Certificates
                 </div>
               </div>
             </div>
