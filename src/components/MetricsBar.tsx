@@ -29,7 +29,7 @@ const stats: MetricStat[] = [
   {
     icon: Calendar,
     value: '3 Days',
-    label: 'Offline Programme',
+    label: 'Festival Schedule',
     sub: '5–7 October 2026 at VIT Chennai',
     status: 'confirmed',
   },

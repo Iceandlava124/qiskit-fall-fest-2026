@@ -30,7 +30,7 @@ export const pastEvents: PastEventData[] = [
       'A prestigious five-day international workshop organized by the Department of Mathematics, School of Advanced Sciences (SAS), VIT Chennai. The event brought together leading researchers, academicians, clinicians, and student delegates across quantum mathematics, biomedical imaging, and intelligent healthcare analytics, concluding with valedictory honors recognizing outstanding research and participant excellence.',
     websiteUrl: 'https://qmi2025.onrender.com/pastevents.html',
     stats: [
-      { label: 'Participants', value: '250+' },
+      { label: 'Participants', value: '70+' },
       { label: 'Expert Sessions', value: '18 Talks' },
       { label: 'Days Duration', value: '5 Days' },
       { label: 'Host School', value: 'SAS VIT' },

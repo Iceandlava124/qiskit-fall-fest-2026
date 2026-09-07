@@ -8,6 +8,7 @@ import {
   Orbit,
   ArrowRight,
   ArrowDown,
+  Users,
 } from 'lucide-react';
 
 const audience = [
@@ -56,6 +57,11 @@ export default function WhoCanAttend() {
     >
       <div className="w-full max-w-7xl mx-auto">
         <AnimatedSection>
+          <div className="flex justify-center mb-5">
+            <div className="w-14 h-14 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-quantum-purple">
+              <Users size={26} />
+            </div>
+          </div>
           <SectionHeading
             title="Who Can Attend"
             subtitle="A connected learning journey — Start with zero prerequisites and advance to research and hackathon builds"

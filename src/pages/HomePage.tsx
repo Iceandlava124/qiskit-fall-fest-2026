@@ -43,14 +43,14 @@ export default function HomePage() {
       {/* 8. Past Events & Archives Teaser linking to dedicated pages */}
       <PastEventsTeaser />
 
-      {/* 9. Contact Us */}
+      {/* 9. Registration CTA */}
+      <RegisterCTA />
+
+      {/* 10. Contact Us */}
       <Contact />
 
-      {/* 10. Concept Explainer (Interactive educational center) */}
+      {/* 11. Concept Explainer (Interactive educational center) */}
       <ConceptExplainer />
-
-      {/* Final Registration CTA */}
-      <RegisterCTA />
     </main>
   );
 }

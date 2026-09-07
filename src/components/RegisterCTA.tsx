@@ -14,7 +14,7 @@ export default function RegisterCTA() {
               {/* Left Column: Heading, Context & Attendee Benefits */}
               <div className="lg:col-span-7 text-center lg:text-left">
                 <p className="text-xs font-mono text-quantum-purple uppercase tracking-wider font-semibold mb-3">
-                  School of Advanced Sciences & The QuantumPlators Club, VIT Chennai
+                  Department of Mathematics, School of Advanced Sciences & The QuantumPlators Club, VIT Chennai
                 </p>
                 <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-slate-900 tracking-tight leading-[1.1] mb-6">
                   Join the Quantum Frontier at <br className="hidden sm:inline" />
@@ -79,7 +79,7 @@ export default function RegisterCTA() {
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-400">
-                    5–7 October 2026 · MG Auditorium, VIT Chennai · OFFLINE
+                    5–7 October 2026 · MG Auditorium, VIT Chennai
                   </div>
                 </div>
               </div>

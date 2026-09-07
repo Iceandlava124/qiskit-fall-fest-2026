@@ -20,29 +20,25 @@ const tracks = [
     num: '01',
     name: 'Quantum Machine Learning',
     icon: Brain,
-    desc: 'Harness parameterized quantum circuits, quantum kernels, and hybrid quantum-classical algorithms to classify high-dimensional datasets and accelerate pattern discovery.',
-    tags: ['Variational Classifiers', 'Quantum Kernels', 'Hybrid AI'],
+    image: '/stock/track-qml.jpg',
   },
   {
     num: '02',
     name: 'Quantum Cryptography & Communication',
     icon: ShieldCheck,
-    desc: 'Explore protocols for unconditionally secure information exchange including Quantum Key Distribution (QKD), BB84 simulation, entanglement distribution, and post-quantum defenses.',
-    tags: ['QKD Protocols', 'BB84 Simulation', 'Post-Quantum Security'],
+    image: '/stock/track-crypto.jpg',
   },
   {
     num: '03',
     name: 'Quantum Error Correction',
     icon: Cpu,
-    desc: 'Investigate stabilizer codes, surface code models, noise mitigation (ZNE/M3), and fault-tolerant techniques essential for scaling NISQ devices into fault-tolerant quantum computers.',
-    tags: ['Surface Codes', 'Stabilizer Formalism', 'Noise Mitigation'],
+    image: '/stock/track-qec.jpg',
   },
   {
     num: '04',
     name: 'Quantum Computing for Healthcare',
     icon: Activity,
-    desc: 'Apply quantum algorithms to accelerate biomedical research, molecular docking simulations, genomic sequence analysis, and precision medicine drug discovery pipelines.',
-    tags: ['Biomedical Research', 'Molecular Docking', 'Drug Discovery'],
+    image: '/stock/track-health.jpg',
   },
 ];
 
@@ -114,7 +110,7 @@ export default function Hackathon() {
 
                 {/* Clean Metadata Line - without team size restrictions */}
                 <p className="text-xs sm:text-sm font-mono text-slate-500">
-                  Offline at VIT Chennai <span className="mx-1.5 text-slate-300">·</span> 4 Official Tracks <span className="mx-1.5 text-slate-300">·</span> IBM Qiskit SDK <span className="mx-1.5 text-slate-300">·</span> BYOD (Bring Your Laptop)
+                  MG Auditorium, VIT Chennai <span className="mx-1.5 text-slate-300">·</span> 4 Official Tracks <span className="mx-1.5 text-slate-300">·</span> IBM Qiskit SDK <span className="mx-1.5 text-slate-300">·</span> BYOD (Bring Your Laptop)
                 </p>
               </div>
 
@@ -146,33 +142,28 @@ export default function Hackathon() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {tracks.map((t, idx) => (
               <AnimatedSection key={t.name} delay={0.15 + idx * 0.05}>
-                <div className="p-7 rounded-2xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-sm transition-all flex flex-col justify-between h-full">
-                  <div>
-                    {/* Number and icon header */}
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="text-xs font-mono text-slate-400 font-semibold">
+                <div className="rounded-2xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-sm hover:shadow-md transition-all overflow-hidden flex flex-col h-full group">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-md bg-slate-900/80 text-white backdrop-blur-xs border border-white/20">
                         Track {t.num}
                       </span>
-                      <t.icon size={20} className="text-quantum-purple" />
                     </div>
-                    <h5 className="font-heading font-bold text-slate-900 text-lg mb-3 leading-snug">
+                    <div className="absolute bottom-3 right-3 w-8 h-8 rounded-lg bg-white/95 backdrop-blur-xs flex items-center justify-center text-quantum-purple shadow-xs">
+                      <t.icon size={16} />
+                    </div>
+                  </div>
+                  <div className="p-5 flex-1 flex flex-col justify-center">
+                    <h5 className="font-heading font-bold text-slate-900 text-base leading-snug group-hover:text-quantum-purple transition-colors">
                       {t.name}
                     </h5>
-                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal mb-6">
-                      {t.desc}
-                    </p>
-                  </div>
-
-                  {/* Track Tags */}
-                  <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-1.5">
-                    {t.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-50 border border-slate-200 text-slate-600"
-                      >
-                        {tag}
-                      </span>
-                    ))}
                   </div>
                 </div>
               </AnimatedSection>

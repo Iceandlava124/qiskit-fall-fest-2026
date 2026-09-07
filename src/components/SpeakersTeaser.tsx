@@ -1,63 +1,28 @@
-import { Sparkles, Brain, Cpu, ShieldCheck, Dna, Terminal, Award, Binary, Atom } from 'lucide-react';
+import { Mic2, Users, Award } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import AnimatedSection from './AnimatedSection';
 
-const featuredSpeakers = [
+const speakerGroups = [
   {
-    name: 'Speaker 1',
-    org: 'IBM Quantum',
-    topic: 'Session 1: Quantum & Qiskit 101 (Intro & Hands-on)',
-    icon: Cpu,
-    category: 'IBM Keynote',
+    icon: Mic2,
+    title: 'IBM Quantum Keynote Speakers',
+    desc: 'Distinguished IBM Quantum researchers and practitioners delivering keynote lectures and hands-on Qiskit programming sessions.',
+    badge: 'IBM Quantum',
+    image: '/stock/speaker-keynote.jpg',
   },
   {
-    name: 'Speaker 2',
-    org: 'IBM Quantum',
-    topic: 'Session 4: Qiskit & Hands-on Quantum Programming',
-    icon: Terminal,
-    category: 'IBM Lab Lead',
+    icon: Users,
+    title: 'Invited Expert Speakers',
+    desc: 'Leading academics and industry researchers presenting across quantum machine learning, cryptography, error correction, and healthcare.',
+    badge: 'Invited Experts',
+    image: '/stock/speaker-expert.jpg',
   },
   {
-    name: 'Speaker 3',
-    org: 'Invited Expert',
-    topic: 'Session 2: Introduction to Quantum Computing',
-    icon: Atom,
-    category: 'Foundations',
-  },
-  {
-    name: 'Speaker 4',
-    org: 'Invited Expert',
-    topic: 'Session 3: Quantum Computing for Healthcare',
-    icon: Dna,
-    category: 'Healthcare',
-  },
-  {
-    name: 'Speaker 5',
-    org: 'Invited Expert',
-    topic: 'Session 5: Quantum Machine Learning',
-    icon: Brain,
-    category: 'Quantum AI',
-  },
-  {
-    name: 'Speaker 6',
-    org: 'Invited Expert',
-    topic: 'Session 6: Quantum Cryptography & Communication',
-    icon: ShieldCheck,
-    category: 'Cryptography',
-  },
-  {
-    name: 'Speaker 7',
-    org: 'Invited Expert',
-    topic: 'Session 7: Quantum Computing for Biomedical Applications',
-    icon: Sparkles,
-    category: 'Biomedical',
-  },
-  {
-    name: 'Speaker 8',
-    org: 'Invited Expert',
-    topic: 'Session 8: Hands-on QML for Biomedical Research',
-    icon: Binary,
-    category: 'Research Lab',
+    icon: Award,
+    title: 'Mentors & Hackathon Guides',
+    desc: 'Dedicated technical mentors guiding teams through all 4 hackathon tracks — available for live debugging, ideation, and circuit review.',
+    badge: 'Hackathon Mentors',
+    image: '/stock/mentor-guide.jpg',
   },
 ];
 
@@ -72,46 +37,42 @@ export default function SpeakersTeaser() {
           />
         </AnimatedSection>
 
-        {/* Speakers Grid - Clean Cards using Speaker 1, Speaker 2, etc. */}
         <AnimatedSection delay={0.1}>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-            {featuredSpeakers.map((speaker, i) => {
-              const Icon = speaker.icon;
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {speakerGroups.map((group) => {
+              const Icon = group.icon;
               return (
                 <div
-                  key={speaker.name}
-                  className="p-5 sm:p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-quantum-purple/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between group"
+                  key={group.title}
+                  className="rounded-2xl bg-slate-50 border border-slate-200 hover:border-quantum-purple/40 shadow-xs hover:shadow-md transition-all overflow-hidden flex flex-col group"
                 >
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-11 h-11 rounded-xl bg-white border border-slate-200 group-hover:border-quantum-purple/40 flex items-center justify-center text-quantum-purple shadow-xs transition-colors">
-                        <Icon size={20} />
+                  {/* Card Image Banner with Badge */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={group.image}
+                      alt={group.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent" />
+                    <div className="absolute top-3 right-3">
+                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-900/80 text-white backdrop-blur-xs border border-white/20 shadow-xs">
+                        {group.badge}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2">
+                        <Icon size={18} className="text-quantum-purple flex-shrink-0" />
+                        <h3 className="font-heading font-bold text-slate-900 text-lg group-hover:text-quantum-purple transition-colors">
+                          {group.title}
+                        </h3>
                       </div>
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-quantum-purple/10 text-quantum-purple border border-quantum-purple/20">
-                        {speaker.category}
-                      </span>
-                    </div>
-
-                    <div className="flex items-baseline justify-between mb-1">
-                      <h3 className="font-heading font-bold text-slate-900 text-lg group-hover:text-quantum-purple transition-colors">
-                        {speaker.name}
-                      </h3>
-                      <span className="text-xs font-mono font-semibold text-slate-400">
-                        0{i + 1}
-                      </span>
-                    </div>
-
-                    <span className="inline-flex items-center gap-1 text-xs font-mono font-semibold text-quantum-purple mb-3">
-                      <Award size={11} />
-                      {speaker.org}
-                    </span>
-
-                    <div className="pt-3 border-t border-slate-200/70">
-                      <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider block mb-1">
-                        Scheduled Session
-                      </span>
-                      <p className="text-xs font-semibold text-slate-800 leading-snug">
-                        {speaker.topic}
+                      <p className="text-sm text-slate-500 leading-relaxed font-normal">
+                        {group.desc}
                       </p>
                     </div>
                   </div>
@@ -119,6 +80,12 @@ export default function SpeakersTeaser() {
               );
             })}
           </div>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.2}>
+          <p className="text-center text-xs font-mono text-slate-400 mt-8">
+            Speaker confirmations will be announced closer to the event date.
+          </p>
         </AnimatedSection>
       </div>
     </section>
