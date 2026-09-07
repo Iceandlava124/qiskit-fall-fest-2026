@@ -5,13 +5,13 @@ const navLinks = [
   { href: '#about', label: 'About' },
   { href: '#organizers', label: 'Organizers' },
   { href: '#speakers', label: 'Speakers' },
-  { href: '#attend', label: 'Who Can Attend' },
+  { href: '#attend', label: 'Audience', mobileLabel: 'Who Can Attend' },
   { href: '#schedule', label: 'Schedule' },
   { href: '#hackathon', label: 'Hackathon' },
   { href: '#venue', label: 'Venue' },
-  { href: '#past-event', label: 'Past Events' },
+  { href: '#past-event', label: 'Gallery', mobileLabel: 'Past Events' },
+  { href: '#concept-explainer', label: 'Explainer', mobileLabel: 'Concept Explainer' },
   { href: '#contact', label: 'Contact' },
-  { href: '#concept-explainer', label: 'Concept Explainer' },
 ];
 
 export default function Navbar() {
@@ -63,34 +63,34 @@ export default function Navbar() {
           {/* Logo / Lockup */}
           <a
             href="#"
-            className="flex items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded group"
+            className="flex items-center gap-2.5 sm:gap-3 shrink-0 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded group mr-2"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
               <img
                 src="/logos/qiskit-logo.svg"
                 alt="IBM Qiskit Logo"
-                className="h-6 w-6 sm:h-7 sm:w-7 object-contain transition-transform group-hover:scale-105"
+                className="h-7 w-7 shrink-0 object-contain transition-transform group-hover:scale-105"
               />
-              <span className="h-4 w-px bg-slate-300" />
+              <span className="h-4 w-px bg-slate-300 shrink-0" />
               <img
                 src="/logos/vit-chennai-logo.png"
                 alt="VIT Chennai Logo"
-                className="h-5 sm:h-6 w-auto object-contain max-w-[75px] sm:max-w-none"
+                className="h-6 w-auto shrink-0 object-contain max-h-6"
               />
             </div>
-            <div className="flex items-baseline gap-1 font-heading font-bold text-slate-900 text-sm sm:text-base tracking-tight">
+            <div className="flex items-baseline gap-1 font-heading font-bold text-slate-900 text-sm sm:text-base tracking-tight shrink-0 whitespace-nowrap">
               <span>Qiskit Fall Fest</span>
               <span className="text-quantum-purple font-mono text-xs font-semibold">2026</span>
             </div>
           </a>
 
           {/* Desktop links */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3.5 2xl:gap-5 shrink-0">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-600 hover:text-quantum-purple transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded px-1"
+                className="text-xs xl:text-sm font-medium text-slate-600 hover:text-quantum-purple transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple rounded px-1.5 py-1 whitespace-nowrap"
               >
                 {link.label}
               </a>
@@ -99,7 +99,7 @@ export default function Navbar() {
             {/* Quick Share Button */}
             <button
               onClick={handleShare}
-              className="text-slate-600 hover:text-quantum-purple p-2 rounded-lg border border-transparent hover:border-slate-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple"
+              className="text-slate-600 hover:text-quantum-purple p-1.5 rounded-lg border border-transparent hover:border-slate-200 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple shrink-0"
               title={copied ? 'Link Copied!' : 'Share Site'}
               aria-label="Share Event Link"
             >
@@ -109,7 +109,7 @@ export default function Navbar() {
             {/* Register CTA - Solid #6929c4 */}
             <a
               href="#register"
-              className="px-5 py-2 text-sm font-semibold rounded-lg bg-quantum-purple hover:bg-quantum-purple-light text-white shadow-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple"
+              className="px-4 py-2 text-xs xl:text-sm font-semibold rounded-lg bg-quantum-purple hover:bg-quantum-purple-light text-white shadow-md transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple shrink-0 whitespace-nowrap"
             >
               Register Now
             </a>
@@ -148,7 +148,7 @@ export default function Navbar() {
                 className="block text-slate-700 hover:text-quantum-purple transition-colors py-2.5 px-3 rounded-lg hover:bg-slate-50 font-medium text-sm"
                 onClick={() => setIsOpen(false)}
               >
-                {link.label}
+                {link.mobileLabel || link.label}
               </a>
             ))}
             <a

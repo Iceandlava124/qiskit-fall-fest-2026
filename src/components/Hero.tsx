@@ -22,8 +22,7 @@ export default function Hero() {
                 <img src="/logos/qiskit-logo.svg" alt="IBM Qiskit Logo" className="h-5 sm:h-6 w-auto" />
                 <span className="text-xs font-bold text-slate-800 tracking-wider font-mono uppercase">IBM Quantum</span>
                 <span className="h-3.5 w-px bg-slate-300" />
-                <img src="/logos/vit-chennai-logo.png" alt="VIT Chennai Logo" className="h-4 sm:h-5 w-auto object-contain" />
-                <span className="text-xs font-semibold text-slate-600 hidden sm:inline">VIT Chennai</span>
+                <img src="/logos/vit-chennai-logo.png" alt="VIT Chennai" className="h-5 sm:h-6 w-auto object-contain" />
               </div>
             </AnimatedSection>
 

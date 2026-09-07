@@ -281,14 +281,91 @@ export default function BlochSphere() {
   }, []);
 
   if (!webGlSupported) {
+    const r = 78;
+    const cx = 110;
+    const cy = 110;
+    const x3d = Math.sin(activePreset.theta) * Math.cos(activePreset.phi);
+    const y3d = Math.cos(activePreset.theta);
+    const z3d = Math.sin(activePreset.theta) * Math.sin(activePreset.phi);
+    const targetX = cx + (x3d * 0.85 - z3d * 0.4) * r;
+    const targetY = cy - (y3d * 0.95 + z3d * 0.2) * r;
+
     return (
-      <div className="flex flex-col items-center justify-center p-8 rounded-3xl glass-panel text-center max-w-sm">
-        <div className="w-16 h-16 rounded-full bg-quantum-purple/20 flex items-center justify-center text-quantum-purple text-xl font-mono mb-3">
-          |ψ⟩
+      <div className="flex flex-col items-center w-full max-w-md mx-auto select-none" role="region" aria-label="Bloch Sphere Simulator">
+        <div className="relative w-full aspect-square max-w-[280px] sm:max-w-[320px] mx-auto flex items-center justify-center p-2">
+          {/* Ambient background glow */}
+          <div className="absolute inset-2 rounded-full bg-quantum-purple/10 blur-2xl pointer-events-none" />
+
+          {/* SVG Vector Bloch Sphere */}
+          <svg viewBox="0 0 220 220" className="w-full h-full relative z-10 overflow-visible">
+            <defs>
+              <marker id="arrowhead-svg" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+                <polygon points="0 0, 8 3, 0 6" fill="#6929C4" />
+              </marker>
+            </defs>
+
+            {/* Sphere outline */}
+            <circle cx={cx} cy={cy} r={r} fill="#FAF5FF" stroke="#C084FC" strokeWidth="1.5" strokeOpacity="0.5" />
+            
+            {/* Equator ellipse */}
+            <ellipse cx={cx} cy={cy} rx={r} ry={r * 0.32} fill="none" stroke="#9333EA" strokeWidth="1" strokeDasharray="3 3" strokeOpacity="0.5" />
+            
+            {/* Z axis (vertical) */}
+            <line x1={cx} y1={cy - r - 10} x2={cx} y2={cy + r + 10} stroke="#64748B" strokeWidth="1" strokeDasharray="2 2" />
+            <text x={cx} y={cy - r - 14} textAnchor="middle" className="text-[11px] font-mono font-bold fill-purple-700">|0⟩</text>
+            <text x={cx} y={cy + r + 20} textAnchor="middle" className="text-[11px] font-mono font-bold fill-purple-700">|1⟩</text>
+            
+            {/* X axis */}
+            <line x1={cx - r * 0.75} y1={cy + r * 0.3} x2={cx + r * 0.75} y2={cy - r * 0.3} stroke="#94A3B8" strokeWidth="1" />
+            <text x={cx - r * 0.75 - 10} y={cy + r * 0.3 + 8} textAnchor="middle" className="text-[9px] font-mono fill-slate-500">|+x⟩</text>
+            
+            {/* Y axis */}
+            <line x1={cx - r - 6} y1={cy} x2={cx + r + 6} y2={cy} stroke="#94A3B8" strokeWidth="1" />
+            <text x={cx + r + 14} y={cy + 3} textAnchor="start" className="text-[9px] font-mono fill-slate-500">|+y⟩</text>
+
+            {/* State Vector Arrow */}
+            <line
+              x1={cx}
+              y1={cy}
+              x2={targetX}
+              y2={targetY}
+              stroke="#6929C4"
+              strokeWidth="2.5"
+              markerEnd="url(#arrowhead-svg)"
+              className="transition-all duration-300 ease-out"
+            />
+            {/* Center origin */}
+            <circle cx={cx} cy={cy} r="3" fill="#6929C4" />
+            {/* Vector tip glowing dot */}
+            <circle cx={targetX} cy={targetY} r="4" fill="#6929C4" />
+          </svg>
+
+          {/* Dynamic State Equation Chip */}
+          <div className="absolute bottom-1 right-1 text-xs font-mono text-quantum-purple bg-white/95 px-3 py-1.5 rounded-lg border border-quantum-purple/30 shadow-md backdrop-blur-md z-20">
+            {activePreset.formula}
+          </div>
         </div>
-        <div className="font-heading font-bold text-slate-900 text-base mb-1">Bloch Sphere</div>
-        <p className="text-xs text-quantum-text-secondary">
-          WebGL acceleration disabled. State: <span className="text-quantum-purple">{activePreset.formula}</span>
+
+        {/* State Presets Buttons */}
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-1.5 p-1.5 rounded-xl border border-slate-200 bg-white/90 backdrop-blur-md shadow-sm">
+          <span className="text-[11px] font-mono text-slate-500 px-2 font-medium">State:</span>
+          {presets.map((p) => (
+            <button
+              key={p.label}
+              onClick={() => setActivePreset(p)}
+              className={`px-3 py-1 text-xs font-mono rounded-lg transition-all ${
+                activePreset.label === p.label
+                  ? 'bg-quantum-purple text-white font-bold shadow-sm ring-1 ring-quantum-purple'
+                  : 'text-slate-600 hover:text-quantum-purple hover:bg-slate-100'
+              }`}
+              title={`${p.name} (${p.label})`}
+            >
+              {p.label}
+            </button>
+          ))}
+        </div>
+        <p className="text-[10px] font-mono text-slate-500 mt-2 text-center">
+          (click presets to transform state vector)
         </p>
       </div>
     );
