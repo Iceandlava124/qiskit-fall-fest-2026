@@ -12,10 +12,7 @@ export default function Organizers() {
     <section id="organizers" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto">
         <AnimatedSection>
-          <SectionHeading
-            title="Patrons & Organizing Committee"
-            subtitle="University leadership, faculty convenors, and student organizers for Qiskit Fall Fest 2026 at VIT Chennai"
-          />
+          <SectionHeading title="Patrons & Organizing Committee" />
         </AnimatedSection>
 
         {/* 1. Chief Patron */}
@@ -108,9 +105,6 @@ export default function Organizers() {
               <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900">
                 Organizing Committee
               </h3>
-              <p className="text-sm text-slate-600 mt-1">
-                Faculty convenors, department leadership, and student organizers for Qiskit Fall Fest 2026
-              </p>
             </div>
           </AnimatedSection>
 
