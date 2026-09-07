@@ -300,7 +300,7 @@ qc.measure(0, 0)`;
                 Core Quantum Curriculum & Problem Tracks
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 mt-1">
-                Theoretical and algorithmic foundations taught throughout the 4-day festival
+                Theoretical and algorithmic foundations taught throughout the 3-day festival
               </p>
             </div>
 

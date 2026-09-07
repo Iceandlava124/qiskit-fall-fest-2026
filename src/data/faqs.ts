@@ -42,6 +42,6 @@ export const faqs: FAQItem[] = [
   {
     question: 'What is the format and duration of Qiskit Fall Fest 2026?',
     answer:
-      'The event is an offline 4-day programme held from 7–10 October 2026 at MG Auditorium, VIT Chennai. It encompasses expert technical keynotes and workshops by IBM India researchers, hands-on Qiskit hardware programming labs, and a full-day quantum hackathon sprint culminating in team demonstrations and valedictory awards.',
+      'The event is an offline 3-day programme held from 5–7 October 2026 at MG Auditorium, VIT Chennai. It encompasses 8 technical sessions and hands-on coding labs, IBM Quantum guest lectures, and a dedicated 4-track hackathon spanning Quantum Machine Learning, Cryptography & Communication, Quantum Error Correction, and Quantum Computing for Healthcare.',
   },
 ];

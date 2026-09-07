@@ -28,9 +28,9 @@ const stats: MetricStat[] = [
   },
   {
     icon: Calendar,
-    value: '4 Days',
+    value: '3 Days',
     label: 'Offline Programme',
-    sub: '7–10 October 2026 at VIT Chennai',
+    sub: '5–7 October 2026 at VIT Chennai',
     status: 'confirmed',
   },
   {
@@ -55,7 +55,7 @@ export default function MetricsBar() {
                 Mark Your Calendar
               </h3>
               <p className="text-sm text-slate-600 max-w-sm mb-6 leading-relaxed">
-                Inauguration ceremony at MG Auditorium, VIT Chennai on October 7, 2026 at 10:00 AM.
+                Inauguration ceremony at MG Auditorium, VIT Chennai on October 5, 2026 at 09:00 AM.
               </p>
               <EventCountdown />
             </AnimatedSection>

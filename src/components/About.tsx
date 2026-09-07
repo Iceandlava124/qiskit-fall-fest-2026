@@ -20,7 +20,7 @@ export default function About() {
             <AnimatedSection delay={0.1}>
               <div className="p-8 sm:p-9 rounded-2xl bg-slate-50 border-l-4 border-l-quantum-purple border border-slate-200 shadow-sm">
                 <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
-                  Qiskit Fall Fest 2026 at VIT Chennai is a 4-day premier quantum computing event bringing together 400–500 students, researchers, technology enthusiasts, and industry professionals to explore the rapidly advancing frontiers of quantum computing.
+                  Qiskit Fall Fest 2026 at VIT Chennai is a 3-day premier quantum computing event bringing together 400–500 students, researchers, technology enthusiasts, and industry professionals to explore the rapidly advancing frontiers of quantum computing.
                 </p>
               </div>
             </AnimatedSection>
@@ -85,7 +85,7 @@ export default function About() {
                     <Award size={18} className="text-quantum-purple mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-xs font-mono text-slate-500 uppercase">Duration & Dates</div>
-                      <div className="text-sm font-medium text-slate-800">4 Days · 7–10 October 2026</div>
+                      <div className="text-sm font-medium text-slate-800">3 Days · 5–7 October 2026</div>
                     </div>
                   </div>
                 </div>
