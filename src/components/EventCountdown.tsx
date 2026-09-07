@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
 export default function EventCountdown() {
-  // Target: October 5, 2026 (Opening Ceremony)
-  const targetDate = new Date('2026-10-05T09:00:00+05:30').getTime();
+  // Target: October 7, 2026 at 10:00 AM (Inauguration Ceremony)
+  const targetDate = new Date('2026-10-07T10:00:00+05:30').getTime();
 
   const [timeLeft, setTimeLeft] = useState(() => {
     const diff = Math.max(0, targetDate - Date.now());

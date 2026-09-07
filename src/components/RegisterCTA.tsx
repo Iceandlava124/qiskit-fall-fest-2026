@@ -79,7 +79,7 @@ export default function RegisterCTA() {
                   </div>
 
                   <div className="pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-400">
-                    5–7 October 2026 · MG Auditorium, VIT Chennai · OFFLINE
+                    7–10 October 2026 · MG Auditorium, VIT Chennai · OFFLINE
                   </div>
                 </div>
               </div>
