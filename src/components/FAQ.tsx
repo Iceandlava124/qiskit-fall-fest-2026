@@ -84,7 +84,7 @@ export default function FAQ() {
           <div className="mt-12 p-6 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
             <div>
               <p className="text-sm font-semibold text-slate-900">Still have questions about OD letters or team eligibility?</p>
-              <p className="text-xs text-slate-500 mt-0.5">The QuantumPlators student organizing team is here to help.</p>
+              <p className="text-xs text-slate-500 mt-0.5">The organizing team from School of Advanced Sciences and The QuantumPlators Club at VIT Chennai is here to help.</p>
             </div>
             <a
               href="mailto:quantumplators@vit.ac.in"

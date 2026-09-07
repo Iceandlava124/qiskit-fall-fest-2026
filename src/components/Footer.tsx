@@ -10,7 +10,7 @@ export default function Footer() {
               Qiskit Fall Fest <span className="text-quantum-purple">2026</span>
             </h3>
             <p className="text-sm font-medium text-slate-800">
-              VIT Chennai × The QuantumPlators Club
+              School of Advanced Sciences & The QuantumPlators Club, VIT Chennai
             </p>
             <p className="text-xs text-slate-600 leading-relaxed max-w-md">
               MG Auditorium, Vellore Institute of Technology, Vandalur-Kelambakkam Road, Keelakottaiyur, Chennai, Tamil Nadu 600127.
@@ -154,7 +154,7 @@ export default function Footer() {
 
         {/* Bottom Credits Bar */}
         <div className="mt-16 pt-8 border-t border-slate-200 text-xs font-mono text-slate-500">
-          <p>© 2026 The QuantumPlators — VIT Chennai. All rights reserved.</p>
+          <p>© 2026 School of Advanced Sciences & The QuantumPlators Club — VIT Chennai. All rights reserved.</p>
         </div>
       </div>
     </footer>

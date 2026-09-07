@@ -3,7 +3,6 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import MetricsBar from './components/MetricsBar';
 import About from './components/About';
-import Experience from './components/Experience';
 import Organizers from './components/Organizers';
 import SpeakersTeaser from './components/SpeakersTeaser';
 import WhoCanAttend from './components/WhoCanAttend';
@@ -27,7 +26,6 @@ function App() {
 
         {/* 1. About */}
         <About />
-        <Experience />
 
         {/* 2. Organizers */}
         <Organizers />

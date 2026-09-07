@@ -29,7 +29,7 @@ export default function About() {
 
             <AnimatedSection delay={0.16}>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-prose">
-                Organized by The QuantumPlators Club at VIT Chennai, the event takes students beyond
+                Organized by the School of Advanced Sciences (SAS) and The QuantumPlators Club at VIT Chennai, the event takes students beyond
                 the classroom through 8 technical sessions, IBM Quantum speaker keynotes, hands-on programming labs,
                 and a 4-track quantum hackathon spanning biomedical research, machine learning, cryptography, and error correction.
               </p>
@@ -53,6 +53,14 @@ export default function About() {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3.5 p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
                     <Users size={18} className="text-quantum-purple mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-xs font-mono text-slate-500 uppercase">Organizers</div>
+                      <div className="text-sm font-medium text-slate-800">School of Advanced Sciences & The QuantumPlators Club, VIT Chennai</div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3.5 p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
+                    <Award size={18} className="text-quantum-purple mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-xs font-mono text-slate-500 uppercase">Theme</div>
                       <div className="text-sm font-medium text-slate-800">Quantum Computing for Biomedical Applications</div>

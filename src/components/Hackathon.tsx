@@ -11,6 +11,8 @@ import {
   Terminal,
   Code,
   CheckCircle,
+  ArrowRight,
+  ArrowDown,
 } from 'lucide-react';
 
 const tracks = [
@@ -56,7 +58,7 @@ const flowSteps = [
     num: '02',
     title: 'Team Formation & Mentors',
     time: 'Day 2 · 03:30 PM',
-    desc: 'Finalize teams (2–4 members), connect with technical mentors, and structure circuit architectures.',
+    desc: 'Connect with technical mentors, structure circuit architectures, and formulate problem approaches.',
     icon: Users,
   },
   {
@@ -110,9 +112,9 @@ export default function Hackathon() {
                   receive guidance from IBM and academic mentors, and compete for prestige and awards.
                 </p>
 
-                {/* Metadata Line */}
+                {/* Clean Metadata Line - without team size restrictions */}
                 <p className="text-xs sm:text-sm font-mono text-slate-500">
-                  Team Size: 2–4 Members <span className="mx-1.5 text-slate-300">·</span> Offline at VIT Chennai <span className="mx-1.5 text-slate-300">·</span> 4 Official Tracks <span className="mx-1.5 text-slate-300">·</span> BYOD (Bring Your Laptop)
+                  Offline at VIT Chennai <span className="mx-1.5 text-slate-300">·</span> 4 Official Tracks <span className="mx-1.5 text-slate-300">·</span> IBM Qiskit SDK <span className="mx-1.5 text-slate-300">·</span> BYOD (Bring Your Laptop)
                 </p>
               </div>
 
@@ -178,7 +180,7 @@ export default function Hackathon() {
           </div>
         </div>
 
-        {/* Hackathon Flow Timeline Cards */}
+        {/* Hackathon Flow Timeline Cards with Connected Arrow Marks */}
         <div>
           <AnimatedSection delay={0.25}>
             <div className="mb-8">
@@ -191,34 +193,64 @@ export default function Hackathon() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-5 sm:gap-6">
-            {flowSteps.map((step, i) => (
-              <AnimatedSection key={step.num} delay={0.25 + i * 0.06}>
-                <div className="p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-sm transition-all flex flex-col justify-between h-full">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-3xl font-heading font-extrabold text-slate-900">
-                        {step.num}
-                      </span>
-                      <step.icon size={18} className="text-quantum-purple" />
-                    </div>
-                    <div className="text-[11px] font-mono text-quantum-purple font-semibold mb-1.5">
-                      {step.time}
-                    </div>
-                    <h5 className="font-heading font-bold text-slate-900 text-base mb-2">
-                      {step.title}
-                    </h5>
-                    <p className="text-xs text-slate-500 leading-relaxed">
-                      {step.desc}
-                    </p>
-                  </div>
+          {/* Connected Flow Container */}
+          <div className="relative">
+            {/* Horizontal guide line across desktop cards */}
+            <div className="hidden xl:block absolute top-1/2 left-10 right-10 h-[2px] bg-slate-200 -translate-y-1/2 z-0 pointer-events-none" />
 
-                  <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-400">
-                    Milestone 0{i + 1}
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-4 sm:gap-6 relative z-10">
+              {flowSteps.map((step, i) => (
+                <div key={step.num} className="flex flex-col xl:block">
+                  <AnimatedSection delay={0.25 + i * 0.06} className="h-full">
+                    <div className="relative p-6 sm:p-7 rounded-2xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-xs hover:shadow-md transition-all flex flex-col justify-between h-full group">
+                      <div>
+                        <div className="flex items-center justify-between mb-4">
+                          <span className="text-3xl font-heading font-extrabold text-slate-900">
+                            {step.num}
+                          </span>
+                          <step.icon size={18} className="text-quantum-purple" />
+                        </div>
+                        <div className="text-[11px] font-mono text-quantum-purple font-semibold mb-1.5">
+                          {step.time}
+                        </div>
+                        <h5 className="font-heading font-bold text-slate-900 text-base mb-2">
+                          {step.title}
+                        </h5>
+                        <p className="text-xs text-slate-500 leading-relaxed">
+                          {step.desc}
+                        </p>
+                      </div>
+
+                      <div className="mt-6 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-400">
+                        Milestone 0{i + 1}
+                      </div>
+
+                      {/* Directional Arrow Mark for Desktop (Rightward) */}
+                      {i < flowSteps.length - 1 && (
+                        <div
+                          className="hidden xl:flex absolute -right-3.5 sm:-right-4 top-1/2 -translate-y-1/2 z-20 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200 shadow-sm items-center justify-center text-quantum-purple group-hover:border-quantum-purple/50 transition-colors pointer-events-none"
+                          aria-hidden="true"
+                        >
+                          <ArrowRight size={14} className="stroke-[2.5]" />
+                        </div>
+                      )}
+                    </div>
+                  </AnimatedSection>
+
+                  {/* Directional Arrow Mark for Mobile/Tablet (Downward) */}
+                  {i < flowSteps.length - 1 && (
+                    <div
+                      className="xl:hidden flex items-center justify-center my-2 sm:my-3 text-quantum-purple"
+                      aria-hidden="true"
+                    >
+                      <div className="w-7 h-7 rounded-full bg-white border border-slate-200 shadow-xs flex items-center justify-center">
+                        <ArrowDown size={14} className="stroke-[2.5]" />
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </AnimatedSection>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 
