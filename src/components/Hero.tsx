@@ -42,10 +42,10 @@ export default function Hero() {
               </p>
             </AnimatedSection>
 
-            {/* Quiet Stat Line */}
+            {/* Stat Line */}
             <AnimatedSection delay={0.16}>
               <p className="text-xs sm:text-sm font-mono text-slate-500 mb-8">
-                400–500 Expected Delegates <span className="mx-1.5 text-slate-300">·</span> 3 Days <span className="mx-1.5 text-slate-300">·</span> 8 Technical Sessions <span className="mx-1.5 text-slate-300">·</span> 4 Hackathon Tracks
+                1,000+ Students <span className="mx-1.5 text-slate-300">·</span> 50+ Regional Colleges <span className="mx-1.5 text-slate-300">·</span> 3 Days <span className="mx-1.5 text-slate-300">·</span> Hands-on Hackathon
               </p>
             </AnimatedSection>
 

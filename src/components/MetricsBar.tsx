@@ -14,23 +14,23 @@ interface MetricStat {
 const stats: MetricStat[] = [
   {
     icon: Users,
-    value: '400–500',
-    label: 'Expected Participants',
-    sub: 'Students, researchers & faculty',
-    status: 'confirmed',
+    value: '1,000+',
+    label: 'Student Attendees',
+    sub: 'Regional university enrollment',
+    status: 'target',
+  },
+  {
+    icon: Building2,
+    value: '50+',
+    label: 'Partner Colleges',
+    sub: 'Institutions across the region',
+    status: 'target',
   },
   {
     icon: Calendar,
     value: '3 Days',
     label: 'Offline Programme',
     sub: '5–7 October 2026 at VIT Chennai',
-    status: 'confirmed',
-  },
-  {
-    icon: Building2,
-    value: '8 Sessions',
-    label: 'Keynotes & Hands-on Labs',
-    sub: 'Includes IBM Quantum speakers',
     status: 'confirmed',
   },
   {
