@@ -1,158 +1,80 @@
-import { useState } from 'react';
 import AnimatedSection from './AnimatedSection';
 import SectionHeading from './SectionHeading';
 import { schedule } from '../data/schedule';
-import { Clock, Tag, User } from 'lucide-react';
+import { Clock, Calendar, MapPin } from 'lucide-react';
 
 export default function Schedule() {
-  const [selectedFilter, setSelectedFilter] = useState<string>('all');
-
-  const filteredSchedule =
-    selectedFilter === 'all'
-      ? schedule
-      : schedule.filter((s) => s.dayLabel.toLowerCase().includes(selectedFilter.toLowerCase()));
-
-  const tabs = [
-    { id: 'all', label: 'All 3 Days', ariaLabel: 'View complete 3-day schedule overview' },
-    { id: 'Day 1', label: 'Day 1 (Oct 5)', ariaLabel: 'View Day 1 schedule: Foundations & Healthcare Horizons' },
-    { id: 'Day 2', label: 'Day 2 (Oct 6)', ariaLabel: 'View Day 2 schedule: Advanced Paradigms & Hackathon Release' },
-    { id: 'Day 3', label: 'Day 3 (Oct 7)', ariaLabel: 'View Day 3 schedule: Submissions, Demos & Valedictory' },
-  ];
-
-  const handleKeyDown = (e: React.KeyboardEvent, index: number) => {
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      const nextIndex = (index + 1) % tabs.length;
-      setSelectedFilter(tabs[nextIndex].id);
-      const nextEl = document.getElementById(`schedule-tab-${tabs[nextIndex].id}`);
-      nextEl?.focus();
-    } else if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      const prevIndex = (index - 1 + tabs.length) % tabs.length;
-      setSelectedFilter(tabs[prevIndex].id);
-      const prevEl = document.getElementById(`schedule-tab-${tabs[prevIndex].id}`);
-      prevEl?.focus();
-    }
-  };
-
   return (
     <section id="schedule" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto relative z-10">
         <AnimatedSection>
-          <SectionHeading
-            title="Event Schedule"
-            subtitle="3-day offline programme at VIT Chennai featuring 8 technical sessions, IBM Quantum speakers, and hackathon"
-          />
+          <SectionHeading title="Event Schedule" />
         </AnimatedSection>
 
-        {/* Accessible Keyboard-Navigable Day Filter Tabs */}
-        <AnimatedSection delay={0.1}>
-          <div
-            role="tablist"
-            aria-label="Filter schedule by day"
-            className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-16 p-2 rounded-xl bg-slate-50 border border-slate-200 shadow-sm max-w-4xl mx-auto"
-          >
-            {tabs.map((tab, idx) => {
-              const isSelected = selectedFilter === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  id={`schedule-tab-${tab.id}`}
-                  role="tab"
-                  aria-selected={isSelected}
-                  aria-controls="schedule-content-panel"
-                  aria-label={tab.ariaLabel}
-                  tabIndex={isSelected ? 0 : -1}
-                  onKeyDown={(e) => handleKeyDown(e, idx)}
-                  onClick={() => setSelectedFilter(tab.id)}
-                  className={`px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-quantum-purple ${
-                    isSelected
-                      ? 'bg-quantum-purple text-white font-semibold shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
-        </AnimatedSection>
+        {/* Horizontal Timeline Container */}
+        <div className="relative mt-8">
+          {/* Continuous Connecting Horizontal Line Across Days (Desktop) */}
+          <div className="hidden lg:block absolute top-6 left-[16%] right-[16%] h-1 bg-gradient-to-r from-quantum-purple via-quantum-purple to-quantum-purple/40 rounded-full z-0" />
 
-        {/* Spacious Schedule Days Container */}
-        <div
-          id="schedule-content-panel"
-          role="tabpanel"
-          aria-labelledby={`schedule-tab-${selectedFilter}`}
-          className="space-y-12 sm:space-y-16"
-        >
-          {filteredSchedule.map((day, i) => (
-            <AnimatedSection key={day.dayLabel} delay={i * 0.08}>
-              <div className="p-8 sm:p-12 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm relative">
-                {/* Header Row: Title & Clean Subtitle */}
-                <div className="border-b border-slate-200 pb-8 mb-8">
-                  <p className="text-xs font-mono text-quantum-purple uppercase tracking-wider mb-2 font-semibold">
-                    {day.dayLabel} <span className="mx-2 text-slate-300">·</span> {day.date} <span className="mx-2 text-slate-300">·</span> MG Auditorium, VIT Chennai
-                  </p>
-
-                  <h3 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 mb-2">
-                    {day.title}
-                  </h3>
-                  <p className="text-base sm:text-lg text-slate-600 font-light">
-                    {day.subtitle}
-                  </p>
-                </div>
-
-                {/* Structured Sessions Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                  {day.sessions.map((session) => (
-                    <div
-                      key={session.title}
-                      className="p-6 sm:p-7 rounded-xl bg-white border border-slate-200 hover:border-quantum-purple/40 shadow-xs transition-all flex flex-col justify-between"
-                    >
-                      <div>
-                        {/* Timeframe */}
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="inline-flex items-center gap-1.5 text-quantum-purple font-mono text-xs font-semibold">
-                            <Clock size={12} />
-                            {session.timeframe}
-                          </span>
-                          {session.speaker && (
-                            <span className="inline-flex items-center gap-1 text-xs font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
-                              <User size={11} className="text-quantum-purple" />
-                              {session.speaker}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* Session Title */}
-                        <h4 className="font-heading font-bold text-slate-900 text-lg sm:text-xl mb-2.5">
-                          {session.title}
-                        </h4>
-
-                        {/* Session Description */}
-                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 font-normal">
-                          {session.description}
-                        </p>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="pt-4 border-t border-slate-100 flex flex-wrap gap-2">
-                        {session.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="inline-flex items-center gap-1 text-[11px] font-mono px-2.5 py-1 rounded bg-slate-50 border border-slate-200 text-slate-600"
-                          >
-                            <Tag size={10} className="text-quantum-purple" />
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
+          {/* 3-Day Horizontal Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative z-10">
+            {schedule.map((day, dIdx) => (
+              <AnimatedSection key={day.dayLabel} delay={dIdx * 0.1}>
+                <div className="flex flex-col h-full">
+                  {/* Timeline Step Marker & Header */}
+                  <div className="flex flex-col items-center text-center mb-6">
+                    {/* Circle Node */}
+                    <div className="w-12 h-12 rounded-full bg-white border-4 border-quantum-purple shadow-md flex items-center justify-center font-heading font-extrabold text-quantum-purple text-base mb-3 transition-transform hover:scale-110">
+                      0{dIdx + 1}
                     </div>
-                  ))}
+                    <h3 className="font-heading font-extrabold text-2xl text-slate-900 mb-1">
+                      {day.dayLabel}
+                    </h3>
+                    <p className="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-quantum-purple bg-quantum-purple/10 px-3 py-1 rounded-full border border-quantum-purple/20">
+                      <Calendar size={12} />
+                      {day.date}
+                    </p>
+                  </div>
+
+                  {/* Day Events Card */}
+                  <div className="p-6 sm:p-7 rounded-2xl bg-slate-50 border border-slate-200 hover:border-quantum-purple/40 shadow-sm transition-all flex-1 flex flex-col">
+                    <div className="mb-4 pb-3 border-b border-slate-200/80 flex items-center justify-between text-xs font-mono text-slate-500">
+                      <span className="font-semibold text-slate-700 truncate pr-2">{day.title}</span>
+                      <span className="inline-flex items-center gap-1 text-[11px] text-slate-500 shrink-0">
+                        <MapPin size={11} className="text-quantum-purple" />
+                        MG Audi
+                      </span>
+                    </div>
+
+                    {/* Clean Event Items without descriptions */}
+                    <ul className="space-y-3 flex-1">
+                      {day.sessions.map((session, sIdx) => (
+                        <li
+                          key={sIdx}
+                          className="p-3.5 rounded-xl bg-white border border-slate-200/90 shadow-xs hover:border-quantum-purple/40 hover:shadow-sm transition-all"
+                        >
+                          <div className="flex items-center justify-between gap-2 mb-1">
+                            <span className="inline-flex items-center gap-1 text-[11px] font-mono font-semibold text-quantum-purple">
+                              <Clock size={11} />
+                              {session.timeframe}
+                            </span>
+                            {session.speaker && (
+                              <span className="text-[10px] font-mono font-medium text-slate-600 bg-slate-100 px-2 py-0.5 rounded shrink-0">
+                                {session.speaker}
+                              </span>
+                            )}
+                          </div>
+                          <h4 className="font-heading font-semibold text-slate-900 text-sm leading-snug">
+                            {session.title}
+                          </h4>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              </div>
-            </AnimatedSection>
-          ))}
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
       </div>
     </section>
