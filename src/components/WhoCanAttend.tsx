@@ -136,7 +136,7 @@ export default function WhoCanAttend() {
               <span className="text-quantum-purple">→</span>
               <span>Qiskit SDK</span>
               <span className="text-quantum-purple">→</span>
-              <span>Biomedical QML</span>
+              <span>QML & Algorithms</span>
               <span className="text-quantum-purple">→</span>
               <span className="font-bold text-slate-900">Hackathon Deployment</span>
             </div>

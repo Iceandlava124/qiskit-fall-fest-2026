@@ -23,7 +23,7 @@ export default function RegisterCTA() {
 
                 <p className="text-base sm:text-lg text-slate-600 mb-8 leading-relaxed font-normal max-w-2xl mx-auto lg:mx-0">
                   Three days of quantum computing workshops, IBM Quantum keynotes, circuit design labs,
-                  hackathon challenges, and biomedical innovation. Secure your spot today.
+                  hackathon challenges, and hands-on quantum innovation. Secure your spot today.
                 </p>
 
                 {/* Attendee Perks Grid */}

@@ -19,10 +19,10 @@ export const schedule: ScheduleEntry[] = [
   {
     dayLabel: 'Day 1',
     date: 'October 5, 2026',
-    title: 'Foundations & Healthcare Horizons',
+    title: 'Quantum Foundations & SDK Architecture',
     subtitle: 'Inauguration, Quantum & Qiskit 101, Core Principles & Hands-on Programming',
     content:
-      'Grand inauguration at MG Auditorium, introductory quantum lectures, quantum computing for healthcare, and guided hands-on Qiskit programming with IBM Quantum speakers.',
+      'Grand inauguration at MG Auditorium, introductory quantum lectures, quantum computing foundations, and guided hands-on Qiskit programming with IBM Quantum speakers.',
     sessions: [
       {
         timeframe: '09:00 AM – 10:00 AM',
@@ -67,9 +67,9 @@ export const schedule: ScheduleEntry[] = [
     dayLabel: 'Day 2',
     date: 'October 6, 2026',
     title: 'Advanced Paradigms & Hackathon Release',
-    subtitle: 'Quantum ML, Cryptography, Biomedical Applications & Hackathon Sprint Kickoff',
+    subtitle: 'Quantum ML, Cryptography, Domain Applications & Hackathon Sprint Kickoff',
     content:
-      'In-depth exploration of Quantum Machine Learning, Cryptography & Communication, Biomedical applications, hands-on research labs, and release of the official Hackathon problem statements.',
+      'In-depth exploration of Quantum Machine Learning, Cryptography & Communication, domain applications, hands-on research labs, and release of the official Hackathon problem statements.',
     sessions: [
       {
         timeframe: '09:00 AM – 10:00 AM',

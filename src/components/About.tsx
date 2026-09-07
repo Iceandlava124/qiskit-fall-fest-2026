@@ -20,9 +20,7 @@ export default function About() {
             <AnimatedSection delay={0.1}>
               <div className="p-8 sm:p-9 rounded-2xl bg-slate-50 border-l-4 border-l-quantum-purple border border-slate-200 shadow-sm">
                 <p className="text-base sm:text-lg text-slate-800 leading-relaxed font-normal">
-                  Qiskit Fall Fest 2026 at VIT Chennai is a 3-day premier quantum computing event centered on
-                  <strong className="text-quantum-purple font-semibold"> Quantum Computing for Biomedical Applications</strong>,
-                  bringing together 400–500 students, researchers, technology enthusiasts, and industry professionals.
+                  Qiskit Fall Fest 2026 at VIT Chennai is a 3-day premier quantum computing event bringing together 400–500 students, researchers, technology enthusiasts, and industry professionals to explore the rapidly advancing frontiers of quantum computing.
                 </p>
               </div>
             </AnimatedSection>
@@ -31,7 +29,7 @@ export default function About() {
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-prose">
                 Organized by the School of Advanced Sciences (SAS) and The QuantumPlators Club at VIT Chennai, the event takes students beyond
                 the classroom through 8 technical sessions, IBM Quantum speaker keynotes, hands-on programming labs,
-                and a 4-track quantum hackathon spanning biomedical research, machine learning, cryptography, and error correction.
+                and a 4-track quantum hackathon spanning machine learning, cryptography, error correction, and scientific computing.
               </p>
             </AnimatedSection>
 
@@ -62,8 +60,8 @@ export default function About() {
                   <div className="flex items-start gap-3.5 p-3 rounded-xl bg-white border border-slate-200 shadow-xs">
                     <Award size={18} className="text-quantum-purple mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-xs font-mono text-slate-500 uppercase">Theme</div>
-                      <div className="text-sm font-medium text-slate-800">Quantum Computing for Biomedical Applications</div>
+                      <div className="text-xs font-mono text-slate-500 uppercase">Focus Area</div>
+                      <div className="text-sm font-medium text-slate-800">Quantum Computing & IBM Qiskit SDK</div>
                     </div>
                   </div>
 

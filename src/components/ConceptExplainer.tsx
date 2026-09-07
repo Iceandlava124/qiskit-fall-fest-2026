@@ -95,7 +95,7 @@ qc.measure(0, 0)`;
     'All',
     'Foundations',
     'Qiskit SDK',
-    'Biomedical & Healthcare',
+    'Algorithms & Applications',
     'Algorithms & Crypto',
   ];
 
@@ -124,7 +124,7 @@ qc.measure(0, 0)`;
             </span>
             <SectionHeading
               title="Quantum Concept Explainer"
-              subtitle="Explore the fundamental physics, IBM Qiskit code syntax, and biomedical applications through live interactive visual tools"
+              subtitle="Explore the fundamental physics, IBM Qiskit code syntax, and real-world quantum algorithms through live interactive visual tools"
             />
           </div>
         </AnimatedSection>

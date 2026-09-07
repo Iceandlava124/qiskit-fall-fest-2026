@@ -1,7 +1,7 @@
 export interface ConceptItem {
   id: string;
   number: string;
-  category: 'Foundations' | 'Qiskit SDK' | 'Algorithms & Crypto' | 'Biomedical & Healthcare';
+  category: 'Foundations' | 'Qiskit SDK' | 'Algorithms & Crypto' | 'Algorithms & Applications';
   title: string;
   math?: string;
   summary: string;
@@ -18,7 +18,7 @@ export const quantumConcepts: ConceptItem[] = [
     title: 'Quantum Superposition',
     math: '|ψ⟩ = α|0⟩ + β|1⟩  (where |α|² + |β|² = 1)',
     summary: 'Unlike classical bits that are strictly 0 or 1, a qubit exists in a simultaneous continuum of states until measured.',
-    deepDive: 'Superposition enables quantum processors to evaluate high-dimensional mathematical spaces simultaneously. In biomedical applications, this property allows evaluating millions of molecular conformations in parallel rather than sequentially.',
+    deepDive: 'Superposition enables quantum processors to evaluate high-dimensional mathematical spaces simultaneously. In real-world applications, this property allows evaluating millions of molecular conformations and state vectors in parallel rather than sequentially.',
     codeSnippet: `from qiskit import QuantumCircuit\n\nqc = QuantumCircuit(1, 1)\nqc.h(0)  # Applies Hadamard gate -> equal superposition (|0> + |1>)/sqrt(2)\nqc.measure(0, 0)`,
     relevance: 'Essential for state preparation in every quantum algorithm and hackathon project.',
   },
@@ -69,18 +69,18 @@ export const quantumConcepts: ConceptItem[] = [
   {
     id: 'vqe-healthcare',
     number: '06',
-    category: 'Biomedical & Healthcare',
-    title: 'VQE for Molecular Simulation & Drug Discovery',
+    category: 'Algorithms & Applications',
+    title: 'VQE for Molecular Simulation & Complex Chemistry',
     math: 'E_0 ≤ ⟨ψ(θ)| H_molecule |ψ(θ)⟩  (Rayleigh-Ritz Variational Principle)',
-    summary: 'A hybrid quantum-classical algorithm that computes the ground state energy and electron structure of complex biomolecules.',
-    deepDive: 'Classical supercomputers struggle exponentially with quantum electron correlations in complex drugs and enzymes. VQE prepares parameterized trial wavefunctions on a quantum computer and optimizes parameters via classical optimizers.',
+    summary: 'A hybrid quantum-classical algorithm that computes the ground state energy and electron structure of complex molecules.',
+    deepDive: 'Classical supercomputers struggle exponentially with quantum electron correlations in complex drugs, materials, and enzymes. VQE prepares parameterized trial wavefunctions on a quantum computer and optimizes parameters via classical optimizers.',
     codeSnippet: `from qiskit_algorithms import VQE\nfrom qiskit_algorithms.optimizers import COBYLA\nfrom qiskit.circuit.library import TwoLocal\n\nansatz = TwoLocal(num_qubits=4, ['ry', 'rz'], 'cz', reps=2)\nvqe = VQE(estimator=estimator, ansatz=ansatz, optimizer=COBYLA())`,
-    relevance: 'Core application for Hackathon Track 4: Quantum Computing for Healthcare.',
+    relevance: 'Core application for Hackathon Track 4: Quantum Computing Applications.',
   },
   {
     id: 'qml-kernels',
     number: '07',
-    category: 'Biomedical & Healthcare',
+    category: 'Algorithms & Applications',
     title: 'Quantum Machine Learning & Quantum Kernels',
     math: 'K(x_i, x_j) = |⟨ϕ(x_i)|ϕ(x_j)⟩|²  (Feature Map Inner Product)',
     summary: 'Mapping biomedical patient and genomic data into high-dimensional quantum Hilbert spaces for superior classification.',

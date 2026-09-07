@@ -37,7 +37,7 @@ const stats: MetricStat[] = [
     icon: Trophy,
     value: '4 Tracks',
     label: 'Quantum Hackathon',
-    sub: 'Biomedical, QML, crypto & error correction',
+    sub: 'QML, Cryptography, Error Correction & Healthcare',
     status: 'confirmed',
   },
 ];

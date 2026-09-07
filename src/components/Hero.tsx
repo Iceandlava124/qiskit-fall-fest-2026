@@ -23,14 +23,14 @@ export default function Hero() {
               </h1>
             </AnimatedSection>
 
-            {/* Theme & Tagline */}
+            {/* Tagline & Motto */}
             <AnimatedSection delay={0.08}>
               <div className="mb-6">
-                <p className="text-xl sm:text-2xl lg:text-3xl font-heading font-bold text-quantum-purple mb-2">
-                  Quantum Computing for Biomedical Applications
+                <p className="text-xl sm:text-2xl lg:text-3xl font-heading font-light text-slate-700 mb-2 leading-relaxed">
+                  Explore Quantum. Build with Qiskit. Connect with the Future.
                 </p>
-                <p className="text-base sm:text-lg font-mono text-slate-600 font-medium tracking-wide">
-                  Learn <span className="text-quantum-purple font-bold">|</span> Explore <span className="text-quantum-purple font-bold">|</span> Build <span className="text-quantum-purple font-bold">|</span> Innovate
+                <p className="text-sm sm:text-base font-mono text-quantum-purple font-semibold tracking-wide">
+                  Learn <span className="text-slate-300 font-normal mx-1.5">|</span> Explore <span className="text-slate-300 font-normal mx-1.5">|</span> Build <span className="text-slate-300 font-normal mx-1.5">|</span> Innovate
                 </p>
               </div>
             </AnimatedSection>
