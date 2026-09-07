@@ -1,3 +1,71 @@
+export interface Patron {
+  name: string;
+  role: string;
+  designation: string;
+  institution: string;
+  image: string;
+}
+
+export const chiefPatron: Patron = {
+  name: 'Dr. G. Viswanathan',
+  role: 'Chief Patron',
+  designation: 'Founder & Chancellor',
+  institution: 'Vellore Institute of Technology (VIT)',
+  image: '/patrons/g-viswanathan.jpg',
+};
+
+export const patrons: Patron[] = [
+  {
+    name: 'Dr. Sankar Viswanathan',
+    role: 'Patron',
+    designation: 'Vice-President',
+    institution: 'VIT',
+    image: '/patrons/sankar-viswanathan.jpg',
+  },
+  {
+    name: 'Dr. Sekar Viswanathan',
+    role: 'Patron',
+    designation: 'Vice-President',
+    institution: 'VIT',
+    image: '/patrons/sekar-viswanathan.jpg',
+  },
+  {
+    name: 'Dr. G. V. Selvam',
+    role: 'Patron',
+    designation: 'Vice-President',
+    institution: 'VIT',
+    image: '/patrons/gv-selvam.jpg',
+  },
+  {
+    name: 'Dr. V. S. Kanchana Bhaaskaran',
+    role: 'Patron',
+    designation: 'Vice-Chancellor',
+    institution: 'VIT',
+    image: '/patrons/kanchana-bhaaskaran.jpg',
+  },
+  {
+    name: 'Dr. T. Thyagarajan',
+    role: 'Patron',
+    designation: 'Pro-Vice Chancellor',
+    institution: 'VIT Chennai',
+    image: '/patrons/t-thyagarajan.jpg',
+  },
+  {
+    name: 'Dr. K. Sathiyanarayanan',
+    role: 'Patron',
+    designation: 'Director',
+    institution: 'VIT Chennai',
+    image: '/patrons/k-sathiyanarayanan.jpg',
+  },
+  {
+    name: 'Dr. P. K. Manoharan',
+    role: 'Patron',
+    designation: 'Additional Registrar',
+    institution: 'VIT Chennai',
+    image: '/patrons/pk-manoharan.jpg',
+  },
+];
+
 export interface Organizer {
   name: string;
   role: string;
