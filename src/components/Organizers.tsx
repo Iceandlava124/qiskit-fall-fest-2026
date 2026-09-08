@@ -108,9 +108,6 @@ export default function Organizers() {
               <h3 className="text-2xl sm:text-3xl font-heading font-extrabold text-slate-900">
                 Organizing Committee
               </h3>
-              <p className="text-xs font-mono text-slate-500 mt-2">
-                Department of Mathematics · School of Advanced Sciences (SAS), VIT Chennai
-              </p>
             </div>
           </AnimatedSection>
 
@@ -155,7 +152,7 @@ export default function Organizers() {
           {/* Faculty Co-Organizers */}
           <div className="mb-14">
             <AnimatedSection delay={0.2}>
-              <div className="flex items-center gap-2 mb-6 border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2 mb-2">
                 <Users size={18} className="text-quantum-purple" />
                 <h4 className="font-heading font-bold text-slate-900 text-lg sm:text-xl">
                   Faculty Co-Organizers
@@ -164,6 +161,9 @@ export default function Organizers() {
                   {facultyOrganizers.length} Members
                 </span>
               </div>
+              <p className="text-xs font-mono text-slate-500 mb-6 border-b border-slate-100 pb-3">
+                Department of Mathematics · School of Advanced Sciences (SAS), VIT Chennai
+              </p>
             </AnimatedSection>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
