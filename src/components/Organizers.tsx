@@ -12,10 +12,7 @@ export default function Organizers() {
     <section id="organizers" className="py-20 md:py-36 lg:py-44 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden flex items-center justify-center">
       <div className="w-full max-w-7xl mx-auto">
         <AnimatedSection>
-          <SectionHeading
-            title="Patrons & Organizing Committee"
-            subtitle="Department of Mathematics, School of Advanced Sciences (SAS) · VIT Chennai"
-          />
+          <SectionHeading title="Patrons & Organizing Committee" />
         </AnimatedSection>
 
         {/* 1. Chief Patron */}
