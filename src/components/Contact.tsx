@@ -33,7 +33,7 @@ export default function Contact() {
         <AnimatedSection>
           <SectionHeading
             title="Contact Us"
-            subtitle="Get in touch with the organizing committee for queries regarding participation, OD letters, and event details"
+            subtitle="Get in touch with the organizing committee for queries regarding participation, registration, and event details"
           />
         </AnimatedSection>
 

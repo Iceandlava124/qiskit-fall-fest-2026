@@ -30,10 +30,6 @@ export default function RegisterCTA() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left pt-6 border-t border-slate-200">
                   <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-800">
                     <span className="text-quantum-purple font-bold">✓</span>
-                    <span>Official On-Duty (OD) letters</span>
-                  </div>
-                  <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-800">
-                    <span className="text-quantum-purple font-bold">✓</span>
                     <span>Verified participation certificate</span>
                   </div>
                   <div className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-800">
